@@ -1,9 +1,17 @@
 #Greenfoot project file
+<<<<<<< Updated upstream
 editor.fx.0.height=739
 editor.fx.0.width=1203
 editor.fx.0.x=98
 editor.fx.0.y=60
 height=916
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=585
+>>>>>>> Stashed changes
 package.numDependencies=0
 package.numTargets=1
 project.charset=UTF-8
