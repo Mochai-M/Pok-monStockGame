@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The effect for the Red stock
  * 
  * @Liyu 
- * @Nov 8 2023
+ * @Nov 9 2023
  */
 public class Red extends Weather
 {
@@ -29,8 +29,9 @@ public class Red extends Weather
         getWorld().addObject(this ,getX()/2, getY()/2);
         
         //increase red stock price
-        
+        //red_stock += 20;
         
         //decrease green stock price
+        //green_stock -= 20;
     }
 }

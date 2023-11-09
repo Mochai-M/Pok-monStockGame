@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Effects for the pink stock
  * 
  * @Liyu
- * @Nov 8 2023
+ * @Nov 9 2023
  */
 public class Pink extends Weather
 {
@@ -23,8 +23,10 @@ public class Pink extends Weather
         getWorld().addObject(this ,getX()/2, getY()/2);
         
         //increase pink stock price
-        
+        //pink_price += 20;
         
         //decrease green stock price
+        //green_price -= 20;
     }
+    
 }
