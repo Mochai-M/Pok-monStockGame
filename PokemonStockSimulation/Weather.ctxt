@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Weather
-comment0.text=\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \n\ \n\ \n\ \n\ \n\ @Liyu\ Xiao\n\ @Nov\ 8\ 2023\n\ \n\ \n\ \n\ \n
+comment0.text=\r\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \r\n\ \r\n\ \r\n\ \r\n\ \r\n\ @Liyu\ Xiao\r\n\ @Nov\ 8\ 2023\r\n\ \r\n\ \r\n\ \r\n\ \r\n
 comment1.params=imageSize\ length
 comment1.target=Weather(int,\ int)
-comment1.text=\n\ The\ constructor\ for\ the\ weather\ class\ \n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\n\ \n
+comment1.text=\r\n\ The\ constructor\ for\ the\ weather\ class\ \r\n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\r\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\r\n\ \r\n
 comment2.params=
 comment2.target=void\ addWeather()
 numComments=3
