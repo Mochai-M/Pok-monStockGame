@@ -10,14 +10,23 @@ public class LineGraph extends Actor
 {
     protected static int graphHeight;
     protected static int graphWidth; 
+        
+    protected GreenfootImage grid;
     
-    protected int value;
-    protected String color;
+    protected int clock;
     
-    protected GreenfootImage point;
-    
+    public LineGraph(int x,int y) {
+        clock = 0;
+        graphWidth = x;
+        graphHeight = y;
+        grid = new GreenfootImage(1600,800);
+    }
     public LineGraph() {
-        point = new GreenfootImage(4,4);
+        clock = 0;
+        graphWidth = 1600;
+        graphHeight = 800;
+        grid = new GreenfootImage(1600,800);
+        drawGrid();
     }
     /**
      * Act - do whatever the LineGraph wants to do. This method is called whenever
@@ -25,12 +34,22 @@ public class LineGraph extends Actor
      */
     public void act()
     {
-        // Add your action code here.
     }
     
-    public void graphPoint() {
-        point.setColor(Color.BLACK);
-        point.drawRect(200,200,40,40);
-        setImage(point);
+    public void drawGrid() {
+        grid.setColor(Color.BLACK);
+        for(int i = graphWidth; i > 0; i = i - 50) {
+            grid.drawLine(i,0,i,800);
+        }
+        for(int i = graphHeight; i > 0; i = i - 50) {
+            grid.drawLine(0,i,1600,i);
+        }
+        setImage(grid);
+    }
+    
+    public void draw() {
+        grid.setColor(Color.BLACK);
+        grid.drawLine(0,0,100,100);
+        setImage(grid);
     }
 }
