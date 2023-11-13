@@ -2,12 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class Line here.
+ * Write a description of class WaterCompany here.
  * 
  * @author Mekaeel
  * @version November 9th
  */
-public class Line extends Actor
+public class WaterCompany extends Companies
 {
     protected static int currentValue = 50;
     protected static int newValue;
@@ -18,7 +18,7 @@ public class Line extends Actor
     
     protected GreenfootImage points;
     
-    public Line(int v) {
+    public WaterCompany(int v) {
         clock = 0;
         iteration = 0;
         
@@ -31,7 +31,7 @@ public class Line extends Actor
     }
     
     /**
-     * Act - do whatever the Line wants to do. This method is called whenever
+     * Act - do whatever the WaterCompany wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -44,7 +44,7 @@ public class Line extends Actor
     }
     
     public void newPoint(int x1, int y1, int x2, int y2) {
-        points.setColor(Color.RED);
+        points.setColor(Color.BLUE);
         points.drawLine(x1,y1,x2,y2);
     }
     
@@ -58,7 +58,7 @@ public class Line extends Actor
             
             currentValue = newValue;
             
-            ((MyWorld)getWorld()).addObject(new Line(400),1625,300);
+            ((MyWorld)getWorld()).addObject(new WaterCompany(400),1625,300);
         }
         
         setLocation(getX() - 50, getY());

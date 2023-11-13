@@ -2,12 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class Line here.
+ * Write a description of class FireCompany here.
  * 
  * @author Mekaeel
  * @version November 9th
  */
-public class Line extends Actor
+public class FireCompany extends Actor
 {
     protected static int currentValue = 50;
     protected static int newValue;
@@ -18,7 +18,7 @@ public class Line extends Actor
     
     protected GreenfootImage points;
     
-    public Line(int v) {
+    public FireCompany(int v) {
         clock = 0;
         iteration = 0;
         
@@ -31,7 +31,7 @@ public class Line extends Actor
     }
     
     /**
-     * Act - do whatever the Line wants to do. This method is called whenever
+     * Act - do whatever the FireCompany wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -58,7 +58,7 @@ public class Line extends Actor
             
             currentValue = newValue;
             
-            ((MyWorld)getWorld()).addObject(new Line(400),1625,300);
+            ((MyWorld)getWorld()).addObject(new FireCompany(400),1625,300);
         }
         
         setLocation(getX() - 50, getY());
