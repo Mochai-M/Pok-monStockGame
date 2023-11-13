@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
 
     // natalie 11/7/2023
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,6 +18,13 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1600, 800, 1,false);
+        
+        setPaintOrder(Line.class,LineGraph.class);
+        
+        addObject(new LineGraph(),800,400);
+        
+        addObject(new FireCompany(400), 1625,300);
+        addObject(new WaterCompany(400), 1625,300);
     }
 }
