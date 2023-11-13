@@ -4,10 +4,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Effect for the Blue stock
  * 
  * @Liyu 
- * @Nov 9 2023
+ * @Nov 11 2023
  */
 public class Blue extends Weather
 {
+    
+    //private int bluePrice = BlueCompany.getValue();
+    //private int redPrice = RedCompany.getValue();
     
     public Blue(){
         //sets the size and length for the effect
@@ -24,9 +27,15 @@ public class Blue extends Weather
         getWorld().addObject(this ,getX()/2, getY()/2);
         
         //increase blue stock price
-        //blue_price += 20;
+        /**
+         * bluePrice = blueCompany.setValue(bluePrice + 20);
+         * 
+         */
         
         //decrease red stock price
-        //red_price -= 20;
+        /**
+         * redPrice = redCompany.setValue(redPrice - 20);
+         * 
+         */
     }
 }
