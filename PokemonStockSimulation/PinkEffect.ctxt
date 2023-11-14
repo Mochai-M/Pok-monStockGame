@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Pink
+comment0.target=PinkEffect
 comment0.text=\n\ Effects\ for\ the\ pink\ stock\n\ \n\ @Liyu\n\ @Nov\ 11\ 2023\n
 comment1.params=
-comment1.target=Pink()
+comment1.target=PinkEffect()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ addWeather()
-numComments=4
+numComments=3

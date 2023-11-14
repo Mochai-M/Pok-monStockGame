@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-<<<<<<< Updated upstream
 
     // natalie 11/7/2023
     //load images into a temporary array
@@ -24,7 +23,7 @@ public class MyWorld extends World
     public MyWorld()
     { 
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1600, 800, 1,false);
+        super(1600, 800, 1, false);
         
         setPaintOrder(Line.class,LineGraph.class);
         
@@ -35,6 +34,27 @@ public class MyWorld extends World
         
         WaterCompany blueCompany = new WaterCompany(400);
         addObject(blueCompany, 1625,300);
+        
+        
     }
     
+    public void act(){
+        //spawns random weather effects 
+        if(Greenfoot.getRandomNumber(1000) == 0){
+            int weatherType = Greenfoot.getRandomNumber(4); 
+            
+            if(weatherType == 0){
+                addObject(new BlueEffect(), 900, -300);
+            }
+            else if(weatherType == 1){
+                addObject(new GreenEffect(), 900, -300);
+            }
+            else if(weatherType == 2){
+                addObject(new RedEffect(), 900, -300);
+            }
+            else{
+                addObject(new PinkEffect(), 900, -300);
+            }
+        }
+    }
 }

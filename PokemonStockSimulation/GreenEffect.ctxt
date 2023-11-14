@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Green
+comment0.target=GreenEffect
 comment0.text=\n\ The\ effect\ for\ the\ Green\ stock\n\ \n\ @Liyu\n\ @Nov\ 11\ 2023\n
 comment1.params=
-comment1.target=Green()
+comment1.target=GreenEffect()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ addWeather()
-numComments=4
+numComments=3
