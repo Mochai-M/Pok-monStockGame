@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Mekaeel
  * @version November 9th
  */
-public class FireCompany extends Actor
+public class FireCompany extends Companies
 {
     protected static int currentValue = 50;
     protected static int newValue;
@@ -75,5 +75,9 @@ public class FireCompany extends Actor
     
     public int getNewValue() {
         return newValue;
+    }
+    
+    public String toString(){
+        return "FireCompany";
     }
 }

@@ -76,4 +76,8 @@ public class GreenCompany extends Companies
     public int getNewValue() {
         return newValue;
     }
+    
+    public String toString(){
+        return "GreenCompany";
+    }
 }

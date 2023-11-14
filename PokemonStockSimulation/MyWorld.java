@@ -24,7 +24,10 @@ public class MyWorld extends World
         
         addObject(new LineGraph(),800,400);
         
-        addObject(new FireCompany(400), 1625,300);
-        addObject(new WaterCompany(400), 1625,300);
+        FireCompany redCompany = new FireCompany(400);
+        addObject(redCompany, 1625,300);
+        
+        WaterCompany blueCompany = new WaterCompany(400);
+        addObject(blueCompany, 1625,300);
     }
 }

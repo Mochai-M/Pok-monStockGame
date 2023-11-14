@@ -76,4 +76,8 @@ public class PinkCompany extends Companies
     public int getNewValue() {
         return newValue;
     }
+    
+    public String toString(){
+        return "PinkCompany";
+    }
 }

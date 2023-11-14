@@ -69,11 +69,16 @@ public class WaterCompany extends Companies
         }
     }
     
+    
     public int getCurrentValue() {
         return currentValue;
     }
     
     public int getNewValue() {
         return newValue;
+    }
+    
+    public String toString(){
+        return "WaterCompany";
     }
 }
