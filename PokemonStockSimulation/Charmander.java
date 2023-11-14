@@ -3,12 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Charmander here.
  * 
- * @Natalie Huang 
- * @version 1.0
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Charmander extends Icons
 {
-    public GreenfootImage[] charmander; // character will have different expressions
+    public Charmander(){
+        super("Charmander");
+    }
     
     /**
      * Act - do whatever the Charmander wants to do. This method is called whenever

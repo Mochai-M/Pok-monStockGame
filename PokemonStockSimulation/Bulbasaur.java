@@ -3,12 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bulbasaur here.
  * 
- * @Natalie Huang 
- * @version 1.0
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Bulbasaur extends Icons
 {
-    public GreenfootImage[] bulbasaur; // character will have different expressions
+    public Bulbasaur(){
+        super("Bulbasaur"); 
+    }
     
     /**
      * Act - do whatever the Bulbasaur wants to do. This method is called whenever

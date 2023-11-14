@@ -3,12 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Ditto here.
  * 
- * @Natalie Huang 
- * @version 1.0
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Ditto extends Icons
 {
-    public GreenfootImage[] ditto; // character will have different expressions
+    public Ditto(){
+        super("Ditto");
+    }
     
     /**
      * Act - do whatever the Ditto wants to do. This method is called whenever
