@@ -8,24 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    //add characters into world on screen
-    private Charmander charmander;
-    private Squirtle squirtle; 
-    private Bulbasaur bulbasaur;
-    private Ditto ditto;
+
+    // natalie 11/7/2023
     
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public MyWorld()
-    {   
-        super(1100, 650, 1); 
-        charmander = new Charmander();
-        addObject(charmander, 100, 200);
-    }
-    
-    public void addImage(){
-
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(1600, 800, 1,false);
+        
+        setPaintOrder(Line.class,LineGraph.class);
+        
+        addObject(new LineGraph(),800,400);
+        
+        addObject(new FireCompany(400), 1625,300);
+        addObject(new WaterCompany(400), 1625,300);
     }
 }
