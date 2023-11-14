@@ -18,12 +18,12 @@ public class Pink extends Weather
     
     public void act()
     {
-        // Add your action code here.
+        //add weather to center of the world
+        getWorld().addObject(this ,getX()/2, getY()/2);
     }
     
     public void addWeather(){
-        //add weather to center of the world
-        getWorld().addObject(this ,getX()/2, getY()/2);
+
         
         //increase pink stock price
         /**

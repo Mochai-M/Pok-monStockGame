@@ -11,20 +11,22 @@ public class Green extends Weather
     //private int greenPrice = GreenCompany.getValue();
     //private int bluePrice = BlueCompany.getValue();
     
+    GreenfootImage greenImage = this.getImage();
+    
     public Green(){
         //sets the size and length for the effect
         super(100,10);
+        
+        greenImage.scale(1000,1000);
     }
     
     public void act()
     {
-        // Add your action code here.
+        //add weather to center of the world
+        getWorld().addObject(this ,getX()/2, getY()/2);
     }
     
     public void addWeather(){
-        //add weather to center of the world
-        getWorld().addObject(this ,getX()/2, getY()/2);
-        
         //increase green stock price
         /**
          * greenPrice = greenCompany.setValue(bluePrice + 20);

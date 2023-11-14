@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Red extends Weather
 {
-    //private int redPrice = redCompany.getValue();
-    //private int bluePrice = blueCompany.getValue();
+    //private int red = redPrice.getValue();
+    //private int blue = bluePrice.getValue();
     
     //constructor for the red class
     public Red(){
@@ -19,7 +19,8 @@ public class Red extends Weather
     
     public void act()
     {
-        // Add your action code here.
+        //add weather to center of the world
+        getWorld().addObject(this ,getX()/2, getY()/2);
     }
     
     
@@ -28,11 +29,10 @@ public class Red extends Weather
      * decreases the green stock price
      */
     public void addWeather(){
-        //add weather to center of the world
-        getWorld().addObject(this ,getX()/2, getY()/2);
+        
         
         //increase red stock price
-        //red_stock += 20;
+        //redPrice += 20;
         
         //decrease green stock price
         //green_stock -= 20;
