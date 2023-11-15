@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Write a description of class PinkCompany here.
  * 
  * @author Mekaeel
- * @version November 9th
+ * @version November 14th
  */
 public class PinkCompany extends Companies
 {
