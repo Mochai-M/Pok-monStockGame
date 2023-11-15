@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public abstract class Companies extends Actor
 {   
+    protected int spawnPoint = 1575;
     protected int clock;
     
     public Companies() {
@@ -17,37 +18,38 @@ public abstract class Companies extends Actor
     
     public void act() {
         clock++;
-        if(clock > 100) {
+        setLocation(getX() - 1, getY());
+        if(clock > 50) {
             nextPoint();
             clock = 0;
         }
     }
     
     public void nextPoint() {
-        setNewValue(Greenfoot.getRandomNumber(600));
-        
         if(getIteration() == 0) {           
             newPoint(0,getCurrentValue(),50,getNewValue());
+            newPoint(0,getCurrentValue() + 1,50,getNewValue() + 1);
+            newPoint(0,getCurrentValue() - 1,50,getNewValue() - 1);
+            newPoint(0,getCurrentValue() + 2,50,getNewValue() + 2);
+            newPoint(0,getCurrentValue() - 2,50,getNewValue() - 2);
             newPoint(0,getCurrentValue() + 3,50,getNewValue() + 3);
             newPoint(0,getCurrentValue() - 3,50,getNewValue() - 3);
             
             updateCurrentValue(getNewValue());
             
             if(getClass() == FireCompany.class) {
-                ((MyWorld)getWorld()).addObject(new FireCompany(400),1625,300);
+                ((MyWorld)getWorld()).addObject(new FireCompany(400),spawnPoint,300);
             } else if(getClass() == GreenCompany.class) {
-                ((MyWorld)getWorld()).addObject(new GreenCompany(400),1625,300);
+                ((MyWorld)getWorld()).addObject(new GreenCompany(400),spawnPoint,300);
             } else if(getClass() == PinkCompany.class) {
-                ((MyWorld)getWorld()).addObject(new PinkCompany(400),1625,300);
+                ((MyWorld)getWorld()).addObject(new PinkCompany(400),spawnPoint,300);
             } else if(getClass() == WaterCompany.class) {
-                ((MyWorld)getWorld()).addObject(new WaterCompany(400),1625,300);
+                ((MyWorld)getWorld()).addObject(new WaterCompany(400),spawnPoint,300);
             }
         }
-        
-        setLocation(getX() - 50, getY());
         incrementIteration();
         
-        if (getIteration() > 32) {
+        if (getIteration() > 30) {
             ((MyWorld)getWorld()).removeObject(this);
         }
     }

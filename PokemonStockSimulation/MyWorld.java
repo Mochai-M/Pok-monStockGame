@@ -32,6 +32,12 @@ public class MyWorld extends World
         
         Companies blueCompany = new WaterCompany(400);
         addObject(blueCompany, 1625,300);
+        
+        Companies greenCompany = new GreenCompany(400);
+        addObject(greenCompany, 1625,300);
+        
+        Companies pinkCompany = new PinkCompany(400);
+        addObject(pinkCompany, 1625,300);
     }
     
 }
