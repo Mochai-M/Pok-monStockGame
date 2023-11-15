@@ -39,7 +39,9 @@ public abstract class Weather extends Actor
         
         image.scale(imageSize,imageSize);
         
-        image.setTransparency(100);
+        
+        //
+        image.setTransparency(180);
     }
     
     
@@ -50,9 +52,10 @@ public abstract class Weather extends Actor
       
       if(actCount<durationLength)
       {
-            setLocation(getX(),getY()+10);   //The object drops down
+            setLocation(getX(),getY()+5);   //The object drops down
             actCount++;
       }
+      
       
       
       //get ALL Companues caught in the "Weather Storm" and 2 of the 4 companies

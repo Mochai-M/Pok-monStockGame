@@ -39,21 +39,28 @@ public class MyWorld extends World
     }
     
     public void act(){
+        int tickDown = 0;
+        
         //spawns random weather effects 
-        if(Greenfoot.getRandomNumber(1000) == 0){
+        tickDown++;
+        if(Greenfoot.getRandomNumber(10000-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
-            
+    
             if(weatherType == 0){
                 addObject(new BlueEffect(), 900, -300);
+                tickDown = 0;
             }
             else if(weatherType == 1){
                 addObject(new GreenEffect(), 900, -300);
+                tickDown = 0;
             }
             else if(weatherType == 2){
                 addObject(new RedEffect(), 900, -300);
+                tickDown = 0;
             }
             else{
                 addObject(new PinkEffect(), 900, -300);
+                tickDown = 0;
             }
         }
     }
