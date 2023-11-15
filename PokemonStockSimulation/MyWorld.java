@@ -27,17 +27,19 @@ public class MyWorld extends World
         
         addObject(new LineGraph(),800,400);
     
+        
         Companies redCompany = new FireCompany(400);
-        addObject(redCompany, 1625,300);
+        addObject(redCompany, 1575,300);
         
         Companies blueCompany = new WaterCompany(400);
-        addObject(blueCompany, 1625,300);
+        addObject(blueCompany, 1575,300);
         
         Companies greenCompany = new GreenCompany(400);
-        addObject(greenCompany, 1625,300);
+        addObject(greenCompany, 1575,300);
+        
         
         Companies pinkCompany = new PinkCompany(400);
-        addObject(pinkCompany, 1625,300);
+        addObject(pinkCompany, 1575,300);
     }
     
     public void act(){

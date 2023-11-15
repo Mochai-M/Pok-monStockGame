@@ -9,8 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public abstract class Companies extends Actor
 {   
-    protected int spawnPoint = 1575;
+    protected int spawnPoint = 1675;
     protected int clock;
+    protected int lineWidth = 54;
+    protected boolean modified = false;
+
     
     public Companies() {
         clock = 0;
@@ -18,22 +21,26 @@ public abstract class Companies extends Actor
     
     public void act() {
         clock++;
-        setLocation(getX() - 1, getY());
+        
         if(clock > 50) {
             nextPoint();
             clock = 0;
         }
+        
+        setLocation(getX() - 1, getY());
+        
+        if (getIteration() > 30) {
+            ((MyWorld)getWorld()).removeObject(this);
+        }
     }
     
-    public void nextPoint() {
-        if(getIteration() == 0) {           
-            newPoint(0,getCurrentValue(),50,getNewValue());
-            newPoint(0,getCurrentValue() + 1,50,getNewValue() + 1);
-            newPoint(0,getCurrentValue() - 1,50,getNewValue() - 1);
-            newPoint(0,getCurrentValue() + 2,50,getNewValue() + 2);
-            newPoint(0,getCurrentValue() - 2,50,getNewValue() - 2);
-            newPoint(0,getCurrentValue() + 3,50,getNewValue() + 3);
-            newPoint(0,getCurrentValue() - 3,50,getNewValue() - 3);
+    public void nextPoint() {        
+        if(getIteration() == 0) {         
+            if(modified == false) {
+                setNewValue(Greenfoot.getRandomNumber(600));
+            }
+            
+            newPoint(0,getCurrentValue(),51,getNewValue());
             
             updateCurrentValue(getNewValue());
             
@@ -46,12 +53,9 @@ public abstract class Companies extends Actor
             } else if(getClass() == WaterCompany.class) {
                 ((MyWorld)getWorld()).addObject(new WaterCompany(400),spawnPoint,300);
             }
+            modified = false;
         }
         incrementIteration();
-        
-        if (getIteration() > 30) {
-            ((MyWorld)getWorld()).removeObject(this);
-        }
     }
       
     public abstract void updateCurrentValue(int x);
@@ -67,6 +71,11 @@ public abstract class Companies extends Actor
     public abstract void incrementIteration();
     
     public abstract void newPoint(int x1, int y1, int x2, int y2);
+    
+    public void modifyValue(int x) {
+        setNewValue(getNewValue() + x);
+        modified = true;
+    }
     
     public abstract String toString();
 

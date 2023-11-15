@@ -19,7 +19,7 @@ public class WaterCompany extends Companies
         super();
         iteration = 0;
         
-        points = new GreenfootImage(50,600);
+        points = new GreenfootImage(lineWidth,600);
         points.setColor(Color.BLUE);
         
         setImage(points);
@@ -36,6 +36,10 @@ public class WaterCompany extends Companies
     
     public void newPoint(int x1, int y1, int x2, int y2) {
         points.drawLine(x1,y1,x2,y2);
+        points.drawLine(x1 + 1,y1,x2 + 1,y2);
+        points.drawLine(x1 - 1,y1,x2 - 1,y2);
+        points.drawLine(x1,y1 + 1,x2,y2 + 1);
+        points.drawLine(x1,y1 - 1,x2,y2 - 1);
     }
     
     /**
