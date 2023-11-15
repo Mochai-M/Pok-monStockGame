@@ -21,15 +21,17 @@ public class MyWorld extends World
     public MyWorld()
     { 
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1600, 800, 1,false);
+        super(1600, 800, 1, false);
         
         setPaintOrder(Line.class,LineGraph.class);
         
         addObject(new LineGraph(),800,400);
     
         Companies redCompany = new FireCompany(400);
+        Companies redCompany = new FireCompany(400);
         addObject(redCompany, 1625,300);
         
+        Companies blueCompany = new WaterCompany(400);
         Companies blueCompany = new WaterCompany(400);
         addObject(blueCompany, 1625,300);
         
@@ -38,6 +40,40 @@ public class MyWorld extends World
         
         Companies pinkCompany = new PinkCompany(400);
         addObject(pinkCompany, 1625,300);
+        
+        Companies greenCompany = new GreenCompany(400);
+        addObject(greenCompany, 1625,300);
+        
+        Companies pinkCompany = new PinkCompany(400);
+        addObject(pinkCompany, 1625,300);
+        
+        
     }
     
+    public void act(){
+        int tickDown = 0;
+        
+        //spawns random weather effects 
+        tickDown++;
+        if(Greenfoot.getRandomNumber(10000-tickDown) == 0){
+            int weatherType = Greenfoot.getRandomNumber(4); 
+    
+            if(weatherType == 0){
+                addObject(new BlueEffect(), 900, -300);
+                tickDown = 0;
+            }
+            else if(weatherType == 1){
+                addObject(new GreenEffect(), 900, -300);
+                tickDown = 0;
+            }
+            else if(weatherType == 2){
+                addObject(new RedEffect(), 900, -300);
+                tickDown = 0;
+            }
+            else{
+                addObject(new PinkEffect(), 900, -300);
+                tickDown = 0;
+            }
+        }
+    }
 }
