@@ -19,7 +19,7 @@ public class MyWorld extends World
      * 
      */
     public MyWorld()
-    { 
+    {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
@@ -28,10 +28,8 @@ public class MyWorld extends World
         addObject(new LineGraph(),800,400);
     
         Companies redCompany = new FireCompany(400);
-        Companies redCompany = new FireCompany(400);
         addObject(redCompany, 1625,300);
         
-        Companies blueCompany = new WaterCompany(400);
         Companies blueCompany = new WaterCompany(400);
         addObject(blueCompany, 1625,300);
         
@@ -40,14 +38,6 @@ public class MyWorld extends World
         
         Companies pinkCompany = new PinkCompany(400);
         addObject(pinkCompany, 1625,300);
-        
-        Companies greenCompany = new GreenCompany(400);
-        addObject(greenCompany, 1625,300);
-        
-        Companies pinkCompany = new PinkCompany(400);
-        addObject(pinkCompany, 1625,300);
-        
-        
     }
     
     public void act(){
