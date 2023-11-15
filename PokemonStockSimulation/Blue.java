@@ -15,22 +15,12 @@ public class Blue extends Weather
 
     public Blue(){
         //sets the size and length for the effect
-<<<<<<< Updated upstream
         super(2500,60);
-=======
-        super(100,10);
-        
->>>>>>> Stashed changes
     }
     
     public void act()
     {
-<<<<<<< Updated upstream
         super.act("WaterCompany", "FireCompany");
-    }
-    
-
-=======
         //add weather to center of the world
         getWorld().addObject(this ,getX()/2, getY()/2);
     }
@@ -47,5 +37,4 @@ public class Blue extends Weather
          * 
          */
     }
->>>>>>> Stashed changes
 }
