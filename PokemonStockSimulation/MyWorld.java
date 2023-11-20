@@ -23,23 +23,21 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Line.class,LineGraph.class);
+        setPaintOrder(LineGraph.class, Line.class);
         
         addObject(new LineGraph(),800,400);
-    
         
-        Companies redCompany = new FireCompany(400);
-        addObject(redCompany, 1575,300);
+        Companies blueCompany = new WaterCompany(100);
+        addObject(blueCompany, 300,100);
         
-        Companies blueCompany = new WaterCompany(400);
-        addObject(blueCompany, 1575,300);
+        Companies greenCompany = new GreenCompany(300);
+        addObject(greenCompany, 900,100);
         
-        Companies greenCompany = new GreenCompany(400);
-        addObject(greenCompany, 1575,300);
+        Companies pinkCompany = new PinkCompany(500);
+        addObject(pinkCompany, 1500,100);
         
-        
-        Companies pinkCompany = new PinkCompany(400);
-        addObject(pinkCompany, 1575,300);
+        Companies redCompany = new FireCompany(700);
+        addObject(redCompany, 1775,300);
     }
     
     public void act(){

@@ -13,14 +13,24 @@ public class FireCompany extends Companies
     protected static int newValue;
     protected int iteration;
     
-    protected GreenfootImage points;
+    protected greenfoot.Color color;
+    
+    public FireCompany() {
+        super();
+        iteration = 0;
+        
+        color = Color.RED;
+        
+        setImage(points);
+    }
     
     public FireCompany(int v) {
         super();
         iteration = 0;
         
-        points = new GreenfootImage(lineWidth,600);
-        points.setColor(Color.RED);
+        currentValue = v;
+        
+        color = Color.RED;
         
         setImage(points);
     }
@@ -32,14 +42,6 @@ public class FireCompany extends Companies
     public void act()
     {
         super.act();
-    }
-    
-    public void newPoint(int x1, int y1, int x2, int y2) {
-        points.drawLine(x1,y1,x2,y2);
-        points.drawLine(x1 + 1,y1,x2 + 1,y2);
-        points.drawLine(x1 - 1,y1,x2 - 1,y2);
-        points.drawLine(x1,y1 + 1,x2,y2 + 1);
-        points.drawLine(x1,y1 - 1,x2,y2 - 1);
     }
     
     /**
@@ -61,6 +63,13 @@ public class FireCompany extends Companies
      */
     public int getIteration() {
         return iteration;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
+    public greenfoot.Color getColor() {
+        return color;
     }
     
     /**

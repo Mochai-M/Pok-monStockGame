@@ -13,8 +13,6 @@ public class Icons extends Actor
     
     private GreenfootImage[] images; // stores the images
     int imageNumber;
-    
-<<<<<<< Updated upstream
     public Icons(String x) {
         for(int i = 1; i < images.length + 1; i++){
             images[i] = new GreenfootImage(x + i + ".png" );
@@ -26,28 +24,10 @@ public class Icons extends Actor
     public void animation(){
         imageNumber = (imageNumber + 1) % images.length;
         setImage(images[imageNumber]);
-=======
-    public Icons() {
-        // Declare my array to hold the 16 images I created
-        //images = new GreenfootImage[16];
-
-        for(int i = 0; i < images.length; i++ ){
-            images[i] = new GreenfootImage( "" + i + ".png" );
-            setImage(images[imageNumber] );
-        }
->>>>>>> Stashed changes
     }
 
     public void act()
     {
         animation();
-<<<<<<< Updated upstream
-=======
-    }
-    
-    public void animation(){
-        imageNumber = (imageNumber + 1) % images.length;
-        setImage(images[imageNumber]);
->>>>>>> Stashed changes
     }
 }

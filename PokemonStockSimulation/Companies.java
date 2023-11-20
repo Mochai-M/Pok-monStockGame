@@ -9,10 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public abstract class Companies extends Actor
 {   
-    protected int spawnPoint = 1675;
+    protected int spawnPoint = 1775;
     protected int clock;
-    protected int lineWidth = 54;
+    protected static int lineWidth = 106;
     protected boolean modified = false;
+    
+    public static GreenfootImage points = new GreenfootImage(lineWidth,600);
+    public GreenfootImage finishedPoints;
 
     
     public Companies() {
@@ -22,37 +25,42 @@ public abstract class Companies extends Actor
     public void act() {
         clock++;
         
-        if(clock > 50) {
-            nextPoint();
-            clock = 0;
+        if(getClass() == FireCompany.class) {
+            setLocation(getX() - 1, getY());
         }
         
-        setLocation(getX() - 1, getY());
-        
-        if (getIteration() > 30) {
+        if(clock >= 100) {
+            nextPoint();
+            clock = 0;
+            
+            if (getIteration() > 33 && getClass() == FireCompany.class) {
             ((MyWorld)getWorld()).removeObject(this);
+            }
         }
     }
     
     public void nextPoint() {        
-        if(getIteration() == 0) {         
+        if(getIteration() == 0 || getClass() != FireCompany.class) {         
             if(modified == false) {
                 setNewValue(Greenfoot.getRandomNumber(600));
             }
             
-            newPoint(0,getCurrentValue(),51,getNewValue());
+            newPoint(0,getCurrentValue(),101,getNewValue());
             
             updateCurrentValue(getNewValue());
             
             if(getClass() == FireCompany.class) {
-                ((MyWorld)getWorld()).addObject(new FireCompany(400),spawnPoint,300);
-            } else if(getClass() == GreenCompany.class) {
-                ((MyWorld)getWorld()).addObject(new GreenCompany(400),spawnPoint,300);
-            } else if(getClass() == PinkCompany.class) {
-                ((MyWorld)getWorld()).addObject(new PinkCompany(400),spawnPoint,300);
-            } else if(getClass() == WaterCompany.class) {
-                ((MyWorld)getWorld()).addObject(new WaterCompany(400),spawnPoint,300);
+                finishedPoints = new GreenfootImage(getImage());
+                
+                points = new GreenfootImage(lineWidth,600);
+                
+                setImage(finishedPoints);
             }
+            
+            if(getClass() == FireCompany.class) {
+                ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,300);
+            }
+            
             modified = false;
         }
         incrementIteration();
@@ -68,9 +76,27 @@ public abstract class Companies extends Actor
     
     public abstract int getIteration();
     
+    public abstract greenfoot.Color getColor();
+    
     public abstract void incrementIteration();
     
-    public abstract void newPoint(int x1, int y1, int x2, int y2);
+    public void newPoint(int x1, int y1, int x2, int y2) {
+        points.setColor(getColor());
+        
+        points.drawLine(x1,y1,x2,y2);
+        
+        points.drawLine(x1 + 1,y1,x2 + 1,y2);
+        points.drawLine(x1 - 1,y1,x2 - 1,y2);
+        
+        points.drawLine(x1,y1 + 1,x2,y2 + 1);
+        points.drawLine(x1,y1 - 1,x2,y2 - 1);
+        
+        points.drawLine(x1 + 2,y1,x2 + 2,y2);
+        points.drawLine(x1 - 2,y1,x2 - 2,y2);
+        
+        points.drawLine(x1,y1 + 2,x2,y2 + 2);
+        points.drawLine(x1,y1 - 2,x2,y2 - 2);
+    }
     
     public void modifyValue(int x) {
         setNewValue(getNewValue() + x);
