@@ -37,7 +37,7 @@ public abstract class Weather extends Actor
         //setting the size, and opaqueness of the Weather 
         GreenfootImage image = getImage();
         
-        image.scale(imageSize,imageSize);
+        image.scale(imageSize,imageSize+300);
         
         
         //
@@ -45,32 +45,43 @@ public abstract class Weather extends Actor
     }
     
     
+    
+    /**
+     * The act method for the weather class
+     * @param String Company1, the name of the first company
+     * @param String Company 2, the name of the second company
+     */
     public void act(String Company1, String Company2){
-        
+      //The act count for 
       int actCount = 0;
       
       
       if(actCount<durationLength)
       {
-            setLocation(getX(),getY()+5);   //The object drops down
+            setLocation(getX(),getY()+15);   //The object drops down
             actCount++;
       }
       
       
       
-      //get ALL Companues caught in the "Weather Storm" and 2 of the 4 companies
+      //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
       ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
       
       for (Companies c : companies){
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
-              //c.getCurrentValue();
-              //c.updateValue();
+              int currentValue = c.getCurrentValue();
+              int changeValue = Greenfoot.getRandomNumber(100)+200;
+              c.setNewValue(currentValue  - changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
-              //c.getCurrentValue();
-              //c.updateValue();
+              int currentValue = c.getCurrentValue();
+              int changeValue = Greenfoot.getRandomNumber(100)+200;
+              c.setNewValue(currentValue + changeValue);
+          }
+          else{
+              c.setNewValue(c.getCurrentValue());
           }
           
       } 

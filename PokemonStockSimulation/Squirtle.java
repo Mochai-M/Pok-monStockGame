@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Squirtle extends Icons
+public class Squirtle extends Icon
 {
     public Squirtle(){
         super("Squirtle");
@@ -18,6 +18,22 @@ public class Squirtle extends Icons
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("Squirtle2.png");
+        /**
+         * GreenfootImage squirtleImage;
+        if(greenEffect){
+            squirtleImage = new GreenfootImage("Squirtle0.png"); //happy squirtle
+            setImage(squirtleImage);
+        }else if (redEffect){
+            squirtleImage = new GreenfootImage("Squirtle1.png"); //pissed off/angry 
+            setImage(squirtleImage);
+        }else if (stockPrice < 50){
+            squirtleImage = new GreenfootImage("Squirtle3.png"); //sad 
+            setImage(squirtleImage);
+        }else {
+            squirtleImage = new GreenfootImage("Squirtle2.png"); //normal squirtle
+            setImage(squirtleImage);
+        }
+         */
     }
 }

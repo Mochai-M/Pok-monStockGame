@@ -6,4 +6,5 @@ comment1.target=Weather(int,\ int)
 comment1.text=\r\n\ The\ constructor\ for\ the\ weather\ class\ \r\n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\r\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\r\n\ \r\n
 comment2.params=Company1\ Company2
 comment2.target=void\ act(java.lang.String,\ java.lang.String)
+comment2.text=\n\ The\ act\ method\ for\ the\ weather\ class\n\ @param\ String\ Company1,\ the\ name\ of\ the\ first\ company\n\ @param\ String\ Company\ 2,\ the\ name\ of\ the\ second\ company\n
 numComments=3

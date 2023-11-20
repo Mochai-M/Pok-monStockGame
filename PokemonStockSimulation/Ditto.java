@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ditto extends Icons
+public class Ditto extends Icon
 {
     public Ditto(){
         super("Ditto");
@@ -18,6 +18,22 @@ public class Ditto extends Icons
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("Ditto2.png");
+        /**
+         * GreenfootImage dittoImage;
+        if(greenEffect){
+            dittoImage = new GreenfootImage("Ditto0.png"); //happy ditto
+            setImage(dittoImage);
+        }else if (redEffect){
+            dittoImage = new GreenfootImage("Ditto1.png"); //pissed off/angry 
+            setImage(dittoImage);
+        }else if (stockPrice < 50){
+            dittoImage = new GreenfootImage("Ditto3.png"); //sad 
+            setImage(dittoImage);
+        }else{
+            dittoImage = new GreenfootImage("Ditto2.png"); //normal ditto
+            setImage(dittoImage);
+        }
+         */
     }
 }
