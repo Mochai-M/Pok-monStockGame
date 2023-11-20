@@ -26,7 +26,8 @@ public abstract class Companies extends Actor
     }
     
     public void nextPoint() {
-        if(getIteration() == 0) {           
+        if(getIteration() == 0) {      
+            
             newPoint(0,getCurrentValue(),50,getNewValue());
             newPoint(0,getCurrentValue() + 1,50,getNewValue() + 1);
             newPoint(0,getCurrentValue() - 1,50,getNewValue() - 1);
