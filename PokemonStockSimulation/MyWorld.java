@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-<<<<<<< Updated upstream
 
     // natalie 11/7/2023
-=======
     //load images into a temporary array
     //GreenfootImage[] images = new GreenfootImage[];
     //new GreenfootImage("*add image*");
@@ -19,8 +17,14 @@ public class MyWorld extends World
     //icon will then be equal to new icon(images);
     
     //private GreenfootImage[] images; 
-    GreenfootImage icon1 = new GreenfootImage(
->>>>>>> Stashed changes
+    //GreenfootImage icon1 = new GreenfootImage();
+    
+    //private Charmander charmander;
+    //private Squirtle squirtle;
+    //private Ditto ditto;
+    //private Bulbasaur bulbasaur;
+    
+    private Icon player1, player2;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -28,7 +32,6 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-<<<<<<< Updated upstream
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1,false);
         
@@ -38,10 +41,40 @@ public class MyWorld extends World
         
         addObject(new FireCompany(400), 1625,300);
         addObject(new WaterCompany(400), 1625,300);
-=======
-        super(1100, 650, 1); 
+        //if player1 chooses squirtle, squirtle icon will take place
+        //if player2 chooses ditto, ditto icon will take place
+        //addObject(new Squirtle(), 174, 677);
+        //addObject(new Charmander(), 174, 400);
+        //addObject(new Ditto(), 1426, 400);
+        //addObject(new Bulbasaur(), 1426, 677);
+       
         
->>>>>>> Stashed changes
+        // GET INPUT FROM USER -> ask which pokemon... 
+        
+        
+        // CREATE an Icon for each player
+        // This will build one object for player1 and one object of player2
+        //if (p1Choice == "char"){
+        //    player1 = new Charmander();
+        //}else if (p1Choice == "squir"){
+        //    player1 = new Squirtle();
+        //}
+        
+        
+        // To be used elsewhere - this is an easy way to check if
+        // player1 happens to be a particular type of class.
+        /**
+         * if(player1.getClass() == Charmander.class){
+            addObject(new Charmander(), 174, 677);
+        } else if(player1.getClass() == Squirtle.class){
+            addObject(new Squirtle(), 174, 677);
+        }
+         */
+        
+        //if(player2 == Ditto.class){
+        //    addObject(new Ditto(), 1426, 677);
+        //} else if(player2 == Bulbasaur.class){
+        //    addObject(new Bulbasaur(), 1426, 677);
+        //}
     }
-    
 }

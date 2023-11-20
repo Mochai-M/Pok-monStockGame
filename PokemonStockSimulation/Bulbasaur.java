@@ -3,13 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bulbasaur here.
  * 
- * @author (your name) 
+ * @Natalie 
  * @version (a version number or a date)
  */
-public class Bulbasaur extends Icons
+public class Bulbasaur extends Icon
 {
     public Bulbasaur(){
-        super("Bulbasaur"); 
+        super("Bulbasaur");
     }
     
     /**
@@ -18,6 +18,22 @@ public class Bulbasaur extends Icons
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("Bulbasaur2.png");
+        /**
+         * GreenfootImage bulbasaurImage;
+        if(greenEffect){
+            bulbasaurImage = new GreenfootImage("Bulbasaur0.png"); //happy bulbasaur
+            setImage(bulbasaurImage);
+        }else if (redEffect){
+            bulbasaurImage = new GreenfootImage("Bulbasaur1.png"); //pissed off/angry 
+            setImage(bulbasaurImage);
+        }else if (stockPrice < 50){
+            bulbasaurImage = new GreenfootImage("Bulbasaur3.png"); //sad 
+            setImage(bulbasaurImage);
+        }else {
+            bulbasaurImage = new GreenfootImage("Bulbasaur4.png"); //normal bulbasaur
+            setImage(bulbasaurImage);
+        }
+         */
     }
 }
