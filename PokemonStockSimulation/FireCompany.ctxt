@@ -11,14 +11,6 @@ comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ FireCompany\ wants\ to\ do.\ This
 comment3.params=x1\ y1\ x2\ y2
 comment3.target=void\ newPoint(int,\ int,\ int,\ int)
 comment4.params=
-<<<<<<< HEAD
-comment4.target=void\ updateValue()
-comment5.params=
-comment5.target=int\ getCurrentValue()
-comment6.params=
-comment6.target=int\ getNewValue()
-numComments=7
-=======
 comment4.target=int\ getCurrentValue()
 comment4.text=\r\n\ Getter\ method\ for\ currentValue\r\n
 comment5.params=
@@ -37,4 +29,3 @@ comment9.params=x
 comment9.target=void\ setNewValue(int)
 comment9.text=\r\n\ Setter\ method\ for\ currentValue\r\n
 numComments=11
->>>>>>> 349178d2bb569a1130372562841b68ebb43357c7
