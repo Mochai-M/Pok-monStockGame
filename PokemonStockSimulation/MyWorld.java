@@ -38,75 +38,25 @@ public class MyWorld extends World
      * 
      */
     public MyWorld()
-<<<<<<< HEAD
-    {    
-=======
-    { 
->>>>>>> 349178d2bb569a1130372562841b68ebb43357c7
+    {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Line.class,LineGraph.class);
+        setPaintOrder(LineGraph.class, Line.class);
         
         addObject(new LineGraph(),800,400);
-    
-        Companies redCompany = new FireCompany(400);
-        redCompany = new FireCompany(400);
-        addObject(redCompany, 1625,300);
         
-        Companies blueCompany = new WaterCompany(400);
-        addObject(blueCompany, 1625,300);
+        Companies blueCompany = new WaterCompany(100);
+        addObject(blueCompany, 300,100);
         
-        Companies greenCompany = new GreenCompany(400);
-        addObject(greenCompany, 1625,300);
+        Companies greenCompany = new GreenCompany(300);
+        addObject(greenCompany, 900,100);
         
-        Companies pinkCompany = new PinkCompany(400);
-        addObject(pinkCompany, 1625,300);
+        Companies pinkCompany = new PinkCompany(500);
+        addObject(pinkCompany, 1500,100);
         
-        
-
-        
-<<<<<<< HEAD
-        addObject(new FireCompany(400), 1625,300);
-        addObject(new WaterCompany(400), 1625,300);
-        //if player1 chooses squirtle, squirtle icon will take place
-        //if player2 chooses ditto, ditto icon will take place
-        //addObject(new Squirtle(), 174, 677);
-        //addObject(new Charmander(), 174, 400);
-        //addObject(new Ditto(), 1426, 400);
-        //addObject(new Bulbasaur(), 1426, 677);
-       
-        
-        // GET INPUT FROM USER -> ask which pokemon... 
-        
-        
-        // CREATE an Icon for each player
-        // This will build one object for player1 and one object of player2
-        //if (p1Choice == "char"){
-        //    player1 = new Charmander();
-        //}else if (p1Choice == "squir"){
-        //    player1 = new Squirtle();
-        //}
-        
-        
-        // To be used elsewhere - this is an easy way to check if
-        // player1 happens to be a particular type of class.
-        /**
-         * if(player1.getClass() == Charmander.class){
-            addObject(new Charmander(), 174, 677);
-        } else if(player1.getClass() == Squirtle.class){
-            addObject(new Squirtle(), 174, 677);
-        }
-         */
-        
-        //if(player2 == Ditto.class){
-        //    addObject(new Ditto(), 1426, 677);
-        //} else if(player2 == Bulbasaur.class){
-        //    addObject(new Bulbasaur(), 1426, 677);
-        //}
-    }
-=======
-        
+        Companies redCompany = new FireCompany(700);
+        addObject(redCompany, 1775,300);
     }
     
     public void act(){
