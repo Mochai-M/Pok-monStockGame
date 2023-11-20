@@ -51,10 +51,9 @@ public class MyWorld extends World
         addObject(new LineGraph(),800,400);
     
         Companies redCompany = new FireCompany(400);
-        Companies redCompany = new FireCompany(400);
+        redCompany = new FireCompany(400);
         addObject(redCompany, 1625,300);
         
-        Companies blueCompany = new WaterCompany(400);
         Companies blueCompany = new WaterCompany(400);
         addObject(blueCompany, 1625,300);
         
@@ -64,11 +63,8 @@ public class MyWorld extends World
         Companies pinkCompany = new PinkCompany(400);
         addObject(pinkCompany, 1625,300);
         
-        Companies greenCompany = new GreenCompany(400);
-        addObject(greenCompany, 1625,300);
         
-        Companies pinkCompany = new PinkCompany(400);
-        addObject(pinkCompany, 1625,300);
+
         
 <<<<<<< HEAD
         addObject(new FireCompany(400), 1625,300);
@@ -118,23 +114,32 @@ public class MyWorld extends World
         
         //spawns random weather effects 
         tickDown++;
-        if(Greenfoot.getRandomNumber(10000-tickDown) == 0){
+        if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
     
             if(weatherType == 0){
+                addObject(new BlueEffect(), 0, -300);
                 addObject(new BlueEffect(), 900, -300);
+                addObject(new BlueEffect(), 1500, -300);
+                
                 tickDown = 0;
             }
             else if(weatherType == 1){
+                addObject(new GreenEffect(), 0, -300);
                 addObject(new GreenEffect(), 900, -300);
+                addObject(new GreenEffect(), 1500, -300);
                 tickDown = 0;
             }
             else if(weatherType == 2){
+                addObject(new RedEffect(), 0, -300);
                 addObject(new RedEffect(), 900, -300);
+                addObject(new RedEffect(), 1500, -300);
                 tickDown = 0;
             }
             else{
+                addObject(new PinkEffect(), 0, -300);
                 addObject(new PinkEffect(), 900, -300);
+                addObject(new PinkEffect(), 1500, -300);
                 tickDown = 0;
             }
         }

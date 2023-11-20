@@ -10,7 +10,7 @@ public class PinkEffect extends Weather
 {
     public PinkEffect(){
         //sets the size and length for the effect
-        super(2000,60);
+        super(1000,60);
 
     }
     

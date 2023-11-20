@@ -10,7 +10,7 @@ public class BlueEffect extends Weather
 {
     public BlueEffect(){
         //sets the size and length for the effect
-        super(2000,60);
+        super(900,60);
 
     }
     
