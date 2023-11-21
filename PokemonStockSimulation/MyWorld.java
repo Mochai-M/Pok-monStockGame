@@ -7,20 +7,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 1.0
  */
 public class MyWorld extends World
-<<<<<<< HEAD
 {
-
-    // natalie 11/7/2023
-=======
-{    // natalie 11/7/2023
->>>>>>> 349178d2bb569a1130372562841b68ebb43357c7
     //load images into a temporary array
     //GreenfootImage[] images = new GreenfootImage[];
     //new GreenfootImage("*add image*");
     //do four times for each emotion
     //icon will then be equal to new icon(images);
-    
-<<<<<<< HEAD
     //private GreenfootImage[] images; 
     //GreenfootImage icon1 = new GreenfootImage();
     
@@ -30,9 +22,6 @@ public class MyWorld extends World
     //private Bulbasaur bulbasaur;
     
     private Icon player1, player2;
-    
-=======
->>>>>>> 349178d2bb569a1130372562841b68ebb43357c7
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -94,5 +83,4 @@ public class MyWorld extends World
             }
         }
     }
->>>>>>> 349178d2bb569a1130372562841b68ebb43357c7
 }

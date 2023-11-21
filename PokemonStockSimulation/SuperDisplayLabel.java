@@ -20,7 +20,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SuperDisplayLabel extends Actor
 {
-    private static final double HEIGHT_RATIO = 5.0;
+    private static final double HEIGHT_RATIO = 3.3;
     
     private static final Color DEFAULT_BACKGROUND_COLOR = new Color (153, 204, 255);
     private static final Color DEFAULT_TEXT_COLOR = Color.BLACK;
