@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class Effect here.
@@ -26,8 +27,28 @@ public class Icon extends Actor
         setImage(images[imageNumber]);
     }
 
-    public void act()
+    public void act(String Company1)
     {
         animation();
+        
+
+      
+    }
+    
+    
+    public boolean checkCompany(String Company1){
+            //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
+        /**
+         * ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
+        for (Companies c : companies){
+              //raises the stock price for company 1
+              if(c.toString().equals(Company1)){
+                  return true;
+              }
+
+      }
+         */ 
+        
+        return true;
     }
 }

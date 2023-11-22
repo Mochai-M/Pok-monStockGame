@@ -16,11 +16,6 @@ public class MyWorld extends World
     //private GreenfootImage[] images; 
     //GreenfootImage icon1 = new GreenfootImage();
     
-    //private Charmander charmander;
-    //private Squirtle squirtle;
-    //private Ditto ditto;
-    //private Bulbasaur bulbasaur;
-    
     private Icon player1, player2;
     /**
      * Constructor for objects of class MyWorld.
@@ -46,6 +41,12 @@ public class MyWorld extends World
         
         Companies redCompany = new FireCompany(700);
         addObject(redCompany, 1775,300);
+        
+        Icon[] temp = WelcomeWorld.getPlayers();
+        player1 = temp[0];
+        player2 = temp[1];
+        addObject(player1, 100, 500);
+        addObject(player2, 400, 500);
     }
     
     public void act(){
@@ -55,7 +56,6 @@ public class MyWorld extends World
         tickDown++;
         if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
-    
             if(weatherType == 0){
                 addObject(new BlueEffect(), 0, -300);
                 addObject(new BlueEffect(), 900, -300);

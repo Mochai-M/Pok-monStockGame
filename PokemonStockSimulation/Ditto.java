@@ -18,13 +18,14 @@ public class Ditto extends Icon
      */
     public void act()
     {
-        setImage("Ditto2.png");
         /**
-         * GreenfootImage dittoImage;
-        if(greenEffect){
+         * setImage("Ditto2.png");
+        GreenfootImage dittoImage;
+        int stockPrice = PinkCompany.getCurrentValue();
+        if(stockPrice > 75){
             dittoImage = new GreenfootImage("Ditto0.png"); //happy ditto
             setImage(dittoImage);
-        }else if (redEffect){
+        }else if (stockPrice < 30){
             dittoImage = new GreenfootImage("Ditto1.png"); //pissed off/angry 
             setImage(dittoImage);
         }else if (stockPrice < 50){

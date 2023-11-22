@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button here.
+ * Write a description of class BottomSelectionButton here.
  * 
- * @Natalie
+ * @Natalie 
  * @November 21
  */
-public class Button extends Actor
+public class BottomSelectionButton extends Actor
 {
     private GreenfootImage image;
     
-    public Button (String text){
-        image = new GreenfootImage (120, 54);
+    public BottomSelectionButton (String text){
+        image = new GreenfootImage (153, 54);
         image.setColor(Color.BLACK);
         image.fill();
         image.setColor (Color.WHITE);
@@ -19,9 +19,9 @@ public class Button extends Actor
         image.drawString(text, 20, 35);
         setImage(image);
     }
-
+    
     /**
-     * Act - do whatever the Button wants to do. This method is called whenever
+     * Act - do whatever the BottomSelectionButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
