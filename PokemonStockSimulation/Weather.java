@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @Liyu Xiao
- * @Nov 8 2023
+ * @Nov 21 2023
  * 
  * 
  * 
@@ -22,6 +22,8 @@ public abstract class Weather extends Actor
     //the length of the weather effect
     protected int durationLength;
     
+    //initializes Gif image
+    protected GifImage rain = new GifImage("Rain.gif");
     
     
     /**
@@ -34,14 +36,18 @@ public abstract class Weather extends Actor
         this.imageSize = imageSize;
         durationLength = length;
         
-        //setting the size, and opaqueness of the Weather 
-        GreenfootImage image = getImage();
+
         
-        image.scale(imageSize,imageSize+300);
-        
-        
-        //
-        image.setTransparency(180);
+        for (GreenfootImage image : rain.getImages())
+        {
+            int wide = image.getWidth()*imageSize/100;
+            int high = image.getHeight()*imageSize/100;
+            image.scale(wide, high);
+            
+            image.setTransparency(100);
+            image.setColor(Color.BLUE);
+            
+        }
     }
     
     
@@ -53,32 +59,28 @@ public abstract class Weather extends Actor
      */
     public void act(String Company1, String Company2){
       //The act count for 
-      int actCount = 0;
+      durationLength--;
       
-      
-      if(actCount<durationLength)
-      {
-            setLocation(getX(),getY()+15);   //The object drops down
-            actCount++;
-      }
-      
+      //animates the rain
+      setImage(rain.getCurrentImage());
+
       
       
       //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
-      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
+      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (1500, Companies.class);
       
       for (Companies c : companies){
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
               int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(100)+200;
-              c.setNewValue(currentValue  - changeValue);
+              int changeValue = Greenfoot.getRandomNumber(10)+100;
+              c.modifyValue(changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
               int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(100)+200;
-              c.setNewValue(currentValue + changeValue);
+              int changeValue = Greenfoot.getRandomNumber(10)+100;
+              c.modifyValue(changeValue);
           }
           else{
               c.setNewValue(c.getCurrentValue());
@@ -86,7 +88,9 @@ public abstract class Weather extends Actor
           
       } 
       
-      
+      if(durationLength == 0){
+          getWorld().removeObject(this);
+      }
     }
     
     

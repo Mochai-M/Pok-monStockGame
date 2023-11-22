@@ -4,14 +4,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Effect for the Blue stock
  * 
  * @Liyu 
- * @Nov 11 2023
+ * @Nov 21 2023
  */
 public class BlueEffect extends Weather
 {
+    
+
+    
+    
+    
+    
     public BlueEffect(){
         //sets the size and length for the effect
-        super(900,60);
-
+        super(300,60);
     }
     
     public void act()

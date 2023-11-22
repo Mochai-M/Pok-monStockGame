@@ -42,7 +42,16 @@ public abstract class Companies extends Actor
     public void nextPoint() {        
         if(getIteration() == 0 || getClass() != FireCompany.class) {         
             if(modified == false) {
-                setNewValue(Greenfoot.getRandomNumber(600));
+                //Determines whether to randomly increase of randomly decrease the stock price
+                int changeType = Greenfoot.getRandomNumber(2); 
+                //increase the stock price
+                if(changeType == 0){
+                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(20)); 
+                }
+                //decrease the stock price
+                else{
+                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(20));
+                }
             }
             
             newPoint(0,getCurrentValue(),101,getNewValue());
@@ -99,8 +108,14 @@ public abstract class Companies extends Actor
     }
     
     public void modifyValue(int x) {
-        setNewValue(getNewValue() + x);
-        modified = true;
+        if((getNewValue() + x) <= 600 && (getNewValue() + x) >= 0) {
+            modified = true;
+            setNewValue(getNewValue() + x);
+        } else if((getNewValue() + x) > 600) {
+            setNewValue(600);
+        } else if(getNewValue() + x < 0) {
+            setNewValue(0);
+        }
     }
     
     public abstract String toString();

@@ -10,7 +10,7 @@ public class GreenEffect extends Weather
 {
     public GreenEffect(){
         //sets the size and length for the effect
-        super(1000,60);
+        super(300,60);
 
     }
     
