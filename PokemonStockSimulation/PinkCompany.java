@@ -79,7 +79,13 @@ public class PinkCompany extends Companies
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
-        newValue = x;
+        if( x > 600) {
+            newValue = 580;
+        } else if(x < 0) {
+            newValue = 0;
+        } else {
+            newValue = x;
+        }
     }
     
     public String toString(){

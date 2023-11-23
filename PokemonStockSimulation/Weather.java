@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @Liyu Xiao
- * @Nov 8 2023
+ * @Nov 21 2023
  * 
  * 
  * 
@@ -22,26 +22,32 @@ public abstract class Weather extends Actor
     //the length of the weather effect
     protected int durationLength;
     
+    //initializes Gif image for the weatehr
+    protected GifImage weather;
     
     
     /**
      * The constructor for the weather class 
      * @param int ImageSize, the size of the image
      * @param int length, the length of the effect
-     * 
+     * @param String weather, the name of the gif image, for the weather
      */
-    public Weather(int imageSize, int length){
+    public Weather(int imageSize, int length, String theWeather){
         this.imageSize = imageSize;
         durationLength = length;
+        weather = new GifImage(theWeather);
         
-        //setting the size, and opaqueness of the Weather 
-        GreenfootImage image = getImage();
-        
-        image.scale(imageSize,imageSize+300);
-        
-        
-        //
-        image.setTransparency(180);
+
+        for (GreenfootImage image : weather.getImages())
+        {
+            int wide = image.getWidth()*imageSize/100;
+            int high = image.getHeight()*imageSize/100;
+            image.scale(wide, high);
+            
+            image.setTransparency(100);
+
+            
+        }
     }
     
     
@@ -53,32 +59,26 @@ public abstract class Weather extends Actor
      */
     public void act(String Company1, String Company2){
       //The act count for 
-      int actCount = 0;
+      durationLength--;
       
-      
-      if(actCount<durationLength)
-      {
-            setLocation(getX(),getY()+15);   //The object drops down
-            actCount++;
-      }
-      
+      //animates the weather
+      setImage(weather.getCurrentImage());
+
       
       
       //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
-      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
+      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (1500, Companies.class);
       
       for (Companies c : companies){
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
-              int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(100)+200;
-              c.setNewValue(currentValue  - changeValue);
+              int changeValue = Greenfoot.getRandomNumber(3);
+              c.increaseValue(changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
-              int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(100)+200;
-              c.setNewValue(currentValue + changeValue);
+              int changeValue = Greenfoot.getRandomNumber(3);
+              c.decreaseValue(changeValue);
           }
           else{
               c.setNewValue(c.getCurrentValue());
@@ -86,7 +86,9 @@ public abstract class Weather extends Actor
           
       } 
       
-      
+      if(durationLength == 0){
+          getWorld().removeObject(this);
+      }
     }
     
     
