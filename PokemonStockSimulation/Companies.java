@@ -26,14 +26,14 @@ public abstract class Companies extends Actor
         clock++;
         
         if(getClass() == FireCompany.class) {
-            setLocation(getX() - 1, getY());
+            setLocation(getX() - 2, getY());
         }
         
-        if(clock >= 100) {
+        if(clock >= 50) {
             nextPoint();
             clock = 0;
             
-            if (getIteration() > 33 && getClass() == FireCompany.class) {
+            if (getIteration() > 17 && getClass() == FireCompany.class) {
             ((MyWorld)getWorld()).removeObject(this);
             }
         }
@@ -107,21 +107,10 @@ public abstract class Companies extends Actor
         points.drawLine(x1,y1 - 2,x2,y2 - 2);
     }
     
-    public void increaseValue(int x) {
+    public void modifyValue(int x) {
         if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
             modified = true;
             setNewValue(getNewValue() - x);
-        } else if((getNewValue() + x) > 550) {
-            setNewValue(600);
-        } else if((getNewValue() + x) < 50) {
-            setNewValue(0);
-        }
-    }
-    
-    public void decreaseValue(int x){
-        if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
-            modified = true;
-            setNewValue(getNewValue() + x);
         } else if((getNewValue() + x) > 550) {
             setNewValue(600);
         } else if((getNewValue() + x) < 50) {

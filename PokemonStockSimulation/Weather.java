@@ -73,15 +73,12 @@ public abstract class Weather extends Actor
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
               int changeValue = Greenfoot.getRandomNumber(3);
-              c.increaseValue(changeValue);
+              c.modifyValue(changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
               int changeValue = Greenfoot.getRandomNumber(3);
-              c.decreaseValue(changeValue);
-          }
-          else{
-              c.setNewValue(c.getCurrentValue());
+              c.modifyValue(changeValue);
           }
           
       } 
