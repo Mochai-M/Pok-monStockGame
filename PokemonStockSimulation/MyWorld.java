@@ -41,13 +41,13 @@ public class MyWorld extends World
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 300,100);
         
-        Companies greenCompany = new GreenCompany(300);
+        Companies greenCompany = new GreenCompany(200);
         addObject(greenCompany, 900,100);
         
-        Companies pinkCompany = new PinkCompany(500);
+        Companies pinkCompany = new PinkCompany(300);
         addObject(pinkCompany, 1500,100);
         
-        Companies redCompany = new FireCompany(700);
+        Companies redCompany = new FireCompany(400);
         addObject(redCompany, 1775,300);
         
         

@@ -22,30 +22,30 @@ public abstract class Weather extends Actor
     //the length of the weather effect
     protected int durationLength;
     
-    //initializes Gif image
-    protected GifImage rain = new GifImage("Rain.gif");
+    //initializes Gif image for the weatehr
+    protected GifImage weather;
     
     
     /**
      * The constructor for the weather class 
      * @param int ImageSize, the size of the image
      * @param int length, the length of the effect
-     * 
+     * @param String weather, the name of the gif image, for the weather
      */
-    public Weather(int imageSize, int length){
+    public Weather(int imageSize, int length, String theWeather){
         this.imageSize = imageSize;
         durationLength = length;
+        weather = new GifImage(theWeather);
         
 
-        
-        for (GreenfootImage image : rain.getImages())
+        for (GreenfootImage image : weather.getImages())
         {
             int wide = image.getWidth()*imageSize/100;
             int high = image.getHeight()*imageSize/100;
             image.scale(wide, high);
             
             image.setTransparency(100);
-            image.setColor(Color.BLUE);
+
             
         }
     }
@@ -61,8 +61,8 @@ public abstract class Weather extends Actor
       //The act count for 
       durationLength--;
       
-      //animates the rain
-      setImage(rain.getCurrentImage());
+      //animates the weather
+      setImage(weather.getCurrentImage());
 
       
       
@@ -72,15 +72,13 @@ public abstract class Weather extends Actor
       for (Companies c : companies){
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
-              int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(10)+100;
-              c.modifyValue(changeValue);
+              int changeValue = Greenfoot.getRandomNumber(3);
+              c.increaseValue(changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
-              int currentValue = c.getCurrentValue();
-              int changeValue = Greenfoot.getRandomNumber(10)+100;
-              c.modifyValue(changeValue);
+              int changeValue = Greenfoot.getRandomNumber(3);
+              c.decreaseValue(changeValue);
           }
           else{
               c.setNewValue(c.getCurrentValue());

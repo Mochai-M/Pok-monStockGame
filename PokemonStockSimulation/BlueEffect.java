@@ -9,14 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class BlueEffect extends Weather
 {
     
-
-    
-    
-    
     
     public BlueEffect(){
         //sets the size and length for the effect
-        super(300,60);
+        super(300,60, "rain.gif");
     }
     
     public void act()

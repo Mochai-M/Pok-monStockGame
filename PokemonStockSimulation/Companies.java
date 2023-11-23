@@ -46,11 +46,11 @@ public abstract class Companies extends Actor
                 int changeType = Greenfoot.getRandomNumber(2); 
                 //increase the stock price
                 if(changeType == 0){
-                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(20)); 
+                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(30)); 
                 }
                 //decrease the stock price
                 else{
-                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(20));
+                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(30));
                 }
             }
             
@@ -107,16 +107,29 @@ public abstract class Companies extends Actor
         points.drawLine(x1,y1 - 2,x2,y2 - 2);
     }
     
-    public void modifyValue(int x) {
-        if((getNewValue() + x) <= 600 && (getNewValue() + x) >= 0) {
+    public void increaseValue(int x) {
+        if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
             modified = true;
-            setNewValue(getNewValue() + x);
-        } else if((getNewValue() + x) > 600) {
+            setNewValue(getNewValue() - x);
+        } else if((getNewValue() + x) > 550) {
             setNewValue(600);
-        } else if(getNewValue() + x < 0) {
+        } else if((getNewValue() + x) < 50) {
             setNewValue(0);
         }
     }
+    
+    public void decreaseValue(int x){
+        if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
+            modified = true;
+            setNewValue(getNewValue() + x);
+        } else if((getNewValue() + x) > 550) {
+            setNewValue(600);
+        } else if((getNewValue() + x) < 50) {
+            setNewValue(0);
+        }
+    }
+    
+    
     
     public abstract String toString();
 
