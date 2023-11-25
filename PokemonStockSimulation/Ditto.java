@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ditto here.
+ * Ditto Class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie
+ * @November 23
  */
 public class Ditto extends Icon
 {
+    /**
+     * Constructor for Ditto
+     */
     public Ditto(){
         super("Ditto");
     }

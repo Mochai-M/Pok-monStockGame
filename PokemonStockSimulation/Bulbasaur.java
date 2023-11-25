@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bulbasaur here.
+ * Bulbasaur Class.
  * 
  * @Natalie 
- * @version (a version number or a date)
+ * @November 23
  */
 public class Bulbasaur extends Icon
 {
+    /**
+     * Constructor for Bulbasaur 
+     */
     public Bulbasaur(){
         super("Bulbasaur");
     }

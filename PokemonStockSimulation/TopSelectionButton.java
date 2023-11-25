@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SelectionButton here.
+ * TopSelectionButton Class
  * 
  * @Natalie
  * @November 21
@@ -10,6 +10,10 @@ public class TopSelectionButton extends Actor
 {
     private GreenfootImage image;
     
+    /**
+     * Constructor Class
+     * <p> Presents what the button will look like on the screen
+     */
     public TopSelectionButton (String text){
         image = new GreenfootImage (153, 54);
         image.setColor(Color.BLACK);

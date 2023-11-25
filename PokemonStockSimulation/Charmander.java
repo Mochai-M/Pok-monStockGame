@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Charmander here.
+ * Charmander Class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie
+ * @November 23
  */
 public class Charmander extends Icon
 {
+    /**
+     * Constructor for Charmander
+     */
     public Charmander(){
         super("Charmander");
     }

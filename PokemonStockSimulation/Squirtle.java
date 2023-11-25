@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Squirtle here.
+ * Squirtle Class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie
+ * @November 23
  */
 public class Squirtle extends Icon
 {
+    /**
+     * Constructor for Squirtle
+     */
     public Squirtle(){
         super("Squirtle");
     }

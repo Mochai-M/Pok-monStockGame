@@ -19,7 +19,8 @@ public class WelcomeWorld extends World
     
     /**
      * Constructor for objects of class WelcomeWorld.
-     * 
+     * <p> Constructor adds the Super Display Label as well as the button for clicking next
+     * it also makes player 1 and 2 null at the beginning
      */
     public WelcomeWorld()
     {    
@@ -30,12 +31,17 @@ public class WelcomeWorld extends World
         player2 = null;
     }
     
+    /**
+     * Stores players in an array
+     */
     public static Icon[] getPlayers(){
         return new Icon[]{player1, player2};
     }
-    // Icon[] players = WelcomeWorld.getPlayers();
     
-    
+    /**
+     * Act method:
+     * <p>Repeats the actions of updating labels and frames.
+     */
     public void act(){
         if(Greenfoot.mouseClicked(next)){
             addObject(label, 800, 50);
@@ -45,6 +51,10 @@ public class WelcomeWorld extends World
         }
     }
     
+    /**
+     * Method that changes background images and Super Display Label.
+     * <p>Helps to choose characters in the beginning as well as switching frames for the world
+     */
     public void frames(){
         if (storyFrame == 1){
             label.update("There are some Pokemon who have decided to take up some businesses classes. Now, they think they know everything about stocks!");

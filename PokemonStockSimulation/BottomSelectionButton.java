@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BottomSelectionButton here.
+ * BottomSelectionButton Class
  * 
  * @Natalie 
  * @November 21
@@ -10,6 +10,10 @@ public class BottomSelectionButton extends Actor
 {
     private GreenfootImage image;
     
+    /**
+     * Constructor Class
+     * <p> Presents what the button will look like on the screen
+     */
     public BottomSelectionButton (String text){
         image = new GreenfootImage (153, 54);
         image.setColor(Color.BLACK);

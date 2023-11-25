@@ -12,10 +12,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *   <li>More Constructors - for more customizability</li>
  *   <li>Auto-width - now fits itself to the Width of the World (for other size, consider SuperTextBox instead)</li>
  *   <li>Added constants for DEFAULTS</li>
- * </ul>
- *   
+ * </ul>v
  * 
- * @author Natalie Huang
+ * @author Jordan Cohen
+ * MODIFIED BY: Natalie Huang
  * @version 1.0
  */
 public class SuperDisplayLabel extends Actor
@@ -46,7 +46,6 @@ public class SuperDisplayLabel extends Actor
      * the font otherwise this will not look right</p>
      */
     public SuperDisplayLabel(Color backColor, Color foreColor, Font font, int height){
-        //System.out.println(bottomY);
         // Declare colour objects for use within this class (red and white)
         this.backColor = backColor;
         this.foreColor = foreColor;
@@ -54,7 +53,6 @@ public class SuperDisplayLabel extends Actor
         textFont = font;
         this.height = height;
         text = "";
-  
     }
 
     /**
