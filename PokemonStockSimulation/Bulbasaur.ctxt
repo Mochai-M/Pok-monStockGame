@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Bulbasaur
-comment0.text=\n\ Write\ a\ description\ of\ class\ Bulbasaur\ here.\n\ \n\ @Natalie\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Bulbasaur\ Class.\r\n\ \r\n\ @Natalie\ \r\n\ @November\ 23\r\n
 comment1.params=
 comment1.target=Bulbasaur()
+comment1.text=\r\n\ Constructor\ for\ Bulbasaur\ \r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ Bulbasaur\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Bulbasaur\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=3
