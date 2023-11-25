@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @Liyu Xiao
- * @Nov 21 2023
+ * @Nov 24 2023
  * 
  * 
  * 
@@ -27,7 +27,8 @@ public abstract class Weather extends Actor
     
     
     /**
-     * The constructor for the weather class 
+     * <p> The constructor for the weather class  </p>
+     * 
      * @param int ImageSize, the size of the image
      * @param int length, the length of the effect
      * @param String weather, the name of the gif image, for the weather
@@ -44,7 +45,7 @@ public abstract class Weather extends Actor
             int high = image.getHeight()*imageSize/100;
             image.scale(wide, high);
             
-            image.setTransparency(100);
+            image.setTransparency(50);
 
             
         }
@@ -53,7 +54,7 @@ public abstract class Weather extends Actor
     
     
     /**
-     * The act method for the weather class
+     * <p> The act method for the weather class </p>
      * @param String Company1, the name of the first company
      * @param String Company 2, the name of the second company
      */
@@ -61,10 +62,9 @@ public abstract class Weather extends Actor
       //The act count for 
       durationLength--;
       
-      //animates the weather
-      setImage(weather.getCurrentImage());
-
       
+
+      setImage(weather.getCurrentImage());
       
       //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
       ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (1500, Companies.class);
@@ -73,16 +73,18 @@ public abstract class Weather extends Actor
           //raises the stock price for company 1
           if(c.toString().equals(Company1)){
               int changeValue = Greenfoot.getRandomNumber(3);
-              c.modifyValue(changeValue);
+              c.increaseValue(changeValue);
           }
           //lowers the stock price for company 2
           else if(c.toString().equals(Company2)){
               int changeValue = Greenfoot.getRandomNumber(3);
-              c.modifyValue(changeValue);
+              c.decreaseValue(changeValue);
           }
-          
       } 
       
+      
+      
+      //when the weather ends, remove the object
       if(durationLength == 0){
           getWorld().removeObject(this);
       }
