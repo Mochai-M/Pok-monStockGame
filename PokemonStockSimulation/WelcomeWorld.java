@@ -11,7 +11,9 @@ public class WelcomeWorld extends World
     private SuperDisplayLabel label;
     Button next = new Button("click this button!");
     private GreenfootImage image;
-    private int storyFrame = 0; 
+    private int storyFrame = 0;
+    
+    protected Icon player1,player2;
     
     /**
      * Constructor for objects of class WelcomeWorld.
@@ -24,6 +26,20 @@ public class WelcomeWorld extends World
         label = new SuperDisplayLabel();
         addObject(next, 725, 650); 
     }
+    
+    /**
+     * Stores players in an array
+     */
+    public Icon[] getPlayers(){
+        player1 = new Charmander();
+        player2 = new Bulbasaur();
+        return new Icon[]{player1, player2};
+    }
+    
+    /**
+     * Act method:
+     * <p>Repeats the actions of updating labels and frames.
+     */
     
     public void act(){
         if (Greenfoot.mouseClicked(next)){
