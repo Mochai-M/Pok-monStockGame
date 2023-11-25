@@ -1,16 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Ditto Class
+ * Write a description of class Ditto here.
  * 
- * @Natalie
- * @November 23
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Ditto extends Icon
 {
-    /**
-     * Constructor for Ditto
-     */
     public Ditto(){
         super("Ditto");
     }
@@ -21,14 +18,13 @@ public class Ditto extends Icon
      */
     public void act()
     {
+        setImage("Ditto2.png");
         /**
-         * setImage("Ditto2.png");
-        GreenfootImage dittoImage;
-        int stockPrice = PinkCompany.getCurrentValue();
-        if(stockPrice > 75){
+         * GreenfootImage dittoImage;
+        if(greenEffect){
             dittoImage = new GreenfootImage("Ditto0.png"); //happy ditto
             setImage(dittoImage);
-        }else if (stockPrice < 30){
+        }else if (redEffect){
             dittoImage = new GreenfootImage("Ditto1.png"); //pissed off/angry 
             setImage(dittoImage);
         }else if (stockPrice < 50){
