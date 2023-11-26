@@ -8,15 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    // natalie 11/7/2023
 
-    //load images into a temporary array
-    //GreenfootImage[] images = new GreenfootImage[];
-    //new GreenfootImage("*add image*");
-    //do four times for each emotion
-    //icon will then be equal to new icon(images);
-    //private GreenfootImage[] images; 
-    //GreenfootImage icon1 = new GreenfootImage();
     
     private Icon player1, player2;
     /**
@@ -49,8 +41,8 @@ public class MyWorld extends World
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 100, 500);
-        addObject(player2, 400, 500);
+        addObject(player1, 100, 650);
+        addObject(player2, 1500, 650);
         
     }
     

@@ -22,7 +22,7 @@ public class Icon extends Actor
     public Icon(String x) {
         for(int i = 0; i < images.length; i++){
             images[i] = new GreenfootImage(x + i + ".png" );
-            images[i].scale(350, 250);
+            images[i].scale(250, 250);
             setImage(images[imageNumber]);   
         }
     }
@@ -52,7 +52,7 @@ public class Icon extends Actor
      * @param Company1      Finding out icons affected by stocks
      */
     public boolean checkCompany(String Company1){
-            //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
+        //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
         /**
          * ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
         for (Companies c : companies){

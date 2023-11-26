@@ -43,10 +43,10 @@ public class WelcomeWorld extends World
      * <p>Repeats the actions of updating labels and frames.
      */
     public void act(){
+        frames();
         if(Greenfoot.mouseClicked(next)){
             addObject(label, 800, 50);
             label.update("WELCOME PLAYER!");
-            frames();
             storyFrame++;
         }
     }
@@ -100,7 +100,7 @@ public class WelcomeWorld extends World
             // after, the game will spawn and start
         }
         
-        if (storyFrame == 6){
+        else if (storyFrame == 6){
             Greenfoot.setWorld(new MyWorld());
         }
     }
