@@ -11,10 +11,10 @@ public abstract class Companies extends Actor
 {   
     protected int spawnPoint = 1775;
     protected int clock;
-    protected static int lineWidth = 106;
+    protected static int lineWidth = 156;
     protected boolean modified = false;
     
-    public static GreenfootImage points = new GreenfootImage(lineWidth,600);
+    public static GreenfootImage points = new GreenfootImage(lineWidth,550);
     public GreenfootImage finishedPoints;
 
     
@@ -26,15 +26,16 @@ public abstract class Companies extends Actor
         clock++;
         
         if(getClass() == FireCompany.class) {
-            setLocation(getX() - 1, getY());
+            setLocation(getX() - 2, getY());
         }
         
-        if(clock >= 100) {
+        if(clock >= 50) {
             nextPoint();
             clock = 0;
             
-            if (getIteration() > 33 && getClass() == FireCompany.class) {
-            ((MyWorld)getWorld()).removeObject(this);
+            if (getIteration() > 12 && getClass() == FireCompany.class) {
+                
+                ((MyWorld)getWorld()).removeObject(this);
             }
         }
     }
@@ -61,13 +62,13 @@ public abstract class Companies extends Actor
             if(getClass() == FireCompany.class) {
                 finishedPoints = new GreenfootImage(getImage());
                 
-                points = new GreenfootImage(lineWidth,600);
+                points = new GreenfootImage(lineWidth,550);
                 
                 setImage(finishedPoints);
             }
             
             if(getClass() == FireCompany.class) {
-                ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,300);
+                ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,275);
             }
             
             modified = false;
@@ -108,25 +109,13 @@ public abstract class Companies extends Actor
     }
     
     public void increaseValue(int x) {
-        if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
-            modified = true;
-            setNewValue(getNewValue() - x);
-        } else if((getNewValue() + x) > 550) {
-            setNewValue(600);
-        } else if((getNewValue() + x) < 50) {
-            setNewValue(0);
-        }
+        modified = true;
+        setNewValue(getNewValue() - x);
     }
     
     public void decreaseValue(int x){
-        if((getNewValue() + x) <= 550 && (getNewValue() + x) >= 50) {
-            modified = true;
-            setNewValue(getNewValue() + x);
-        } else if((getNewValue() + x) > 550) {
-            setNewValue(600);
-        } else if((getNewValue() + x) < 50) {
-            setNewValue(0);
-        }
+        modified = true;
+        setNewValue(getNewValue() + x);
     }
     
     
