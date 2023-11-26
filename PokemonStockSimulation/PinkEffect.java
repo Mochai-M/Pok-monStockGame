@@ -16,7 +16,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PinkEffect extends Weather
 {
     //initialize, the fire sound
-    GreenfootSound pinkSound = new GreenfootSound("fairy.wav");
+    GreenfootSound pinkSound = new GreenfootSound("fairy.mp3");
     
     public PinkEffect(){
         //sets the size and length for the effect
@@ -28,7 +28,7 @@ public class PinkEffect extends Weather
     
     public void act()
     {
-        super.act("PinkCompany", "FireCompany");
+        super.act("PinkCompany", "WaterCompany");
         
         pinkSound.play();
     }

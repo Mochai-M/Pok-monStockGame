@@ -54,28 +54,23 @@ public class MyWorld extends World
         if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
             if(weatherType == 0){
-                addObject(new BlueEffect(), 0, 300);
+                addObject(new BlueEffect(), 600, 300);
                 addObject(new BlueEffect(), 900, 300);
-                addObject(new BlueEffect(), 1500, 300);
                 
                 tickDown = 0;
             }
             else if(weatherType == 1){
-                addObject(new GreenEffect(), 0, 300);
+                addObject(new GreenEffect(), 600, 300);
                 addObject(new GreenEffect(), 900, 300);
-                addObject(new GreenEffect(), 1500, 300);
                 tickDown = 0;
             }
             else if(weatherType == 2){
-                addObject(new RedEffect(), 0, 300);
-                addObject(new RedEffect(), 900, 300);
-                addObject(new RedEffect(), 1500, 300);
+                addObject(new RedEffect(), 600, 300);
                 tickDown = 0;
             }
             else{
-                addObject(new PinkEffect(), 0, 300);
+                addObject(new PinkEffect(), 600, 300);
                 addObject(new PinkEffect(), 900, 300);
-                addObject(new PinkEffect(), 1500, 300);
                 tickDown = 0;
             }
         }
