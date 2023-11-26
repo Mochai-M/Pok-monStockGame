@@ -14,6 +14,8 @@ public class Icon extends Actor
     
     private GreenfootImage[] images = new GreenfootImage[4]; // stores the images
     private int imageNumber;
+    
+    protected GreenfootImage icon;
     /**
      * Constructor for the Icon Class
      * <p> Includes looping through the photos and scaling each one to make sure they fit 
@@ -44,6 +46,7 @@ public class Icon extends Actor
     public void act(String Company1)
     {
         animation();
+        checkCompany(Company1);
     }
     
     /**
@@ -51,19 +54,31 @@ public class Icon extends Actor
      * 
      * @param Company1      Finding out icons affected by stocks
      */
-    public boolean checkCompany(String Company1){
-            //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
-        /**
-         * ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
-        for (Companies c : companies){
-              //raises the stock price for company 1
-              if(c.toString().equals(Company1)){
-                  return true;
+    public void checkCompany(String Company1){
+      //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
+      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (3000, Companies.class);
+      for (Companies c : companies){
+            int stockPrice = c.getCurrentValue();
+            
+            
+            if(c.toString().equals(Company1)){
+                if(stockPrice > 75){
+                icon = images[0];  //happy 
+                setImage(icon);
+            }else if (stockPrice < 30){
+                icon = images[1]; //pissed off/angry 
+                setImage(icon);
+            }else if (stockPrice < 50){
+                icon = images[3]; //sad 
+                setImage(icon);
+            }else {
+                icon = images[4]; //normal 
+                setImage(icon);
+            }
               }
 
       }
-         */ 
+         
         
-        return true;
     }
 }
