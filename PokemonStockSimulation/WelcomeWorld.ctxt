@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=WelcomeWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ WelcomeWorld\ here.\r\n\ \r\n\ @Natalie\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WelcomeWorld\ here.\r\n\ \r\n\ @Natalie\r\n\ @November\ 21\r\n
 comment1.params=
 comment1.target=WelcomeWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ WelcomeWorld.\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ WelcomeWorld.\r\n\ <p>\ Constructor\ adds\ the\ Super\ Display\ Label\ as\ well\ as\ the\ button\ for\ clicking\ next\r\n\ it\ also\ makes\ player\ 1\ and\ 2\ null\ at\ the\ beginning\r\n
 comment2.params=
 comment2.target=Icon[]\ getPlayers()
 comment2.text=\r\n\ Stores\ players\ in\ an\ array\r\n
@@ -12,4 +12,5 @@ comment3.target=void\ act()
 comment3.text=\r\n\ Act\ method\:\r\n\ <p>Repeats\ the\ actions\ of\ updating\ labels\ and\ frames.\r\n
 comment4.params=
 comment4.target=void\ frames()
+comment4.text=\r\n\ Method\ that\ changes\ background\ images\ and\ Super\ Display\ Label.\r\n\ <p>Helps\ to\ choose\ characters\ in\ the\ beginning\ as\ well\ as\ switching\ frames\ for\ the\ world\r\n
 numComments=5

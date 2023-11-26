@@ -74,14 +74,17 @@ public abstract class Weather extends Actor
           if(c.toString().equals(Company1)){
               int changeValue = Greenfoot.getRandomNumber(3);
               c.increaseValue(changeValue);
-          }
-          //lowers the stock price for company 2
-          else if(c.toString().equals(Company2)){
-              int changeValue = Greenfoot.getRandomNumber(3);
-              c.decreaseValue(changeValue);
+              break;
           }
       } 
-      
+      for (Companies c : companies){
+      //lowers the stock price for company 2
+          if(c.toString().equals(Company2)){
+              int changeValue = Greenfoot.getRandomNumber(3);
+              c.decreaseValue(changeValue);
+              break;
+          }
+      }
       
       
       //when the weather ends, remove the object

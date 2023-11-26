@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Squirtle here.
+ * Squirtle Class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie
+ * @November 23
  */
 public class Squirtle extends Icon
 {
+    /**
+     * Constructor for Squirtle
+     */
     public Squirtle(){
         super("Squirtle");
     }
@@ -18,13 +21,14 @@ public class Squirtle extends Icon
      */
     public void act()
     {
-        setImage("Squirtle2.png");
         /**
-         * GreenfootImage squirtleImage;
-        if(greenEffect){
+         * setImage("Squirtle2.png");
+        GreenfootImage squirtleImage;
+        int stockPrice = WaterCompany.getCurrentValue();
+        if(stockPrice > 75){
             squirtleImage = new GreenfootImage("Squirtle0.png"); //happy squirtle
             setImage(squirtleImage);
-        }else if (redEffect){
+        }else if (stockPrice < 30){
             squirtleImage = new GreenfootImage("Squirtle1.png"); //pissed off/angry 
             setImage(squirtleImage);
         }else if (stockPrice < 50){

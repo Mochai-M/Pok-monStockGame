@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Charmander here.
+ * Charmander Class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie
+ * @November 23
  */
 public class Charmander extends Icon
 {
+    /**
+     * Constructor for Charmander
+     */
     public Charmander(){
         super("Charmander");
     }
@@ -18,13 +21,14 @@ public class Charmander extends Icon
      */
     public void act()
     {
-        setImage("Charmander2.png");
         /**
-         * GreenfootImage charmanderImage;
-        if(greenEffect){
+         * setImage("Charmander2.png");
+        GreenfootImage charmanderImage;
+        int stockPrice = FireCompany.getCurrentValue();
+        if(stockPrice > 75){
             charmanderImage = new GreenfootImage("Charmander0.png"); //happy charmander
             setImage(charmanderImage);
-        }else if (redEffect){
+        }else if (stockPrice < 30){
             charmanderImage = new GreenfootImage("Charmander1.png"); //pissed off/angry 
             setImage(charmanderImage);
         }else if(stockPrice < 50){

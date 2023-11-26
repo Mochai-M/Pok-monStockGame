@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
- * Write a description of class Effect here.
+ * Effect Class
  * 
  * @Natalie Huang
- * @version 1.0 (11/8/2023)
+ * @November 25
  */
 public class Icon extends Actor
 {
@@ -13,6 +14,11 @@ public class Icon extends Actor
     
     private GreenfootImage[] images = new GreenfootImage[4]; // stores the images
     private int imageNumber;
+    /**
+     * Constructor for the Icon Class
+     * <p> Includes looping through the photos and scaling each one to make sure they fit 
+     * well on the screen
+     */
     public Icon(String x) {
         for(int i = 0; i < images.length; i++){
             images[i] = new GreenfootImage(x + i + ".png" );
@@ -21,13 +27,43 @@ public class Icon extends Actor
         }
     }
     
+    /**
+     * Will loop through the icon images and 
+     * images on screen will change 
+     */
     public void animation(){
         imageNumber = (imageNumber + 1) % images.length;
         setImage(images[imageNumber]);
     }
-
-    public void act()
+    
+    /**
+     * Act Method
+     * 
+     * @param Company1      Will find out which company is affected
+     */
+    public void act(String Company1)
     {
-        animation();
+        //animation();
+    }
+    
+    /**
+     * Will check which company is affected and will base stocks and emotions of the icons based on it
+     * 
+     * @param Company1      Finding out icons affected by stocks
+     */
+    public boolean checkCompany(String Company1){
+            //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
+        /**
+         * ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
+        for (Companies c : companies){
+              //raises the stock price for company 1
+              if(c.toString().equals(Company1)){
+                  return true;
+              }
+
+      }
+         */ 
+        
+        return true;
     }
 }
