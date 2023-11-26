@@ -9,9 +9,12 @@ import java.util.ArrayList;
  */
 public class FireCompany extends Companies
 {
-    protected static int currentValue = 50;
+    protected static int currentValue = 400;
     protected static int newValue;
+    protected static int previousValue = 400;
     protected int iteration;
+    
+    protected boolean header = false;
     
     protected greenfoot.Color color;
     
@@ -25,14 +28,7 @@ public class FireCompany extends Companies
     }
     
     public FireCompany(int v) {
-        super();
-        iteration = 0;
-        
-        currentValue = v;
-        
-        color = Color.RED;
-        
-        setImage(points);
+        header = true;
     }
     
     /**
@@ -41,7 +37,12 @@ public class FireCompany extends Companies
      */
     public void act()
     {
-        super.act();
+        if(header == false) {
+            super.act();
+        }
+        else {
+            changeInValue();
+        }
     }
     
     /**
@@ -90,10 +91,10 @@ public class FireCompany extends Companies
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
-        if( x > 600) {
-            newValue = 580;
-        } else if(x < 0) {
-            newValue = 0;
+        if( x > 535) {
+            newValue = 535;
+        } else if(x < 15) {
+            newValue = 15;
         } else {
             newValue = x;
         }
@@ -101,5 +102,16 @@ public class FireCompany extends Companies
     
     public String toString(){
         return "FireCompany";
+    }
+    
+    protected GreenfootImage increasing = new GreenfootImage("images/fireGood.png");
+    protected GreenfootImage decreasing = new GreenfootImage("images/fireBad.png");
+    
+    public void changeInValue() {
+        if(currentValue > previousValue) {
+            setImage(decreasing);
+        } else {
+            setImage(increasing);
+        }
     }
 }

@@ -28,34 +28,43 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(LineGraph.class, Line.class);
+        setPaintOrder(Icon.class, Companies.class, LineGraph.class);
         
         addObject(new LineGraph(),800,400);
         
         Companies blueCompany = new WaterCompany(100);
-        addObject(blueCompany, 300,100);
+        addObject(blueCompany, 201,25);
         
         Companies greenCompany = new GreenCompany(200);
-        addObject(greenCompany, 900,100);
+        addObject(greenCompany, 601,25);
         
         Companies pinkCompany = new PinkCompany(300);
-        addObject(pinkCompany, 1500,100);
+        addObject(pinkCompany, 1001,25);
         
-        Companies redCompany = new FireCompany(400);
-        addObject(redCompany, 1775,300);
+        Companies redHeader = new FireCompany(10);
+        addObject(redHeader, 1401,25);
+        
+        Companies redCompany = new FireCompany();
+        addObject(redCompany, 1775,275);
         
         //sets the values at the side 
         
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 100, 500);
-        addObject(player2, 400, 500);
+        addObject(player1, 175, 675);
+        addObject(player2, 1425, 675);
         
     }
-    
-    public void act(){
-        int tickDown = 0;
+    int tickDown = 0;
+    /*
+    public void act() {
+        if(getObjects(Weather.class).size() == 0) {
+            addWeather();
+        }
+    }
+    */
+    public void addWeather() {
         
         //spawns random weather effects 
         tickDown++;

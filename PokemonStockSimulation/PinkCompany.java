@@ -11,6 +11,7 @@ public class PinkCompany extends Companies
 {
     protected static int currentValue = 50;
     protected static int newValue;
+    protected static int previousValue = 300;
     protected int iteration;
     
     protected greenfoot.Color color;
@@ -31,6 +32,7 @@ public class PinkCompany extends Companies
     public void act()
     {
         super.act();
+        changeInValue();
     }
     
     /**
@@ -79,10 +81,10 @@ public class PinkCompany extends Companies
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
-        if( x > 600) {
-            newValue = 580;
-        } else if(x < 0) {
-            newValue = 0;
+        if( x > 535) {
+            newValue = 535;
+        } else if(x < 15) {
+            newValue = 15;
         } else {
             newValue = x;
         }
@@ -90,5 +92,16 @@ public class PinkCompany extends Companies
     
     public String toString(){
         return "PinkCompany";
+    }
+    
+    protected GreenfootImage increasing = new GreenfootImage("images/pinkGood.png");
+    protected GreenfootImage decreasing = new GreenfootImage("images/pinkBad.png");
+    
+    public void changeInValue() {
+        if(currentValue > previousValue) {
+            setImage(decreasing);
+        } else {
+            setImage(increasing);
+        }
     }
 }
