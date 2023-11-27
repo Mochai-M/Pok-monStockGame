@@ -68,18 +68,20 @@ public abstract class Weather extends Actor
       
       //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
       ArrayList<Companies> companies = (ArrayList<Companies>)getWorld().getObjects(Companies.class);
-      int changeValue = Greenfoot.getRandomNumber(2);
+      
+      
+      int changeValue = 30;
       
       for (Companies c : companies){
           //raises the stock price for company 1
-          if(c.toString().equals(Company1)){
+          if(c.toString().equals(Company1) && c.getIteration() == 0){
               c.increaseValue(changeValue);
               break;
           }
       } 
       for (Companies c : companies){
           //lowers the stock price for company 2
-          if(c.toString().equals(Company2)){
+          if(c.toString().equals(Company2) && c.getIteration() == 0){
               c.decreaseValue(changeValue);
               break;
           }

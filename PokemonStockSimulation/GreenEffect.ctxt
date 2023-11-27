@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GreenEffect
-comment0.text=\r\n\ The\ effect\ for\ the\ Green\ stock\r\n\ \r\n\ @Liyu\r\n\ @Nov\ 11\ 2023\r\n\ \r\n\ image\ link\:\ https\://tenor.com/view/leaves-gif-16219912\r\n\ \r\n\ sound\ link\:\ https\://mixkit.co/free-sound-effects/wind/\r\n
+comment0.text=\n\ The\ effect\ for\ the\ Green\ stock\n\ \n\ @Liyu\n\ @Nov\ 11\ 2023\n\ \n\ image\ link\:\ https\://tenor.com/view/leaves-gif-16219912\n\ \n\ sound\ link\:\ https\://mixkit.co/free-sound-effects/wind/\n
 comment1.params=
 comment1.target=GreenEffect()
 comment2.params=

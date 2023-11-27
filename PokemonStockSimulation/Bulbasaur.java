@@ -21,6 +21,10 @@ public class Bulbasaur extends Icon
      */
     public void act()
     {
-        super.act("GreenCompany");
+        super.act("Plant");
+    }
+    
+    public String getCompany(){
+        return "Plant";
     }
 }

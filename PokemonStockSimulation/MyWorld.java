@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class MyWorld here.
@@ -59,21 +60,22 @@ public class MyWorld extends World
         // Date Object
         addObject(new Date(), 1375, 25);
         
-        // Portfolio value display
-        /*
-        if(c == "Water") {
-            company = (Companies)getWorld().getObjects(WaterCompany.class).get(0);
-        } else if(c == "Fire") {
-            company = (Companies)getWorld().getObjects(FireCompany.class).get(0);
-        } else if(c == "Plant") {
-            company = (Companies)getWorld().getObjects(GreenCompany.class).get(0);
-        } else if(c == "Pink") {
-            company = (Companies)getWorld().getObjects(PinkCompany.class).get(0);
+        
+    
+      
+        for (Icon c: temp){
+            if(c.getCompany() == "Water") {
+                addObject(new Portfolio(getObjects(WaterCompany.class).get(0)), 125, 575);
+            } else if(c.getCompany() == "Fire") {
+                addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
+            } else if(c.getCompany() == "Plant") {
+                addObject(new Portfolio(getObjects(GreenCompany.class).get(0)), 1600-125, 575);
+            } else if(c.getCompany() == "Fairy") {
+                addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
+            }
         }
-        */
+        
        
-        addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
-        addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
     }
     int tickDown = 0;
     

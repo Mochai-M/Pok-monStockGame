@@ -21,6 +21,10 @@ public class Charmander extends Icon
      */
     public void act()
     {
-        super.act("FireCompany");
+        super.act("Fire");
+    }
+    
+    public String getCompany(){
+        return "Fire";
     }
 }
