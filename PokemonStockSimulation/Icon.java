@@ -14,6 +14,7 @@ public class Icon extends Actor
     
     private GreenfootImage[] images = new GreenfootImage[4]; // stores the images
     private int imageNumber;
+    protected GreenfootImage icon;
     /**
      * Constructor for the Icon Class
      * <p> Includes looping through the photos and scaling each one to make sure they fit 
@@ -43,7 +44,8 @@ public class Icon extends Actor
      */
     public void act(String Company1)
     {
-        //animation();
+        animation();
+        checkCompany(Company1);
     }
     
     /**
@@ -51,19 +53,28 @@ public class Icon extends Actor
      * 
      * @param Company1      Finding out icons affected by stocks
      */
-    public boolean checkCompany(String Company1){
-        //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
-        /**
-         * ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (100, Companies.class);
+    public void checkCompany(String Company1){
+        //Finds which company to affect
+        ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (3000, Companies.class);
         for (Companies c : companies){
-              //raises the stock price for company 1
-              if(c.toString().equals(Company1)){
-                  return true;
+            //raises the stock price for company 1
+            if(c.toString().equals(Company1)){
+            int stockPrice = c.getCurrentValue();
+            if(stockPrice < 100){
+                icon = images[0]; //happy ditto
+                setImage(icon);
+            }else if (stockPrice < 300 && stockPrice >= 100){
+                icon = images[2]; //normal  
+                setImage(icon);
+            }else if (stockPrice < 450 && stockPrice >= 300){
+                icon = images[1]; //sad 
+                setImage(icon);
+            }else{
+                icon = images[3]; //normal ditto
+                setImage(icon);
+            }
               }
 
       }
-         */ 
-        
-        return true;
     }
 }
