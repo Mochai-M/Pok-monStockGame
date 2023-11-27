@@ -8,19 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * Image link: https://forums.synfig.org/t/still-not-sorted-out-falling-rain/1927
  * 
+ * 
+ * sound link: https://mixkit.co/free-sound-effects/rain/
  */
 public class BlueEffect extends Weather
 {
-    
+    //initialize, the fire sound
+    GreenfootSound waterSound = new GreenfootSound("water.wav");
     
     public BlueEffect(){
         //sets the size and length for the effect
-        super(300,100, "rain.gif");
+        super(300,200, "rain.gif");
+        
+        waterSound.setVolume(50);
     }
     
     public void act()
     {
         super.act("WaterCompany", "FireCompany");
+        
+        waterSound.play();
     }
     
 
