@@ -74,4 +74,8 @@ public class Date extends Actor
         }
         return true;
     }
+    
+    public String getDate() {
+        return month + Integer.toString(day);
+    }
 }
