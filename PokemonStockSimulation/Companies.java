@@ -33,7 +33,7 @@ public abstract class Companies extends Actor
             nextPoint();
             clock = 0;
             
-            if (getIteration() > 12 && getClass() == FireCompany.class) {
+            if (getIteration() > 17 && getClass() == FireCompany.class) {
                 
                 ((MyWorld)getWorld()).removeObject(this);
             }

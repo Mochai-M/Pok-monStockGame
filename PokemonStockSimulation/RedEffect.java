@@ -19,13 +19,13 @@ public class RedEffect extends Weather
     public RedEffect(){
         //sets the size and length for the effect
         super(250,160, "FireEffect.gif");
-        fireSound = new GreenfootSound("fire.wav");
-        fireSound.setVolume(10);
+        //fireSound = new GreenfootSound("fire.wav");
+        //fireSound.setVolume(10);
     }
     
     public void act()
     {
         super.act("FireCompany", "GreenCompany");
-        fireSound.play();
+        //fireSound.play();
     }
 }

@@ -57,8 +57,19 @@ dependency25.type=UsesDependency
 dependency26.from=Weather
 dependency26.to=Companies
 dependency26.type=UsesDependency
+<<<<<<< Updated upstream
 dependency3.from=WelcomeWorld
 dependency3.to=TopSelectionButton
+=======
+dependency27.from=Weather
+dependency27.to=Companies
+dependency27.type=UsesDependency
+dependency28.from=Icon
+dependency28.to=Companies
+dependency28.type=UsesDependency
+dependency3.from=MyWorld
+dependency3.to=Companies
+>>>>>>> Stashed changes
 dependency3.type=UsesDependency
 dependency4.from=WelcomeWorld
 dependency4.to=BottomSelectionButton
@@ -78,6 +89,7 @@ dependency8.type=UsesDependency
 dependency9.from=WelcomeWorld
 dependency9.to=Bulbasaur
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -85,6 +97,15 @@ editor.fx.0.y=0
 height=1096
 package.numDependencies=26
 package.numTargets=24
+=======
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=552
+editor.fx.0.y=114
+height=1096
+package.numDependencies=28
+package.numTargets=25
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
