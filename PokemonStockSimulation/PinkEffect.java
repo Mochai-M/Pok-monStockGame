@@ -28,7 +28,7 @@ public class PinkEffect extends Weather
     
     public void act()
     {
-        super.act("Pink", "Water");
+        super.act("Fairy", "Water");
         
         pinkSound.play();
     }

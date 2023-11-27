@@ -108,7 +108,7 @@ public class WaterCompany extends Companies
     }
     
     public String toString(){
-        return "Plant";
+        return "Water";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/waterGood.png");

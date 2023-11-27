@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @Natalie Huang
  * @November 25
  */
-public class Icon extends Actor
+public abstract class Icon extends Actor
 {
     //one class and it gets called with a different image
     //when one stock from company goes up, character becomes happy & vice versa 
@@ -44,7 +44,6 @@ public class Icon extends Actor
      */
     public void act(String Company1)
     {
-        animation();
         checkCompany(Company1);
     }
     
@@ -59,22 +58,25 @@ public class Icon extends Actor
         for (Companies c : companies){
             //raises the stock price for company 1
             if(c.toString().equals(Company1)){
-            int stockPrice = c.getCurrentValue();
-            if(stockPrice < 100){
+            float stockPrice = c.getValue();
+            if(stockPrice > 90){
                 icon = images[0]; //happy ditto
                 setImage(icon);
-            }else if (stockPrice < 300 && stockPrice >= 100){
+            }else if (stockPrice > 70){
                 icon = images[2]; //normal  
                 setImage(icon);
-            }else if (stockPrice < 450 && stockPrice >= 300){
+            }else if (stockPrice > 50){
                 icon = images[1]; //sad 
                 setImage(icon);
             }else{
                 icon = images[3]; //normal ditto
                 setImage(icon);
             }
-              }
+        }
 
       }
     }
+    
+    //gets the name of the company, the icon belongs to
+    public abstract String getCompany();
 }

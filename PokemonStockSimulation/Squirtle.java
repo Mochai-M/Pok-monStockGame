@@ -21,6 +21,11 @@ public class Squirtle extends Icon
      */
     public void act()
     {
-        super.act("WaterCompany");
+        super.act("Water");
+    }
+    
+    
+    public String getCompany(){
+        return "Water";
     }
 }

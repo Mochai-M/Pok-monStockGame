@@ -13,4 +13,6 @@ comment3.text=\n\ Act\ Method\n\ \n\ @param\ Company1\ \ \ \ \ \ Will\ find\ out
 comment4.params=Company1
 comment4.target=void\ checkCompany(java.lang.String)
 comment4.text=\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\n\ \n\ @param\ Company1\ \ \ \ \ \ Finding\ out\ icons\ affected\ by\ stocks\n
-numComments=5
+comment5.params=
+comment5.target=java.lang.String\ getCompany()
+numComments=6

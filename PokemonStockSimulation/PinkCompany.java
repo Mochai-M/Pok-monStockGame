@@ -108,7 +108,7 @@ public class PinkCompany extends Companies
     }
     
     public String toString(){
-        return "Plant";
+        return "Fairy";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/pinkGood.png");
