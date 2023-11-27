@@ -25,7 +25,7 @@ public class BlueEffect extends Weather
     
     public void act()
     {
-        super.act("WaterCompany", "FireCompany");
+        super.act("Water", "Fire");
         
         waterSound.play();
     }

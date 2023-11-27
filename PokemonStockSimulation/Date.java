@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Date extends Actor
 {
     GreenfootImage date = new GreenfootImage(250,50);
-    private int month,day;
+    private int month,day = 1;
     private int clock;
     private String ending;
     
@@ -37,10 +37,20 @@ public class Date extends Actor
     }
     
     public void updateDate() {
+        if(day == 1 || day == 21 || day == 31) {
+            ending = "st";
+        } else if (day == 2 || day == 22) {
+            ending = "nd";
+        } else if (day == 3 || day == 23) {
+            ending = "rd";
+        } else {
+            ending = "th";
+        }
+        
         date.setColor(Color.BLACK);
         date.fill();
         date.setColor(Color.WHITE);
-        date.setFont(new Font("TimesNewRoman",false,false,30));
+        date.setFont(new Font("Roman",false,false,30));
         date.drawString(months[month] + ", " + day + ending, 10, 35);
         
         setImage(date);
@@ -50,16 +60,6 @@ public class Date extends Actor
         } else {
             month++;
             day = 1;
-        }
-        
-        if(day == 1 || day == 21 || day == 31) {
-            ending = "st";
-        } else if (day == 2 || day == 22) {
-            ending = "nd";
-        } else if (day == 3 || day == 23) {
-            ending = "rd";
-        } else {
-            ending = "th";
         }
     }
     

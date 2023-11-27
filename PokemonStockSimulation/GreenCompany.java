@@ -90,7 +90,7 @@ public class GreenCompany extends Companies
     }
     
     public String toString(){
-        return "GreenCompany";
+        return "Plant";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/greenGood.png");

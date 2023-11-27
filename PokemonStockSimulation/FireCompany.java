@@ -36,9 +36,14 @@ public class FireCompany extends Companies
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
-    {
+    {      
         if(header == false) {
+            setLocation(getX() - 2, getY());
             super.act();
+            
+            if (getIteration() > 17 && getClass() == FireCompany.class) {
+                ((MyWorld)getWorld()).removeObject(this);
+            }
         }
         else {
             changeInValue();
@@ -91,7 +96,7 @@ public class FireCompany extends Companies
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
-        if( x > 535) {
+        if(x > 535) {
             newValue = 535;
         } else if(x < 15) {
             newValue = 15;
@@ -101,7 +106,7 @@ public class FireCompany extends Companies
     }
     
     public String toString(){
-        return "FireCompany";
+        return "Fire";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/fireGood.png");

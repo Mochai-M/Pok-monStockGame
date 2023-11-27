@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Weather
-comment0.text=\r\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \r\n\ \r\n\ \r\n\ \r\n\ \r\n\ @Liyu\ Xiao\r\n\ @Nov\ 24\ 2023\r\n\ \r\n\ \r\n\ \r\n\ \r\n
+comment0.text=\r\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \r\n\ \r\n\ \r\n\ \r\n\ \r\n\ @Liyu\ Xiao,\ Mekaeel\ Malik\r\n\ @Nov\ 24\ 2023\r\n\ \r\n\ \r\n\ \r\n\ \r\n
 comment1.params=imageSize\ length\ theWeather
 comment1.target=Weather(int,\ int,\ java.lang.String)
 comment1.text=\r\n\ <p>\ The\ constructor\ for\ the\ weather\ class\ \ </p>\r\n\ \r\n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\r\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\r\n\ @param\ String\ weather,\ the\ name\ of\ the\ gif\ image,\ for\ the\ weather\r\n

@@ -25,7 +25,7 @@ public class RedEffect extends Weather
     
     public void act()
     {
-        super.act("FireCompany", "GreenCompany");
+        super.act("Fire", "Plant");
         //fireSound.play();
     }
 }

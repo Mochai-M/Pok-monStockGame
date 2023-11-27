@@ -25,18 +25,9 @@ public abstract class Companies extends Actor
     public void act() {
         clock++;
         
-        if(getClass() == FireCompany.class) {
-            setLocation(getX() - 2, getY());
-        }
-        
         if(clock >= 50) {
             nextPoint();
             clock = 0;
-            
-            if (getIteration() > 17 && getClass() == FireCompany.class) {
-                
-                ((MyWorld)getWorld()).removeObject(this);
-            }
         }
     }
     
@@ -118,7 +109,9 @@ public abstract class Companies extends Actor
         setNewValue(getNewValue() + x);
     }
     
-    
+    public float getValue() {
+        return (600 - getCurrentValue())/6;
+    }
     
     public abstract String toString();
 

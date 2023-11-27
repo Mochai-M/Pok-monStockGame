@@ -28,7 +28,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Date.class, Icon.class, Companies.class, LineGraph.class);
+        setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
         
         addObject(new LineGraph(),800,400);
         
@@ -52,11 +52,27 @@ public class MyWorld extends World
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 162, 675);
-        addObject(player2, 1600-162, 675);
+        addObject(player1, 125, 700);
+        addObject(player2, 1600-125, 700);
 
-        //date thing
+        // Date Object
         addObject(new Date(), 1375, 25);
+        
+        // Portfolio value display
+        /*
+        if(c == "Water") {
+            company = (Companies)getWorld().getObjects(WaterCompany.class).get(0);
+        } else if(c == "Fire") {
+            company = (Companies)getWorld().getObjects(FireCompany.class).get(0);
+        } else if(c == "Plant") {
+            company = (Companies)getWorld().getObjects(GreenCompany.class).get(0);
+        } else if(c == "Pink") {
+            company = (Companies)getWorld().getObjects(PinkCompany.class).get(0);
+        }
+        */
+       
+        addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
+        addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
     }
     int tickDown = 0;
     

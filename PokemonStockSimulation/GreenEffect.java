@@ -23,7 +23,7 @@ public class GreenEffect extends Weather
     
     public void act()
     {
-        super.act("GreenCompany", "WaterCompany");
+        super.act("Plant", "Water");
         
         greenSound.play();
     }

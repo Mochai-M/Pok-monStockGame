@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 
  * 
  * 
- * @Liyu Xiao
+ * @Liyu Xiao, Mekaeel Malik
  * @Nov 24 2023
  * 
  * 
@@ -67,20 +67,19 @@ public abstract class Weather extends Actor
       setImage(weather.getCurrentImage());
       
       //get ALL Companies caught in the "Weather Storm" and 2 of the 4 companies
-      ArrayList<Companies> companies = (ArrayList<Companies>)getObjectsInRange (1500, Companies.class);
+      ArrayList<Companies> companies = (ArrayList<Companies>)getWorld().getObjects(Companies.class);
+      int changeValue = 3;
       
       for (Companies c : companies){
           //raises the stock price for company 1
-          if(c.toString().equals(Company1)){
-              int changeValue = Greenfoot.getRandomNumber(3);
+          if(c.toString().equals(Company1) && c.getIteration() == 0){
               c.increaseValue(changeValue);
               break;
           }
       } 
       for (Companies c : companies){
-      //lowers the stock price for company 2
+          //lowers the stock price for company 2
           if(c.toString().equals(Company2)){
-              int changeValue = Greenfoot.getRandomNumber(3);
               c.decreaseValue(changeValue);
               break;
           }
