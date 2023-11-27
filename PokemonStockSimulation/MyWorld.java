@@ -57,13 +57,13 @@ public class MyWorld extends World
         
     }
     int tickDown = 0;
-    /*
+    
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
             addWeather();
         }
     }
-    */
+    
     public void addWeather() {
         
         //spawns random weather effects 
