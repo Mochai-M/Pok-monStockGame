@@ -79,7 +79,7 @@ public abstract class Weather extends Actor
       } 
       for (Companies c : companies){
           //lowers the stock price for company 2
-          if(c.toString().equals(Company2)){
+          if(c.toString().equals(Company2) && c.getIteration() == 0){
               c.decreaseValue(changeValue);
               break;
           }

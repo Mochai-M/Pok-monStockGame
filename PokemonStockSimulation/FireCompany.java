@@ -12,6 +12,8 @@ public class FireCompany extends Companies
     protected static int currentValue = 400;
     protected static int newValue;
     protected static int previousValue = 400;
+    protected static boolean modified;    
+    
     protected int iteration;
     
     protected boolean header = false;
@@ -21,6 +23,7 @@ public class FireCompany extends Companies
     public FireCompany() {
         super();
         iteration = 0;
+        modified = false;
         
         color = Color.RED;
         
@@ -40,6 +43,9 @@ public class FireCompany extends Companies
         if(header == false) {
             setLocation(getX() - 2, getY());
             super.act();
+            if(clock >= 50) {
+                //incrementIteration();
+            }
             
             if (getIteration() > 17 && getClass() == FireCompany.class) {
                 ((MyWorld)getWorld()).removeObject(this);
@@ -74,6 +80,20 @@ public class FireCompany extends Companies
     /**
      * Getter method for iteration
      */
+    public boolean wasModified() {
+        return modified;
+    }
+    
+    /**
+     * Setter method for iteration
+     */
+    public void resetModified() {
+        modified = false;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
     public greenfoot.Color getColor() {
         return color;
     }
@@ -103,6 +123,7 @@ public class FireCompany extends Companies
         } else {
             newValue = x;
         }
+        modified = true;
     }
     
     public String toString(){
