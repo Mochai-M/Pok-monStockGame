@@ -35,8 +35,6 @@ public class WelcomeWorld extends World
      * Stores players in an array
      */
     public static Icon[] getPlayers(){
-        player1 = new Charmander();
-        player2= new Ditto();
         return new Icon[]{player1, player2};
     }
     

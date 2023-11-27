@@ -52,8 +52,8 @@ public class MyWorld extends World
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 175, 675);
-        addObject(player2, 1425, 675);
+        addObject(player1, 120, 670);
+        addObject(player2, 1490, 670);
         
     }
     int tickDown = 0;
