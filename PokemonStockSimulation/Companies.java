@@ -21,7 +21,8 @@ public abstract class Companies extends Actor
         clock = 0;
     }
     
-    public void act() {       
+    public void act() {  
+        clock++;     
         if(clock >= 50) {
             nextPoint();
             clock = 0;
@@ -29,7 +30,6 @@ public abstract class Companies extends Actor
                 incrementIteration();
             }
         }
-        clock++;
     }
     
     public void nextPoint() {        

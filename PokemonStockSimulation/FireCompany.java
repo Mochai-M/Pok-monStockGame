@@ -25,7 +25,7 @@ public class FireCompany extends Companies
         iteration = 0;
         modified = false;
         
-        color = Color.RED;
+        color = new Color(252,81,76);
         
         setImage(points);
     }
@@ -43,11 +43,8 @@ public class FireCompany extends Companies
         if(header == false) {
             setLocation(getX() - 2, getY());
             super.act();
-            if(clock >= 50) {
-                //incrementIteration();
-            }
             
-            if (getIteration() > 17 && getClass() == FireCompany.class) {
+            if (getIteration() > 15 && getClass() == FireCompany.class) {
                 ((MyWorld)getWorld()).removeObject(this);
             }
         }

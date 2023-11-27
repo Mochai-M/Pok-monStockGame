@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Icon
-comment0.text=\n\ Effect\ Class\n\ \n\ @Natalie\ Huang\n\ @November\ 25\n
+comment0.text=\r\n\ Effect\ Class\r\n\ \r\n\ @Natalie\ Huang\r\n\ @November\ 25\r\n
 comment1.params=x
 comment1.target=Icon(java.lang.String)
-comment1.text=\n\ Constructor\ for\ the\ Icon\ Class\n\ <p>\ Includes\ looping\ through\ the\ photos\ and\ scaling\ each\ one\ to\ make\ sure\ they\ fit\ \n\ well\ on\ the\ screen\n
+comment1.text=\r\n\ Constructor\ for\ the\ Icon\ Class\r\n\ <p>\ Includes\ looping\ through\ the\ photos\ and\ scaling\ each\ one\ to\ make\ sure\ they\ fit\ \r\n\ well\ on\ the\ screen\r\n
 comment2.params=
 comment2.target=void\ animation()
-comment2.text=\n\ Will\ loop\ through\ the\ icon\ images\ and\ \n\ images\ on\ screen\ will\ change\ \n
+comment2.text=\r\n\ Will\ loop\ through\ the\ icon\ images\ and\ \r\n\ images\ on\ screen\ will\ change\ \r\n
 comment3.params=Company1
 comment3.target=void\ act(java.lang.String)
-comment3.text=\n\ Act\ Method\n\ \n\ @param\ Company1\ \ \ \ \ \ Will\ find\ out\ which\ company\ is\ affected\n
+comment3.text=\r\n\ Act\ Method\r\n\ \r\n\ @param\ Company1\ \ \ \ \ \ Will\ find\ out\ which\ company\ is\ affected\r\n
 comment4.params=Company1
 comment4.target=void\ checkCompany(java.lang.String)
-comment4.text=\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\n\ \n\ @param\ Company1\ \ \ \ \ \ Finding\ out\ icons\ affected\ by\ stocks\n
+comment4.text=\r\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\r\n\ \r\n\ @param\ Company1\ \ \ \ \ \ Finding\ out\ icons\ affected\ by\ stocks\r\n
 numComments=5

@@ -44,7 +44,7 @@ public class Icon extends Actor
      */
     public void act(String Company1)
     {
-        animation();
+        //animation();
         checkCompany(Company1);
     }
     

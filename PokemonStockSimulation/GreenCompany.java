@@ -24,7 +24,7 @@ public class GreenCompany extends Companies
         
         currentValue = v;
 
-        color = Color.GREEN;
+        color = new Color(110,194,68);
     }
     
     /**

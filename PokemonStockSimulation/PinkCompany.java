@@ -24,7 +24,7 @@ public class PinkCompany extends Companies
         
         currentValue = v;
 
-        color = Color.PINK;
+        color = new Color(244,167,187);
     }
     
     /**
@@ -108,7 +108,7 @@ public class PinkCompany extends Companies
     }
     
     public String toString(){
-        return "Plant";
+        return "Pink";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/pinkGood.png");
