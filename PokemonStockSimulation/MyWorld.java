@@ -28,21 +28,21 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Icon.class, Companies.class, LineGraph.class);
+        setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
         
         addObject(new LineGraph(),800,400);
         
         Companies blueCompany = new WaterCompany(100);
-        addObject(blueCompany, 201,25);
+        addObject(blueCompany, 151,25);
         
         Companies greenCompany = new GreenCompany(200);
-        addObject(greenCompany, 601,25);
+        addObject(greenCompany, 451,25);
         
         Companies pinkCompany = new PinkCompany(300);
-        addObject(pinkCompany, 1001,25);
+        addObject(pinkCompany, 751,25);
         
         Companies redHeader = new FireCompany(10);
-        addObject(redHeader, 1401,25);
+        addObject(redHeader, 1051,25);
         
         Companies redCompany = new FireCompany();
         addObject(redCompany, 1775,275);
@@ -52,18 +52,36 @@ public class MyWorld extends World
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 120, 670);
-        addObject(player2, 1490, 670);
+        addObject(player1, 125, 700);
+        addObject(player2, 1600-125, 700);
+
+        // Date Object
+        addObject(new Date(), 1375, 25);
         
+        // Portfolio value display
+        /*
+        if(c == "Water") {
+            company = (Companies)getWorld().getObjects(WaterCompany.class).get(0);
+        } else if(c == "Fire") {
+            company = (Companies)getWorld().getObjects(FireCompany.class).get(0);
+        } else if(c == "Plant") {
+            company = (Companies)getWorld().getObjects(GreenCompany.class).get(0);
+        } else if(c == "Pink") {
+            company = (Companies)getWorld().getObjects(PinkCompany.class).get(0);
+        }
+        */
+       
+        addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
+        addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
     }
     int tickDown = 0;
-    /*
+    
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
             addWeather();
         }
     }
-    */
+    
     public void addWeather() {
         
         //spawns random weather effects 

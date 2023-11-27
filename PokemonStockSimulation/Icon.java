@@ -23,7 +23,7 @@ public class Icon extends Actor
     public Icon(String x) {
         for(int i = 0; i < images.length; i++){
             images[i] = new GreenfootImage(x + i + ".png" );
-            images[i].scale(250, 250);
+            images[i].scale(250, 200);
             setImage(images[imageNumber]);   
         }
     }

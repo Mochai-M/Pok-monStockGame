@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Weather
-comment0.text=\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \n\ \n\ \n\ \n\ \n\ @Liyu\ Xiao\n\ @Nov\ 24\ 2023\n\ \n\ \n\ \n\ \n
+comment0.text=\r\n\ <p>\ Weather\ Class\ affects\ the\ stock\ prices\ of\ certain\ companies.\ It\ occurs\ randomly\ throughout\ the\ simulation.\ </p>\ \r\n\ \r\n\ \r\n\ \r\n\ \r\n\ @Liyu\ Xiao,\ Mekaeel\ Malik\r\n\ @Nov\ 24\ 2023\r\n\ \r\n\ \r\n\ \r\n\ \r\n
 comment1.params=imageSize\ length\ theWeather
 comment1.target=Weather(int,\ int,\ java.lang.String)
-comment1.text=\n\ <p>\ The\ constructor\ for\ the\ weather\ class\ \ </p>\n\ \n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\n\ @param\ String\ weather,\ the\ name\ of\ the\ gif\ image,\ for\ the\ weather\n
+comment1.text=\r\n\ <p>\ The\ constructor\ for\ the\ weather\ class\ \ </p>\r\n\ \r\n\ @param\ int\ ImageSize,\ the\ size\ of\ the\ image\r\n\ @param\ int\ length,\ the\ length\ of\ the\ effect\r\n\ @param\ String\ weather,\ the\ name\ of\ the\ gif\ image,\ for\ the\ weather\r\n
 comment2.params=Company1\ Company2
 comment2.target=void\ act(java.lang.String,\ java.lang.String)
-comment2.text=\n\ <p>\ The\ act\ method\ for\ the\ weather\ class\ </p>\n\ @param\ String\ Company1,\ the\ name\ of\ the\ first\ company\n\ @param\ String\ Company\ 2,\ the\ name\ of\ the\ second\ company\n
+comment2.text=\r\n\ <p>\ The\ act\ method\ for\ the\ weather\ class\ </p>\r\n\ @param\ String\ Company1,\ the\ name\ of\ the\ first\ company\r\n\ @param\ String\ Company\ 2,\ the\ name\ of\ the\ second\ company\r\n
 numComments=3

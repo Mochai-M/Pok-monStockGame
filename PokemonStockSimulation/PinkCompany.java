@@ -11,17 +11,19 @@ public class PinkCompany extends Companies
 {
     protected static int currentValue = 50;
     protected static int newValue;
-    protected static int previousValue = 300;
-    protected int iteration;
+    protected static int previousValue = 200;
+    protected static boolean modified;
     
+    protected int iteration;
     protected greenfoot.Color color;
     
     public PinkCompany(int v) {
         super();
         iteration = 0;
+        modified = false;
         
         currentValue = v;
-        
+
         color = Color.PINK;
     }
     
@@ -59,6 +61,20 @@ public class PinkCompany extends Companies
     /**
      * Getter method for iteration
      */
+    public boolean wasModified() {
+        return modified;
+    }
+    
+    /**
+     * Setter method for iteration
+     */
+    public void resetModified() {
+        modified = false;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
     public greenfoot.Color getColor() {
         return color;
     }
@@ -88,10 +104,11 @@ public class PinkCompany extends Companies
         } else {
             newValue = x;
         }
+        modified = true;
     }
     
     public String toString(){
-        return "PinkCompany";
+        return "Plant";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/pinkGood.png");

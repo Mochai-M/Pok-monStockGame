@@ -12,7 +12,6 @@ public abstract class Companies extends Actor
     protected int spawnPoint = 1775;
     protected int clock;
     protected static int lineWidth = 156;
-    protected boolean modified = false;
     
     public static GreenfootImage points = new GreenfootImage(lineWidth,550);
     public GreenfootImage finishedPoints;
@@ -22,27 +21,20 @@ public abstract class Companies extends Actor
         clock = 0;
     }
     
-    public void act() {
-        clock++;
-        
-        if(getClass() == FireCompany.class) {
-            setLocation(getX() - 2, getY());
-        }
-        
+    public void act() {       
         if(clock >= 50) {
             nextPoint();
             clock = 0;
-            
-            if (getIteration() > 12 && getClass() == FireCompany.class) {
-                
-                ((MyWorld)getWorld()).removeObject(this);
+            if(getClass() == FireCompany.class) {
+                incrementIteration();
             }
         }
+        clock++;
     }
     
     public void nextPoint() {        
         if(getIteration() == 0 || getClass() != FireCompany.class) {         
-            if(modified == false) {
+            if(wasModified() == false) {
                 //Determines whether to randomly increase of randomly decrease the stock price
                 int changeType = Greenfoot.getRandomNumber(2); 
                 //increase the stock price
@@ -71,9 +63,8 @@ public abstract class Companies extends Actor
                 ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,275);
             }
             
-            modified = false;
+            resetModified();
         }
-        incrementIteration();
     }
       
     public abstract void updateCurrentValue(int x);
@@ -83,6 +74,10 @@ public abstract class Companies extends Actor
     public abstract int getNewValue();
     
     public abstract void setNewValue(int x);
+    
+    public abstract boolean wasModified();
+    
+    public abstract void resetModified();
     
     public abstract int getIteration();
     
@@ -109,16 +104,16 @@ public abstract class Companies extends Actor
     }
     
     public void increaseValue(int x) {
-        modified = true;
         setNewValue(getNewValue() - x);
     }
     
     public void decreaseValue(int x){
-        modified = true;
         setNewValue(getNewValue() + x);
     }
     
-    
+    public float getValue() {
+        return (600 - getCurrentValue())/6;
+    }
     
     public abstract String toString();
 

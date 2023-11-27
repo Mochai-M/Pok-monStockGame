@@ -12,6 +12,8 @@ public class FireCompany extends Companies
     protected static int currentValue = 400;
     protected static int newValue;
     protected static int previousValue = 400;
+    protected static boolean modified;    
+    
     protected int iteration;
     
     protected boolean header = false;
@@ -21,6 +23,7 @@ public class FireCompany extends Companies
     public FireCompany() {
         super();
         iteration = 0;
+        modified = false;
         
         color = Color.RED;
         
@@ -36,9 +39,17 @@ public class FireCompany extends Companies
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
-    {
+    {      
         if(header == false) {
+            setLocation(getX() - 2, getY());
             super.act();
+            if(clock >= 50) {
+                //incrementIteration();
+            }
+            
+            if (getIteration() > 17 && getClass() == FireCompany.class) {
+                ((MyWorld)getWorld()).removeObject(this);
+            }
         }
         else {
             changeInValue();
@@ -69,6 +80,20 @@ public class FireCompany extends Companies
     /**
      * Getter method for iteration
      */
+    public boolean wasModified() {
+        return modified;
+    }
+    
+    /**
+     * Setter method for iteration
+     */
+    public void resetModified() {
+        modified = false;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
     public greenfoot.Color getColor() {
         return color;
     }
@@ -91,17 +116,18 @@ public class FireCompany extends Companies
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
-        if( x > 535) {
+        if(x > 535) {
             newValue = 535;
         } else if(x < 15) {
             newValue = 15;
         } else {
             newValue = x;
         }
+        modified = true;
     }
     
     public String toString(){
-        return "FireCompany";
+        return "Fire";
     }
     
     protected GreenfootImage increasing = new GreenfootImage("images/fireGood.png");
