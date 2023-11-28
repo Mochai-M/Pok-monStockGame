@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=RedEffect
-comment0.text=\n\ The\ effect\ for\ the\ Red\ stock\n\ \n\ @Liyu\ \n\ @Nov\ 24\ 2023\n\ \n\ \n\ sound\ Effects\ credits\ link\:\ https\://mixkit.co/free-sound-effects/fire/\n\ Image\ Credits\ link\ \:\ https\://martincrownover.com/gamemaker-examples-tutorials/particles-fire/\n
+comment0.text=\n\ The\ effect\ for\ the\ Red\ stock\n\ \n\ @Liyu\ Xiao\n\ @Nov\ 28\ 2023\n\ \n\ \n\ sound\ Effects\ credits\ link\:\ https\://mixkit.co/free-sound-effects/fire/\n\ Image\ Credits\ link\ \:\ https\://martincrownover.com/gamemaker-examples-tutorials/particles-fire/\n
 comment1.params=
 comment1.target=RedEffect()
 comment2.params=

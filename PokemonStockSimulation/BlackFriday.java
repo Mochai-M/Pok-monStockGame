@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * <p> The Black Friday Class is a special weather effect, when called, it will drop all the stock prices by 100 </p>
  * 
- * Liyu 
+ * Liyu Xiao
  * @Nov 27 2023
  * 
  * 
@@ -15,6 +15,12 @@ public class BlackFriday extends Actor
     
     //initialize, the stockMarket sound
     GreenfootSound stockMarketSound = new GreenfootSound("stockmarket.mp3");
+    
+    
+    /**
+     * The constructor for the black Friday Class
+     * <p> Sets the volume for the sound and scales the image </p>
+     */
     
     public BlackFriday(){
         stockMarketSound.setVolume(20);

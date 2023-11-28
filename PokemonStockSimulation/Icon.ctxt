@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Icon
-comment0.text=\n\ Effect\ Class\n\ \n\ @Natalie\ Huang\n\ @November\ 25\n
+comment0.text=\n\ Effect\ Class\n\ \n\ @Natalie\ Huang,\ Liyu\ Xiao\n\ @November\ 28\n
 comment1.params=x
 comment1.target=Icon(java.lang.String)
 comment1.text=\n\ Constructor\ for\ the\ Icon\ Class\n\ <p>\ Includes\ looping\ through\ the\ photos\ and\ scaling\ each\ one\ to\ make\ sure\ they\ fit\ \n\ well\ on\ the\ screen\n
@@ -12,7 +12,7 @@ comment3.target=void\ act(java.lang.String)
 comment3.text=\n\ Act\ Method\n\ \n\ @param\ Company1\ \ \ \ \ \ Will\ find\ out\ which\ company\ is\ affected\n
 comment4.params=Company1
 comment4.target=void\ checkCompany(java.lang.String)
-comment4.text=\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\n\ \n\ @param\ Company1\ \ \ \ \ \ Finding\ out\ icons\ affected\ by\ stocks\n
+comment4.text=\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\n\ \n\ @param\ Company1\ Finding\ out\ icons\ affected\ by\ stocks\n
 comment5.params=
 comment5.target=java.lang.String\ getCompany()
 numComments=6
