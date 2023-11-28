@@ -44,7 +44,7 @@ public class FireCompany extends Companies
             setLocation(getX() - 2, getY());
             super.act();
             
-            if (getIteration() > 15 && getClass() == FireCompany.class) {
+            if (getIteration() > 16 && getClass() == FireCompany.class) {
                 ((MyWorld)getWorld()).removeObject(this);
             }
         }

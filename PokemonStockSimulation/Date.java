@@ -29,7 +29,7 @@ public class Date extends Actor
      */
     public void act()
     {
-        if(clock > 20 && endSimulation()) {
+        if(clock > 10 && endSimulation() == false) {
             updateDate();
             clock = 0;
         }
@@ -70,9 +70,9 @@ public class Date extends Actor
             date.setColor(Color.WHITE);
             date.setFont(new Font("TimesNewRoman",false,false,30));
             date.drawString("FINISHED", 10, 35);
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     
     public String getDate() {

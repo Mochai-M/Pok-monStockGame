@@ -48,6 +48,8 @@ public class MyWorld extends World
         Companies redCompany = new FireCompany();
         addObject(redCompany, 1775,275);
         
+        redCompany.players = WelcomeWorld.getPlayers();
+        
         //sets the values at the side 
         
         Icon[] temp = WelcomeWorld.getPlayers();
@@ -82,6 +84,16 @@ public class MyWorld extends World
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
             addWeather();
+        }
+        if(getObjects(Date.class).get(0).endSimulation()) {
+            GreenfootImage finalBackground = getBackground();
+            
+            for(Actor a : getObjects(Actor.class)) {
+                finalBackground.drawImage(a.getImage(),a.getX()-(a.getImage().getWidth()/2),a.getY()-(a.getImage().getHeight()/2));
+                removeObject(a);
+            }
+            Greenfoot.setWorld(new EndingWorld(finalBackground));
+            //setBackground(finalBackground);
         }
     }
     

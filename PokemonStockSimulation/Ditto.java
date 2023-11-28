@@ -21,11 +21,11 @@ public class Ditto extends Icon
      */
     public void act()
     {
-        super.act("Fairy");
+        super.act("Pink");
     }
     
     
     public String getCompany(){
-        return "Fairy";
+        return "Pink";
     }
 }

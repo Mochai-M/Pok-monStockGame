@@ -70,7 +70,7 @@ public abstract class Weather extends Actor
       ArrayList<Companies> companies = (ArrayList<Companies>)getWorld().getObjects(Companies.class);
       
       
-      int changeValue = 30;
+      int changeValue = Greenfoot.getRandomNumber(2);
       
       for (Companies c : companies){
           //raises the stock price for company 1

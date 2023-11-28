@@ -13,6 +13,8 @@ public abstract class Companies extends Actor
     protected int clock;
     protected static int lineWidth = 156;
     
+    protected static Icon[] players;
+    
     public static GreenfootImage points = new GreenfootImage(lineWidth,550);
     public GreenfootImage finishedPoints;
 
@@ -86,6 +88,22 @@ public abstract class Companies extends Actor
     public abstract void incrementIteration();
     
     public void newPoint(int x1, int y1, int x2, int y2) {
+        if(players[0].getCompany() == toString() || players[1].getCompany() == toString()) {
+            points.setColor(Color.BLACK);
+            
+            points.drawLine(x1 + 3,y1,x2 + 3,y2);
+            points.drawLine(x1 - 3,y1,x2 - 3,y2);
+            
+            points.drawLine(x1,y1 + 3,x2,y2 + 3);
+            points.drawLine(x1,y1 - 3,x2,y2 - 3);
+            
+            points.drawLine(x1 + 4,y1,x2 + 4,y2);
+            points.drawLine(x1 - 4,y1,x2 - 4,y2);
+            
+            points.drawLine(x1,y1 + 4,x2,y2 + 4);
+            points.drawLine(x1,y1 - 4,x2,y2 - 4);
+        }
+        
         points.setColor(getColor());
         
         points.drawLine(x1,y1,x2,y2);
