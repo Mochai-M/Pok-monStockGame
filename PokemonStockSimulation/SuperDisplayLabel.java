@@ -53,8 +53,8 @@ public class SuperDisplayLabel extends Actor
         textFont = font;
         this.height = height;
         text = "";
-    }
-
+    }    
+    
     /**
      * Font and Colour Choice Constructor 
      * <p>Note that the Font will be used to set the height when using this constructor</p>

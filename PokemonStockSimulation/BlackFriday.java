@@ -44,7 +44,7 @@ public class BlackFriday extends Actor
              //Decrease the stock price for all companies
              ArrayList<Companies> companies = (ArrayList<Companies>)getWorld().getObjects(Companies.class);
              for (Companies c : companies){
-                  c.decreaseValue(1000);
+                  c.decreaseValue(300);
              }
              
              getWorld().removeObject(this);

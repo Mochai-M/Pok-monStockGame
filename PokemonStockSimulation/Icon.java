@@ -79,4 +79,7 @@ public abstract class Icon extends Actor
     
     //gets the name of the company, the icon belongs to
     public abstract String getCompany();
+    
+    //gets the name of the player, the icon belongs to
+    public abstract String getPlayer();
 }

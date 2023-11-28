@@ -50,6 +50,11 @@ public class MyWorld extends World
     //GreenfootImage icon1 = new GreenfootImage();
     
     private Icon player1, player2;
+    
+    private Companies company1, company2;
+    
+    private int tickDown;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -99,27 +104,46 @@ public class MyWorld extends World
         
     
       
-        for (Icon c: temp){
-            if(c.getCompany() == "Water") {
-                addObject(new Portfolio(getObjects(WaterCompany.class).get(0)), 125, 575);
-            } else if(c.getCompany() == "Fire") {
-                addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
-            } else if(c.getCompany() == "Plant") {
-                addObject(new Portfolio(getObjects(GreenCompany.class).get(0)), 1600-125, 575);
-            } else if(c.getCompany() == "Fairy") {
-                addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
-            }
+        if(player1.getCompany() == "Water") {
+            addObject(new Portfolio(blueCompany), 125, 575);
+            company1 = blueCompany;
+        } else if(player1.getCompany() == "Fire") {
+            addObject(new Portfolio(redCompany), 125, 575);
+            company1 = redCompany;
+        } else if(player1.getCompany() == "Plant") {
+            addObject(new Portfolio(greenCompany), 1600-125, 575);
+            company1 = greenCompany;        
+        } else if(player1.getCompany() == "Pink") {
+            addObject(new Portfolio(pinkCompany), 1600-125, 575);
+            company1 = pinkCompany;  
         }
         
-       
+        if(player2.getCompany() == "Water") {
+            addObject(new Portfolio(blueCompany), 125, 575);
+            company2 = blueCompany;
+        } else if(player2.getCompany() == "Fire") {
+            addObject(new Portfolio(redCompany), 125, 575);
+            company2 = redCompany;
+        } else if(player2.getCompany() == "Plant") {
+            addObject(new Portfolio(greenCompany), 1600-125, 575);
+            company2 = greenCompany;        
+        } else if(player2.getCompany() == "Pink") {
+            addObject(new Portfolio(pinkCompany), 1600-125, 575);
+            company2 = pinkCompany;  
+        }
+        
+        tickDown = 0;
     }
-    int tickDown = 0;
+        
+       
     
     
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
             addWeather();
         }
+        
+        
         if(getObjects(Date.class).get(0).endSimulation()) {
             GreenfootImage finalBackground = getBackground();
             
@@ -127,9 +151,17 @@ public class MyWorld extends World
                 finalBackground.drawImage(a.getImage(),a.getX()-(a.getImage().getWidth()/2),a.getY()-(a.getImage().getHeight()/2));
                 removeObject(a);
             }
-            Greenfoot.setWorld(new EndingWorld(finalBackground));
-            //setBackground(finalBackground);
+            if(company1.getValue() > company2.getValue()) {
+                Greenfoot.setWorld(new EndingWorld(finalBackground, player1));
+            } else if(company2.getValue() > company1.getValue()) {
+               Greenfoot.setWorld(new EndingWorld(finalBackground, player2));
+            } else {
+                Greenfoot.setWorld(new EndingWorld(finalBackground));
+            }
+                
+            
         }
+        
     }
     
     public void addWeather() {

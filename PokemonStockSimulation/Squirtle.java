@@ -28,4 +28,8 @@ public class Squirtle extends Icon
     public String getCompany(){
         return "Water";
     }
+    
+    public String getPlayer() {
+        return "Squirtle";
+    }
 }

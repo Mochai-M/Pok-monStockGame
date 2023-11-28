@@ -28,4 +28,8 @@ public class Ditto extends Icon
     public String getCompany(){
         return "Pink";
     }
+    
+    public String getPlayer() {
+        return "Ditto";
+    }
 }

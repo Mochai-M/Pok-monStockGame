@@ -13,13 +13,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RedEffect extends Weather
 {
     //initialize, the fire sound
-    GreenfootSound fireSound = new GreenfootSound("fire.wav");;
+    GreenfootSound fireSound = new GreenfootSound("fire.wav");
     
     
     public RedEffect(){
         //sets the size and length for the effect
-        super(250,160, "FireEffect.gif");
-        fireSound.setVolume(5);
+        super(450,200, "FireEffect.gif");
+        
+        //fireSound.setVolume(20);
     }
     
     
@@ -27,6 +28,6 @@ public class RedEffect extends Weather
     public void act()
     {
         super.act("Fire", "Plant");
-        fireSound.play();
+        //fireSound.play();
     }
 }

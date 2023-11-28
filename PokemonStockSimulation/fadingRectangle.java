@@ -6,13 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class fadingRectangle extends Actor
+public class FadingRectangle extends Actor
 {
     private int clock;
     
     GreenfootImage image;
     
-    public fadingRectangle(int x, int y) {
+    public FadingRectangle(int x, int y) {
         image = new GreenfootImage(x,y);
         image.setTransparency(0);
         image.setColor(Color.BLACK);
@@ -28,10 +28,11 @@ public class fadingRectangle extends Actor
      */
     public void act()
     {
-        clock++;
-        if(clock > 2 && image.getTransparency() < 230) {
-            image.setTransparency(image.getTransparency() + 1);
+        if(clock > 1 && image.getTransparency() < 235) {
+            image.setTransparency(image.getTransparency() + 2);
             clock = 0;
+        } else {
+            clock++;
         }
     }
 }

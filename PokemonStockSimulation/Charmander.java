@@ -27,4 +27,8 @@ public class Charmander extends Icon
     public String getCompany(){
         return "Fire";
     }
+    
+    public String getPlayer() {
+        return "Charmander";
+    }
 }

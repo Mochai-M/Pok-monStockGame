@@ -27,4 +27,8 @@ public class Bulbasaur extends Icon
     public String getCompany(){
         return "Plant";
     }
+    
+    public String getPlayer() {
+        return "Bulbasaur";
+    }
 }

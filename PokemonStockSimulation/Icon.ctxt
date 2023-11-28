@@ -15,4 +15,6 @@ comment4.target=void\ checkCompany(java.lang.String)
 comment4.text=\r\n\ Will\ check\ which\ company\ is\ affected\ and\ will\ base\ stocks\ and\ emotions\ of\ the\ icons\ based\ on\ it\r\n\ \r\n\ @param\ Company1\ Finding\ out\ icons\ affected\ by\ stocks\r\n
 comment5.params=
 comment5.target=java.lang.String\ getCompany()
-numComments=6
+comment6.params=
+comment6.target=java.lang.String\ getPlayer()
+numComments=7
