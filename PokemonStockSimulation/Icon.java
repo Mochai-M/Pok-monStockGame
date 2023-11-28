@@ -62,14 +62,14 @@ public abstract class Icon extends Actor
             if(stockPrice > 90){
                 icon = images[0]; //happy ditto
                 setImage(icon);
-            }else if (stockPrice > 70){
-                icon = images[2]; //normal  
+            }else if (stockPrice > 60){
+                icon = images[2]; // normal  
                 setImage(icon);
-            }else if (stockPrice > 50){
-                icon = images[1]; //sad 
+            }else if (stockPrice > 40){
+                icon = images[1]; //angry 
                 setImage(icon);
             }else{
-                icon = images[3]; //normal ditto
+                icon = images[3]; //sad ditto
                 setImage(icon);
             }
         }

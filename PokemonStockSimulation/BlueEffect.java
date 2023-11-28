@@ -18,7 +18,7 @@ public class BlueEffect extends Weather
     
     public BlueEffect(){
         //sets the size and length for the effect
-        super(300,200, "rain.gif");
+        super(450,200, "rain.gif");
         
         waterSound.setVolume(50);
     }
