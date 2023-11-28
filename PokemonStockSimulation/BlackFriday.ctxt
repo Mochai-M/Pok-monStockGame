@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=BlackFriday
+comment0.text=\n\ <p>\ The\ Black\ Friday\ Class\ is\ a\ special\ weather\ effect,\ when\ called,\ it\ will\ drop\ all\ the\ stock\ prices\ by\ 100\ </p>\n\ \n\ Liyu\ \n\ @Nov\ 27\ 2023\n\ \n\ \n
+comment1.params=
+comment1.target=BlackFriday()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ <p>\ The\ act\ method\ for\ black\ Friday,\ On\ this\ day,\ all\ stocks\ drop\ by\ 100\ </p>\n
+numComments=3

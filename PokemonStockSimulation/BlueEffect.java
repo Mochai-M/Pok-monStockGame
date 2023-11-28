@@ -13,7 +13,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BlueEffect extends Weather
 {
-    //initialize, the fire sound
+    //initialize, the water sound
     GreenfootSound waterSound = new GreenfootSound("water.wav");
     
     public BlueEffect(){

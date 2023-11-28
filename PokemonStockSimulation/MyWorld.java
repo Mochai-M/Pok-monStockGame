@@ -60,6 +60,10 @@ public class MyWorld extends World
         addObject(new Date(), 1375, 25);
         
         
+        
+        //Black Friday Object
+        addObject(new BlackFriday(),600,600);
+        
     
       
         for (Icon c: temp){
@@ -77,6 +81,7 @@ public class MyWorld extends World
        
     }
     int tickDown = 0;
+    
     
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
@@ -98,8 +103,7 @@ public class MyWorld extends World
                 tickDown = 0;
             }
             else if(weatherType == 1){
-                addObject(new GreenEffect(), 0, 300);
-                addObject(new GreenEffect(), 900, 300);
+                addObject(new GreenEffect(), 600, 300);
                 addObject(new GreenEffect(), 1500, 300);
                 tickDown = 0;
             }

@@ -39,11 +39,11 @@ public abstract class Companies extends Actor
                 int changeType = Greenfoot.getRandomNumber(2); 
                 //increase the stock price
                 if(changeType == 0){
-                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(30)); 
+                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(40)); 
                 }
                 //decrease the stock price
                 else{
-                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(30));
+                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(40));
                 }
             }
             
