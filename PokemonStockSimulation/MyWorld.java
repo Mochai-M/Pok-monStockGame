@@ -2,7 +2,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class MyWorld here.
+ *  
+ * <p> Pokemon Stock Simulation watch as two pokemon battle it out through the stock market!  </p>
+ * 
+ * 
+ * <p> Key Features: Weather effects (increase decrease the stock prices), Portfolios (shows how well the pokemon's company is doing),
+ * Icons (show the emotions each pokemon has depending on the price of their stocks), Stock indicators (show whether stock is rising or 
+ * dropping for the given company), Stock Graphs (How the stocks are shown to go up and down on the screen) </p>
+ * 
+ * 
+ * <p> Credits for Images </p>
+ * 
+ * <p> Fire Effect Image Credits link : https://martincrownover.com/gamemaker-examples-tutorials/particles-fire/ </p>
+ * <p> Water Effect Image Credits link: https://forums.synfig.org/t/still-not-sorted-out-falling-rain/1927 </p>
+ * <p> Green Effect Image Credits link: https://tenor.com/view/leaves-gif-16219912 </p> 
+ * <p> Pink Effect Image Credits link: https://www.pinterest.ca/pin/329114685245117235/ </p>
+ * 
+ * 
+ * <p> Credits for Sound </p>
+ * 
+ * <p> Fire Effect Sound Credits link: https://mixkit.co/free-sound-effects/rain/ </p>
+ * <p> Water Effect Sound Credits link: https://mixkit.co/free-sound-effects/fire/ </p>
+ * <p> Green Effect Sound Credits link: https://mixkit.co/free-sound-effects/wind/ </p>
+ * <p> Pink Effect Sound Credits link: https://pixabay.com/sound-effects/search/fairy/ </p>
+ * 
+ * 
+ * 
+ * 
+ * 
+ * <p> KNOWN BUGS </p>
+ * <p> If ran at a high speeds, the effects will slow down the simulation and will lag the simulation </p>
+ * 
  * 
  * @author Mekaeel Malik, Natalie Huang, Liyu Xiao
  * @version 1.0
@@ -63,6 +93,10 @@ public class MyWorld extends World
         addObject(new Date(), 1375, 25);
         
         
+        
+        //Black Friday Object
+        addObject(new BlackFriday(),600,600);
+        
     
       
         for (Icon c: temp){
@@ -80,6 +114,7 @@ public class MyWorld extends World
        
     }
     int tickDown = 0;
+    
     
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
@@ -104,27 +139,20 @@ public class MyWorld extends World
         if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
             if(weatherType == 0){
-                addObject(new BlueEffect(), 0, 300);
-                addObject(new BlueEffect(), 900, 300);
-                addObject(new BlueEffect(), 1500, 300);
+                addObject(new BlueEffect(), 600, 300);
                 
                 tickDown = 0;
             }
             else if(weatherType == 1){
-                addObject(new GreenEffect(), 0, 300);
-                addObject(new GreenEffect(), 900, 300);
-                addObject(new GreenEffect(), 1500, 300);
+                addObject(new GreenEffect(), 600, 300);
                 tickDown = 0;
             }
             else if(weatherType == 2){
-                addObject(new RedEffect(), 0, 300);
-                addObject(new RedEffect(), 900, 300);
-                addObject(new RedEffect(), 1500, 300);
+                addObject(new RedEffect(), 600, 300);
                 tickDown = 0;
             }
             else{
-                addObject(new PinkEffect(), 0, 300);
-                addObject(new PinkEffect(), 900, 300);
+                addObject(new PinkEffect(), 600, 300);
                 addObject(new PinkEffect(), 1500, 300);
                 tickDown = 0;
             }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Effect Class
  * 
- * @Natalie Huang
- * @November 25
+ * @Natalie Huang, Liyu Xiao
+ * @November 28
  */
 public abstract class Icon extends Actor
 {
@@ -50,7 +50,7 @@ public abstract class Icon extends Actor
     /**
      * Will check which company is affected and will base stocks and emotions of the icons based on it
      * 
-     * @param Company1      Finding out icons affected by stocks
+     * @param Company1 Finding out icons affected by stocks
      */
     public void checkCompany(String Company1){
         //Finds which company to affect
@@ -62,14 +62,14 @@ public abstract class Icon extends Actor
             if(stockPrice > 90){
                 icon = images[0]; //happy ditto
                 setImage(icon);
-            }else if (stockPrice > 70){
-                icon = images[2]; //normal  
+            }else if (stockPrice > 60){
+                icon = images[2]; // normal  
                 setImage(icon);
-            }else if (stockPrice > 50){
-                icon = images[1]; //sad 
+            }else if (stockPrice > 40){
+                icon = images[1]; //angry 
                 setImage(icon);
             }else{
-                icon = images[3]; //normal ditto
+                icon = images[3]; //sad ditto
                 setImage(icon);
             }
         }
