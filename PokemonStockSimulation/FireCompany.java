@@ -42,14 +42,35 @@ public class FireCompany extends Companies
     {      
         if(header == false) {
             setLocation(getX() - 2, getY());
+            
             super.act();
             
-            if (getIteration() > 16 && getClass() == FireCompany.class) {
+            if(clock == 49) {
+                if(iteration == 0) {
+                    finishedPoints = new GreenfootImage(getImage());
+                    
+                    points = new GreenfootImage(lineWidth,550);
+                    
+                    setImage(finishedPoints);
+                    
+                    ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,275);
+                }
+                
+                incrementIteration();
+            }
+                
+            if (getIteration() > 17) {
                 ((MyWorld)getWorld()).removeObject(this);
             }
         }
         else {
             changeInValue();
+            
+            clock++;
+            
+            if(clock >= 50) {
+                clock = 0;
+            }
         }
     }
     

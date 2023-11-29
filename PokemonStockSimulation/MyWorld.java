@@ -68,6 +68,9 @@ public class MyWorld extends World
         
         //addObject(new LineGraph(),800,400);
         
+        Companies redCompany = new FireCompany();
+        addObject(redCompany, 1775,275);
+        
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 151,25);
         
@@ -79,9 +82,6 @@ public class MyWorld extends World
         
         Companies redHeader = new FireCompany(10);
         addObject(redHeader, 1051,25);
-        
-        Companies redCompany = new FireCompany();
-        addObject(redCompany, 1775,275);
         
         redCompany.players = WelcomeWorld.getPlayers();
         

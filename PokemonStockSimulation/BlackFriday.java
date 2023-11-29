@@ -38,7 +38,7 @@ public class BlackFriday extends Actor
       ArrayList<Date> currentDate = (ArrayList<Date>)getWorld().getObjects(Date.class);
       for(Date date: currentDate){
           //if the date is October 19 Add in the Black Friday Effect
-          if(date.getDate().equals("919")){
+          if(date.getDate().equals("824")){
              stockMarketSound.play();
              
              //Decrease the stock price for all companies

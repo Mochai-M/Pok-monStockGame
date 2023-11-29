@@ -29,7 +29,7 @@ public class Tugrope extends Actor
     public void moveTheKnot() {
         if(moveToPoint() < getX() && getX() > 500) {
             setLocation(getX() - 1,getY());
-        } else if(moveToPoint() > getX() && getX() < 1200) {
+        } else if(moveToPoint() > getX() && getX() < 1050) {
             setLocation(getX() + 1, getY());
         }
     }

@@ -50,7 +50,7 @@ public class Date extends Actor
         date.setColor(Color.BLACK);
         date.fill();
         date.setColor(Color.WHITE);
-        date.setFont(new Font("Roman",false,false,30));
+        date.setFont(new Font("Times New Roman", true, false, 30));
         date.drawString(months[month] + ", " + day + ending, 10, 35);
         
         setImage(date);
@@ -68,7 +68,7 @@ public class Date extends Actor
             date.setColor(Color.BLACK);
             date.fill();
             date.setColor(Color.WHITE);
-            date.setFont(new Font("TimesNewRoman",false,false,30));
+            date.setFont(new Font("Times New Roman",false,false,30));
             date.drawString("FINISHED", 10, 35);
             return true;
         }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Companies
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Companies\ here.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 14th,\ 2023\r\n
+comment0.text=\r\n\ Super\ class\ for\ each\ company\ that\ holds\ the\ functions\ used\ by\ all\ companies\r\n\ and\ properly\ abstracts\ and\ statics\ certain\ variables\ for\ efficient\ code.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 14th,\ 2023\r\n
 comment1.params=
 comment1.target=Companies()
 comment10.params=

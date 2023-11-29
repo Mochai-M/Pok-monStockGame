@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Companies here.
+ * Super class for each company that holds the functions used by all companies
+ * and properly abstracts and statics certain variables for efficient code.
  * 
  * @author Mekaeel
  * @version November 14th, 2023
@@ -10,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Companies extends Actor
 {   
     protected int spawnPoint = 1775;
-    protected int clock;
+    protected static int clock = 0;
     protected static int lineWidth = 156;
     
     protected static Icon[] players;
@@ -20,53 +21,34 @@ public abstract class Companies extends Actor
 
     
     public Companies() {
-        clock = 0;
     }
     
-    public void act() {  
-        clock++;     
-        if(clock >= 50) {
-            nextPoint();
-            clock = 0;
-            if(getClass() == FireCompany.class) {
-                incrementIteration();
-            }
+    public void act() {
+        
+        if(clock == 48 && getIteration() == 0) {
+            nextPoint();            
         }
     }
     
-    public void nextPoint() {        
-        if(getIteration() == 0 || getClass() != FireCompany.class) {         
-            if(wasModified() == false) {
-                //Determines whether to randomly increase of randomly decrease the stock price
-                int changeType = Greenfoot.getRandomNumber(2); 
-                //increase the stock price
-                if(changeType == 0){
-                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(40)); 
-                }
-                //decrease the stock price
-                else{
-                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(40));
-                }
+    public void nextPoint() {  
+        if(wasModified() == false) {
+            //Determines whether to randomly increase of randomly decrease the stock price
+            int changeType = Greenfoot.getRandomNumber(2); 
+            //increase the stock price
+            if(changeType == 0){
+               setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(40)); 
             }
-            
-            newPoint(0,getCurrentValue(),101,getNewValue());
-            
-            updateCurrentValue(getNewValue());
-            
-            if(getClass() == FireCompany.class) {
-                finishedPoints = new GreenfootImage(getImage());
-                
-                points = new GreenfootImage(lineWidth,550);
-                
-                setImage(finishedPoints);
+            //decrease the stock price
+            else{
+                setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(40));
             }
-            
-            if(getClass() == FireCompany.class) {
-                ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,275);
-            }
-            
-            resetModified();
         }
+        
+        newPoint(0,getCurrentValue(),101,getNewValue());
+        
+        updateCurrentValue(getNewValue());
+        
+        resetModified();
     }
       
     public abstract void updateCurrentValue(int x);
