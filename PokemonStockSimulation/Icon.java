@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Effect Class
  * 
- * @Natalie Huang, Liyu Xiao
+ * @Natalie Huang, Liyu Xiao,Wendy Luo
  * @November 28
  */
 public abstract class Icon extends Actor
@@ -23,7 +23,7 @@ public abstract class Icon extends Actor
     public Icon(String x) {
         for(int i = 0; i < images.length; i++){
             images[i] = new GreenfootImage(x + i + ".png" );
-            images[i].scale(250, 200);
+            images[i].scale(400, 200);
             setImage(images[imageNumber]);   
         }
     }

@@ -11,7 +11,6 @@ public class EndingWorld extends World
     private int clock;
     private GreenfootImage background;
     private GreenfootImage start;
-    private SuperDisplayLabel label;
     
     /**
      * Constructor for objects of class EndingWorld.
@@ -27,15 +26,7 @@ public class EndingWorld extends World
         this.background = background;
         setBackground(background);
         
-        addObject(new FadingRectangle(1600,800),800,400);
-        
-        label = new SuperDisplayLabel(Color.WHITE,Color.BLACK,new Font("Times New Roman",true, false, 80));
-                
-        addObject(label,800,400);
-        
-        label.update(winner.getPlayer() + " Wins!!!");
-        
-        label.setLocation(800,400);
+        addObject(new FadingRectangle(1600,800, winner),800,400);
     }
     
     public EndingWorld(GreenfootImage background)
@@ -49,13 +40,5 @@ public class EndingWorld extends World
         setBackground(background);
         
         addObject(new FadingRectangle(1600,800),800,400);
-        
-        label = new SuperDisplayLabel(Color.BLACK,Color.WHITE,new Font("Times New Roman",true, false, 80));
-                
-        addObject(label,800,400);
-        
-        label.update("TIE");
-        
-        label.setLocation(800,400);
     }
     }

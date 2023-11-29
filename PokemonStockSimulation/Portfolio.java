@@ -20,7 +20,7 @@ public class Portfolio extends Actor
         this.centerOnLeft = centerOnLeft;
         
         
-        displayValue = new GreenfootImage(450,50);
+        displayValue = new GreenfootImage(400,50);
         
         displayValue.setFont(new Font("Times New Roman",false,false,30));
     }
@@ -40,7 +40,7 @@ public class Portfolio extends Actor
         displayValue.setColor(Color.WHITE);
         
         if(centerOnLeft) {
-            displayValue.drawString("("+company+") "+Float.toString(company.getValue()) + " ₱ ", 287, 35);
+            displayValue.drawString("("+company+") "+Float.toString(company.getValue()) + " ₱ ", 200, 35);
         } else {
             displayValue.drawString("₱ " + Float.toString(company.getValue()) + " ("+company+")", 10, 35);
         }

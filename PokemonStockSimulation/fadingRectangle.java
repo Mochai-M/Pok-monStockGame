@@ -12,7 +12,11 @@ public class FadingRectangle extends Actor
     
     GreenfootImage image;
     
-    public FadingRectangle(int x, int y) {
+    private Icon winner;
+    
+    public FadingRectangle(int x, int y, Icon winner) {
+        this.winner = winner;
+        
         image = new GreenfootImage(x,y);
         image.setTransparency(0);
         image.setColor(Color.BLACK);
@@ -32,7 +36,7 @@ public class FadingRectangle extends Actor
             image.setTransparency(image.getTransparency() + 2);
             clock = 0;
         } else if(image.getTransparency() > 235) {
-            
+            //draw the new image onto the world thing
         } else {
             clock++;
         }

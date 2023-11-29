@@ -18,6 +18,7 @@ import java.util.ArrayList;
  * <p> Green Effect Image Credits link: https://tenor.com/view/leaves-gif-16219912 </p> 
  * <p> Pink Effect Image Credits link: https://www.pinterest.ca/pin/329114685245117235/ </p>
  * 
+ * <
  * 
  * <p> Credits for Sound </p>
  * 
@@ -91,8 +92,8 @@ public class MyWorld extends World
         player1 = temp[0];
         player2 = temp[1];
         
-        addObject(player1, 225, 700);
-        addObject(player2, 1600-225, 700);
+        addObject(player1, 200, 700);
+        addObject(player2, 1600-200, 700);
 
         // Date Object
         addObject(new Date(), 1375, 25);
@@ -105,18 +106,18 @@ public class MyWorld extends World
     
       
         if(player1.getCompany() == "Water") {
-            addObject(new Portfolio(blueCompany, true), 225, 575);
+            addObject(new Portfolio(blueCompany, true), 200, 575);
             company1 = blueCompany;
         } else if(player1.getCompany() == "Fire") {
-            addObject(new Portfolio(redCompany, true), 225, 575);
+            addObject(new Portfolio(redCompany, true), 200, 575);
             company1 = redCompany;
         }
         
         if(player2.getCompany() == "Plant") {
-            addObject(new Portfolio(greenCompany, false), 1600-225, 575);
+            addObject(new Portfolio(greenCompany, false), 1600-200, 575);
             company2 = greenCompany;        
         } else if(player2.getCompany() == "Pink") {
-            addObject(new Portfolio(pinkCompany, false), 1600-225, 575);
+            addObject(new Portfolio(pinkCompany, false), 1600-200, 575);
             company2 = pinkCompany;  
         }
         
