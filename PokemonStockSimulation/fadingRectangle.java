@@ -12,10 +12,14 @@ public class FadingRectangle extends Actor
     
     GreenfootImage image;
     
-    private Icon winner;
+    private String winner;
+    private GreenfootImage winnerImage;
     
-    public FadingRectangle(int x, int y, Icon winner) {
+    public FadingRectangle(int x, int y, String winner) {
         this.winner = winner;
+        if(winner == "TIE") {
+            
+        }
         
         image = new GreenfootImage(x,y);
         image.setTransparency(0);

@@ -26,7 +26,7 @@ public class EndingWorld extends World
         this.background = background;
         setBackground(background);
         
-        addObject(new FadingRectangle(1600,800, winner),800,400);
+        addObject(new FadingRectangle(1600,800, winner.getPlayer()),800,400);
     }
     
     public EndingWorld(GreenfootImage background)
@@ -39,6 +39,6 @@ public class EndingWorld extends World
         this.background = background;
         setBackground(background);
         
-        addObject(new FadingRectangle(1600,800),800,400);
+        addObject(new FadingRectangle(1600,800, "TIE"),800,400);
     }
     }
