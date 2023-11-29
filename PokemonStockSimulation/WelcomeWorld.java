@@ -25,7 +25,6 @@ public class WelcomeWorld extends World
     public WelcomeWorld()
     {    
         super(1600, 800, 1, false);
-        label = new SuperDisplayLabel();
         addObject(next, 1360, 710); 
         player1 = null;
         player2 = null;
@@ -37,16 +36,19 @@ public class WelcomeWorld extends World
     public static Icon[] getPlayers(){
         return new Icon[]{player1, player2};
     }
-    
     /**
      * Act method:
      * <p>Repeats the actions of updating labels and frames.
      */
     public void act(){
         frames();
-        if(Greenfoot.mouseClicked(next)){
-            addObject(label, 800, 50);
-            label.update("WELCOME PLAYER!");
+        if(storyFrame < 4 && Greenfoot.mouseClicked(next)){
+            storyFrame++;
+        } else if(storyFrame == 4 && player1 != null && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+        } else if(storyFrame == 5 && player2 != null && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+        } else if(storyFrame == 6) {
             storyFrame++;
         }
     }
@@ -57,36 +59,31 @@ public class WelcomeWorld extends World
      */
     public void frames(){
         if (storyFrame == 1){
-            label.update("There are some Pokemon who have decided to take up some businesses classes. Now, they think they know everything about stocks!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 2){
-            label.update("They've decided to battle each other to find out which team knows their stocks the best");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 3){
-            label.update("Will your team be able to defeat the other pair?");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 4){ //player 1 selection
-            label.update("Choose your Pokemon Player 1!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(selectTop, 1152, 145); // ttop button selection
-            addObject(selectBottom, 1152, 550); //bottom button selection
+            addObject(selectTop, 352, 498); // left button selection
+            addObject(selectBottom, 1271, 498); //right button selection
             
             if(Greenfoot.mouseClicked(selectTop)){
-                player1 = new Charmander();
+                player1 = new Squirtle();
                 // chosen charmander
                 // add the background of charmander into the world
             } else if(Greenfoot.mouseClicked(selectBottom)){
-                player1 = new Squirtle();
+                player1 = new Charmander();
                 // chosen squirtle
                 // add the background of squirtle into the world
             }
             //if selectTop is chosen, then that pokemon will appear in the world
             //if selectBottom is chosen, same thing happens 
         }else if(storyFrame == 5){ //player 2 selection
-            label.update("Choose your Pokemon Player 2!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(selectTop, 1152, 145); // top button selection
-            addObject(selectBottom, 1152, 550); //bottom button selection
+            addObject(selectTop, 280, 498); // left button selection
+            addObject(selectBottom, 1214, 498); //right button selection
             
             if(Greenfoot.mouseClicked(selectTop)){
                 player2 = new Ditto();

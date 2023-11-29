@@ -105,30 +105,18 @@ public class MyWorld extends World
     
       
         if(player1.getCompany() == "Water") {
-            addObject(new Portfolio(blueCompany), 325, 575);
+            addObject(new Portfolio(blueCompany, true), 225, 575);
             company1 = blueCompany;
         } else if(player1.getCompany() == "Fire") {
-            addObject(new Portfolio(redCompany), 325, 575);
+            addObject(new Portfolio(redCompany, true), 225, 575);
             company1 = redCompany;
-        } else if(player1.getCompany() == "Plant") {
-            addObject(new Portfolio(greenCompany), 1600-325, 575);
-            company1 = greenCompany;        
-        } else if(player1.getCompany() == "Pink") {
-            addObject(new Portfolio(pinkCompany), 1600-325, 575);
-            company1 = pinkCompany;  
         }
         
-        if(player2.getCompany() == "Water") {
-            addObject(new Portfolio(blueCompany), 325, 575);
-            company2 = blueCompany;
-        } else if(player2.getCompany() == "Fire") {
-            addObject(new Portfolio(redCompany), 325, 575);
-            company2 = redCompany;
-        } else if(player2.getCompany() == "Plant") {
-            addObject(new Portfolio(greenCompany), 1600-325, 575);
+        if(player2.getCompany() == "Plant") {
+            addObject(new Portfolio(greenCompany, false), 1600-225, 575);
             company2 = greenCompany;        
         } else if(player2.getCompany() == "Pink") {
-            addObject(new Portfolio(pinkCompany), 1600-325, 575);
+            addObject(new Portfolio(pinkCompany, false), 1600-225, 575);
             company2 = pinkCompany;  
         }
         

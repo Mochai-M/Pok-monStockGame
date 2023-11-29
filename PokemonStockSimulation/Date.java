@@ -20,6 +20,12 @@ public class Date extends Actor
         month = 0;
         day = 1;
         
+        date.setColor(Color.BLACK);
+        date.fill();
+        date.setColor(Color.WHITE);
+        date.setFont(new Font("Times New Roman", true, false, 30));
+        date.drawString(months[month] + ", " + day + ending, 10, 35);
+        
         setImage(date);
     }
     

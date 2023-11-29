@@ -31,6 +31,8 @@ public class FadingRectangle extends Actor
         if(clock > 1 && image.getTransparency() < 235) {
             image.setTransparency(image.getTransparency() + 2);
             clock = 0;
+        } else if(image.getTransparency() > 235) {
+            
         } else {
             clock++;
         }
