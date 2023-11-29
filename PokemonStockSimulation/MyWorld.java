@@ -66,7 +66,7 @@ public class MyWorld extends World
         
         setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
         
-        addObject(new LineGraph(),800,400);
+        //addObject(new LineGraph(),800,400);
         
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 151,25);
@@ -91,8 +91,8 @@ public class MyWorld extends World
         player1 = temp[0];
         player2 = temp[1];
         
-        addObject(player1, 125, 700);
-        addObject(player2, 1600-125, 700);
+        addObject(player1, 225, 700);
+        addObject(player2, 1600-225, 700);
 
         // Date Object
         addObject(new Date(), 1375, 25);
@@ -105,34 +105,42 @@ public class MyWorld extends World
     
       
         if(player1.getCompany() == "Water") {
-            addObject(new Portfolio(blueCompany), 125, 575);
+            addObject(new Portfolio(blueCompany), 325, 575);
             company1 = blueCompany;
         } else if(player1.getCompany() == "Fire") {
-            addObject(new Portfolio(redCompany), 125, 575);
+            addObject(new Portfolio(redCompany), 325, 575);
             company1 = redCompany;
         } else if(player1.getCompany() == "Plant") {
-            addObject(new Portfolio(greenCompany), 1600-125, 575);
+            addObject(new Portfolio(greenCompany), 1600-325, 575);
             company1 = greenCompany;        
         } else if(player1.getCompany() == "Pink") {
-            addObject(new Portfolio(pinkCompany), 1600-125, 575);
+            addObject(new Portfolio(pinkCompany), 1600-325, 575);
             company1 = pinkCompany;  
         }
         
         if(player2.getCompany() == "Water") {
-            addObject(new Portfolio(blueCompany), 125, 575);
+            addObject(new Portfolio(blueCompany), 325, 575);
             company2 = blueCompany;
         } else if(player2.getCompany() == "Fire") {
-            addObject(new Portfolio(redCompany), 125, 575);
+            addObject(new Portfolio(redCompany), 325, 575);
             company2 = redCompany;
         } else if(player2.getCompany() == "Plant") {
-            addObject(new Portfolio(greenCompany), 1600-125, 575);
+            addObject(new Portfolio(greenCompany), 1600-325, 575);
             company2 = greenCompany;        
         } else if(player2.getCompany() == "Pink") {
-            addObject(new Portfolio(pinkCompany), 1600-125, 575);
+            addObject(new Portfolio(pinkCompany), 1600-325, 575);
             company2 = pinkCompany;  
         }
         
         tickDown = 0;
+        
+        setBackground("BackgroundwRope.png");
+        
+        Tugrope tugrope = new Tugrope();
+        
+        tugrope.setCompanies(company1,company2);
+        
+        addObject(tugrope, 800, 700);
     }
         
        
