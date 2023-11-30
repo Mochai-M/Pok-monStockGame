@@ -48,9 +48,9 @@ public abstract class Weather extends Actor
         {
             int wide = image.getWidth()*imageSize/100;
             int high = image.getHeight()*imageSize/100;
-            image.scale(wide+300, high);
+            image.scale(wide+300, high+300);
             
-            image.setTransparency(50);
+            image.setTransparency(100);
 
             
         }

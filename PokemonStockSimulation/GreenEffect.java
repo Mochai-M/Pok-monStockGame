@@ -15,7 +15,7 @@ public class GreenEffect extends Weather
     GreenfootSound greenSound = new GreenfootSound("green.mp3");
     public GreenEffect(){
         //sets the size and length for the effect
-        super(300,100, "leaves.gif");
+        super(450,150, "leaves.gif");
         
         greenSound.setVolume(20);
         
