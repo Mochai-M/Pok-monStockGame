@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * and properly abstracts and statics certain variables for efficient code.
  * 
  * @author Mekaeel
- * @version November 14th, 2023
+ * @version November 29th, 2023
  */
 
 public abstract class Companies extends Actor

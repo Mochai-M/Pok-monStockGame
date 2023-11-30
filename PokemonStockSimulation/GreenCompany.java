@@ -2,11 +2,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class GreenCompany here.
+ * Sub class for green company that holds the specific variables used by 
+ * the green company that also draws the line from the current value to the next.
  * 
  * @author Mekaeel
- * @version November 14th
+ * @version November 29th, 2023
  */
+
 public class GreenCompany extends Companies
 {
     protected static int currentValue = 50;
