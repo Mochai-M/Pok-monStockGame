@@ -40,17 +40,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class MyWorld extends World
-{
-    // natalie 11/7/2023
-
-    //load images into a temporary array
-    //GreenfootImage[] images = new GreenfootImage[];
-    //new GreenfootImage("*add image*");
-    //do four times for each emotion
-    //icon will then be equal to new icon(images);
-    //private GreenfootImage[] images; 
-    //GreenfootImage icon1 = new GreenfootImage();
-    
+{    
     private Icon player1, player2;
     
     private Companies company1, company2;
@@ -70,8 +60,15 @@ public class MyWorld extends World
         
         setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class);
         
-        this.effectSpawnRate = effectSpawnRate;
-                
+        //sets the values at the side 
+        
+        Icon[] temp = WelcomeWorld.getPlayers();
+        player1 = temp[0];
+        player2 = temp[1];
+        
+        addObject(player1, 200, 700);
+        addObject(player2, 1600-200, 700);
+        
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 151,25);
         
@@ -81,27 +78,7 @@ public class MyWorld extends World
         Companies pinkCompany = new PinkCompany(300);
         addObject(pinkCompany, 751,25);
         
-        Companies redHeader = new FireCompany(10);
-        addObject(redHeader, 1051,25);
-        
         Companies redCompany = new FireCompany();
-        addObject(redCompany, 1775,275);
-        
-        redCompany.players = WelcomeWorld.getPlayers();
-        redCompany.setVarianceRate(stockVarianceRate);
-        
-        //sets the values at the side 
-        
-        Icon[] temp = WelcomeWorld.getPlayers();
-        player1 = temp[0];
-        player2 = temp[1];
-        
-        addObject(player1, 200, 700);
-        addObject(player2, 1600-200, 700);
-
-        // Date Object
-        addObject(new Date(worldSpeed), 1375, 25);
-        
         
         //Black Friday Object
         addObject(new BlackFriday(),600,600);
@@ -121,6 +98,17 @@ public class MyWorld extends World
             addObject(new Portfolio(pinkCompany, false), 1600-200, 575);
             company2 = pinkCompany;  
         }
+                
+        
+        Companies redHeader = new FireCompany(company1,company2);
+        addObject(redHeader, 1051,25);
+        
+        addObject(redCompany, 1775,275);
+        
+        // Objects using the variables inputted into the world function
+        addObject(new Date(worldSpeed), 1375, 25);
+        this.effectSpawnRate = effectSpawnRate;
+        redCompany.setVarianceRate(stockVarianceRate);
         
         tickDown = 0;
         
@@ -141,6 +129,8 @@ public class MyWorld extends World
         
         
         if(getObjects(Date.class).get(0).endSimulation()) {
+            
+            
             GreenfootImage finalBackground = getBackground();
             
             for(Actor a : getObjects(Actor.class)) {

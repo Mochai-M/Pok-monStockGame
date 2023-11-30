@@ -3,6 +3,7 @@ comment0.target=FadingRectangle
 comment0.text=\r\n\ Display\ function\ that\ slowly\ fades\ to\ black\ before\ showing\ who\ the\ \r\n\ final\ winner\ of\ the\ stock\ simulation\ was.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 29th\r\n
 comment1.params=x\ y\ winner
 comment1.target=FadingRectangle(int,\ int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ to\ initialize\ the\ fading\ rectangle\ with\ a\ given\ size\ and\ the\ winner\ of\ the\ simulation\r\n\ \r\n\ @int\ x\:\ size\ in\ terms\ of\ width\r\n\ @int\ y\:\ size\ in\ terms\ of\ height\r\n\ @String\ winner\:\ the\ winner\ of\ the\ simulation\ in\ terms\ of\ string\ value\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ fadingRectangle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

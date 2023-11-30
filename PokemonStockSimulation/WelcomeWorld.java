@@ -117,11 +117,11 @@ public class WelcomeWorld extends World
             addObject(changeSpeed,1200,400);
             
             if(Greenfoot.mouseClicked(changeEffect)){
-                effectSpawnRate = Integer.parseInt(Greenfoot.ask("Input new effect spawn rate. (Current one is " + effectSpawnRate + ")"));
+                effectSpawnRate = Integer.parseInt(Greenfoot.ask("Input new effect spawn rate. (Current one is " + effectSpawnRate + ") P.S. higher is less"));
             } else if(Greenfoot.mouseClicked(changeVariance)){
-                stockChangeValue = Integer.parseInt(Greenfoot.ask("Input new stock variance value. (Current one is " + stockChangeValue + ")"));
+                stockChangeValue = Integer.parseInt(Greenfoot.ask("Input new stock variance value. (Current one is " + stockChangeValue + ") P.S. higher means more possible values"));
             } else if(Greenfoot.mouseClicked(changeSpeed)){
-                worldSpeed = Integer.parseInt(Greenfoot.ask("Input new world speed. (Current one is " + worldSpeed + ")"));
+                worldSpeed = Integer.parseInt(Greenfoot.ask("Input new world speed. (Current one is " + worldSpeed + ") P.S. higher means slower"));
             }
         } else if (storyFrame == 7){
             Greenfoot.setWorld(new MyWorld(stockChangeValue,stockChangeValue,worldSpeed));

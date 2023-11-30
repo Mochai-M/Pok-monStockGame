@@ -19,6 +19,10 @@ public class WaterCompany extends Companies
     protected int iteration;
     protected greenfoot.Color color;
     
+    /**
+     * Constructor for WaterCompany that takes in an initial value to start at
+     * and also sets the other differentiating factors between this class and others
+     */
     public WaterCompany(int v) {
         super();
         iteration = 0;
@@ -47,7 +51,7 @@ public class WaterCompany extends Companies
     }
     
     /**
-     * Getter method for currentNewValue
+     * Getter method for newValue
      */
     public int getNewValue() {
         return newValue;
@@ -61,21 +65,21 @@ public class WaterCompany extends Companies
     }
     
     /**
-     * Getter method for iteration
+     * Getter method for modified
      */
     public boolean wasModified() {
         return modified;
     }
     
     /**
-     * Setter method for iteration
+     * Setter method for modified
      */
     public void resetModified() {
         modified = false;
     }
     
     /**
-     * Getter method for iteration
+     * Getter method for color
      */
     public greenfoot.Color getColor() {
         return color;
@@ -96,7 +100,7 @@ public class WaterCompany extends Companies
     }
     
     /**
-     * Setter method for currentValue
+     * Setter method for newValue
      */
     public void setNewValue(int x) {
         if( x > 535) {
@@ -109,13 +113,20 @@ public class WaterCompany extends Companies
         modified = true;
     }
     
+    /**
+     * toString method to give other functions a string value to check against
+     */
     public String toString(){
         return "Water";
     }
     
+    // images for the stock headers
     protected GreenfootImage increasing = new GreenfootImage("images/waterGood.png");
     protected GreenfootImage decreasing = new GreenfootImage("images/waterBad.png");
     
+    /**
+     * Changes the stock header based on how the stock has changed from its initial price
+     */
     public void changeInValue() {
         if(currentValue > previousValue) {
             setImage(decreasing);

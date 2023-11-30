@@ -8,4 +8,5 @@ comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Portfolio\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ updateValue()
+comment3.text=\r\n\ Method\ to\ update\ the\ displayed\ stock\ value\r\n
 numComments=4
