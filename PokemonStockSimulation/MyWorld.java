@@ -56,22 +56,21 @@ public class MyWorld extends World
     
     private int tickDown;
     
+    private int effectSpawnRate;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
+    public MyWorld(int effectSpawnRate, int stockVarianceRate, int worldSpeed)
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
         setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
         
-        //addObject(new LineGraph(),800,400);
-        
-        Companies redCompany = new FireCompany();
-        addObject(redCompany, 1775,275);
-        
+        this.effectSpawnRate = effectSpawnRate;
+                
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 151,25);
         
@@ -84,7 +83,11 @@ public class MyWorld extends World
         Companies redHeader = new FireCompany(10);
         addObject(redHeader, 1051,25);
         
+        Companies redCompany = new FireCompany();
+        addObject(redCompany, 1775,275);
+        
         redCompany.players = WelcomeWorld.getPlayers();
+        redCompany.setVarianceRate(stockVarianceRate);
         
         //sets the values at the side 
         
@@ -96,14 +99,11 @@ public class MyWorld extends World
         addObject(player2, 1600-200, 700);
 
         // Date Object
-        addObject(new Date(), 1375, 25);
-        
+        addObject(new Date(worldSpeed), 1375, 25);
         
         
         //Black Friday Object
         addObject(new BlackFriday(),600,600);
-        
-    
       
         if(player1.getCompany() == "Water") {
             addObject(new Portfolio(blueCompany, true), 200, 575);
@@ -154,18 +154,15 @@ public class MyWorld extends World
                Greenfoot.setWorld(new EndingWorld(finalBackground, player2));
             } else {
                 Greenfoot.setWorld(new EndingWorld(finalBackground));
-            }
-                
-            
+            }           
         }
-        
     }
     
     public void addWeather() {
         
         //spawns random weather effects 
         tickDown++;
-        if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
+        if(Greenfoot.getRandomNumber(effectSpawnRate-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
             if(weatherType == 0){
                 addObject(new BlueEffect(), 600, 300);

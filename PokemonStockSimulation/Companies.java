@@ -14,10 +14,12 @@ public abstract class Companies extends Actor
     protected static int clock = 0;
     protected static int lineWidth = 156;
     
+    protected static int varianceRate;
+    
     protected static Icon[] players;
     
-    public static GreenfootImage points = new GreenfootImage(lineWidth,550);
-    public GreenfootImage finishedPoints;
+    protected static GreenfootImage points = new GreenfootImage(lineWidth,550);
+    protected GreenfootImage finishedPoints;
 
     
     public Companies() {
@@ -36,11 +38,11 @@ public abstract class Companies extends Actor
             int changeType = Greenfoot.getRandomNumber(2); 
             //increase the stock price
             if(changeType == 0){
-               setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(40)); 
+               setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(varianceRate)); 
             }
             //decrease the stock price
             else{
-                setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(40));
+                setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(varianceRate));
             }
         }
         
@@ -116,5 +118,9 @@ public abstract class Companies extends Actor
     }
     
     public abstract String toString();
+    
+    public void setVarianceRate(int x) {
+        varianceRate = x;
+    }
 
 }

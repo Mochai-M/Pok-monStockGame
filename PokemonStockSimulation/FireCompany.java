@@ -32,6 +32,7 @@ public class FireCompany extends Companies
     
     public FireCompany(int v) {
         header = true;
+        clock = 0;
     }
     
     /**

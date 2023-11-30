@@ -18,7 +18,15 @@ public class FadingRectangle extends Actor
     public FadingRectangle(int x, int y, String winner) {
         this.winner = winner;
         if(winner == "TIE") {
-            
+            winnerImage = new GreenfootImage("tie.png");
+        } else if(winner == "Bulbasaur") {
+            winnerImage = new GreenfootImage("bulbasaurWins.png");
+        } else if(winner == "Squirtle") {
+            winnerImage = new GreenfootImage("squirtleWins.png");
+        } else if(winner == "Charmander") {
+            winnerImage = new GreenfootImage("charmanderWins.png");
+        } else if(winner == "Ditto") {
+            winnerImage = new GreenfootImage("dittoWins.png");
         }
         
         image = new GreenfootImage(x,y);
@@ -36,11 +44,12 @@ public class FadingRectangle extends Actor
      */
     public void act()
     {
-        if(clock > 1 && image.getTransparency() < 235) {
+        if(clock > 1 && image.getTransparency() < 251) {
             image.setTransparency(image.getTransparency() + 2);
             clock = 0;
-        } else if(image.getTransparency() > 235) {
-            //draw the new image onto the world thing
+        } else if(image.getTransparency() > 251) {
+            image.setTransparency(255);
+            image.drawImage(winnerImage,0,0);
         } else {
             clock++;
         }

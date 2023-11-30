@@ -23,6 +23,16 @@ public class Button extends Actor
         image.drawString(text, 20, 35);
         setImage(image);
     }
+    
+    public Button (String text, int size){
+        image = new GreenfootImage (size, 54);
+        image.setColor(Color.BLACK);
+        image.fill();
+        image.setColor (Color.WHITE);
+        image.setFont(new Font("Times New Roman", true, false, 30));
+        image.drawString(text, 20, 35);
+        setImage(image);
+    }
 
     /**
      * Act - do whatever the Button wants to do. This method is called whenever
