@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=BlackFriday
-comment0.text=\r\n\ <p>\ The\ Black\ Friday\ Class\ is\ a\ special\ weather\ effect,\ when\ called,\ it\ will\ drop\ all\ the\ stock\ prices\ by\ 100\ </p>\r\n\ \r\n\ Liyu\ Xiao\r\n\ @Nov\ 27\ 2023\r\n\ \r\n\ \r\n\ Sound\ Credits\:\ https\://www.zedge.net/ringtone/5c2f1209-403a-4326-96e3-179ee944898d\r\n
+comment0.text=\n\ <p>\ The\ Black\ Friday\ Class\ is\ a\ special\ weather\ effect,\ when\ called,\ it\ will\ drop\ all\ the\ stock\ prices\ by\ 100\ </p>\n\ \n\ Liyu\ Xiao\n\ @Nov\ 27\ 2023\n\ \n\ \n\ Sound\ Credits\:\ https\://www.zedge.net/ringtone/5c2f1209-403a-4326-96e3-179ee944898d\n
 comment1.params=
 comment1.target=BlackFriday()
-comment1.text=\r\n\ The\ constructor\ for\ the\ black\ Friday\ Class\r\n\ <p>\ Sets\ the\ volume\ for\ the\ sound\ and\ scales\ the\ image\ </p>\r\n
+comment1.text=\n\ The\ constructor\ for\ the\ black\ Friday\ Class\n\ <p>\ Sets\ the\ volume\ for\ the\ sound\ and\ scales\ the\ image\ </p>\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ <p>\ The\ act\ method\ for\ black\ Friday,\ On\ this\ day,\ all\ stocks\ drop\ by\ 100\ </p>\r\n
+comment2.text=\n\ <p>\ The\ act\ method\ for\ black\ Friday,\ On\ this\ day,\ all\ stocks\ drop\ by\ 100\ </p>\n
 numComments=3

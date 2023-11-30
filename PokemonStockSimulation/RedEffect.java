@@ -18,9 +18,9 @@ public class RedEffect extends Weather
     
     public RedEffect(){
         //sets the size and length for the effect
-        super(450,200, "FireEffect.gif");
+        super(600,200, "fire.gif");
         
-        //fireSound.setVolume(20);
+        fireSound.setVolume(20);
     }
     
     
@@ -28,6 +28,6 @@ public class RedEffect extends Weather
     public void act()
     {
         super.act("Fire", "Plant");
-        //fireSound.play();
+        fireSound.play();
     }
 }

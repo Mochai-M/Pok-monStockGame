@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * <p> Fire Effect Image Credits link : https://martincrownover.com/gamemaker-examples-tutorials/particles-fire/ </p>
  * <p> Water Effect Image Credits link: https://forums.synfig.org/t/still-not-sorted-out-falling-rain/1927 </p>
  * <p> Green Effect Image Credits link: https://tenor.com/view/leaves-gif-16219912 </p> 
- * <p> Pink Effect Image Credits link: https://www.pinterest.ca/pin/329114685245117235/ </p>
+ * <p> Pink Effect Image Credits link: https://tenor.com/view/hearts-pink-hearts-going-up-gif-17654443 </p>
  * 
  * <
  * 
@@ -26,6 +26,7 @@ import java.util.ArrayList;
  * <p> Water Effect Sound Credits link: https://mixkit.co/free-sound-effects/fire/ </p>
  * <p> Green Effect Sound Credits link: https://mixkit.co/free-sound-effects/wind/ </p>
  * <p> Pink Effect Sound Credits link: https://pixabay.com/sound-effects/search/fairy/ </p>
+ * 
  * 
  * 
  * 
@@ -177,7 +178,6 @@ public class MyWorld extends World
             }
             else{
                 addObject(new PinkEffect(), 600, 300);
-                addObject(new PinkEffect(), 1500, 300);
                 tickDown = 0;
             }
         }

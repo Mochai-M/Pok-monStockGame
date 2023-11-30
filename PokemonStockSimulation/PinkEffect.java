@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @Nov 28 2023
  * 
  * 
- * image credits: https://www.pinterest.ca/pin/329114685245117235/
+ * image credits: https://tenor.com/view/hearts-pink-hearts-going-up-gif-17654443
  * 
  * 
  * 
@@ -20,10 +20,10 @@ public class PinkEffect extends Weather
     
     public PinkEffect(){
         //sets the size and length for the effect
-        super(250,100, "fairy.gif");
+        super(200,100, "fairy.gif");
         
         
-        pinkSound.setVolume(20);
+        pinkSound.setVolume(40);
     }
     
     
