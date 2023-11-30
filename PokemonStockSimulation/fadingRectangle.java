@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class fadingRectangle here.
+ * Display function that slowly fades to black before showing who the 
+ * final winner of the stock simulation was.
  * 
  * @author Mekaeel
  * @version November 29th

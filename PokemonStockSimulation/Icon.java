@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Effect Class
  * 
- * @Natalie Huang, Liyu Xiao,Wendy Luo
+ * @Natalie Huang, Liyu Xiao, Wendy Luo
  * @November 28
  */
 public abstract class Icon extends Actor

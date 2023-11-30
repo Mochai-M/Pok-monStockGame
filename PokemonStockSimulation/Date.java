@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Date here.
+ * A class that keeps track of the date at the current point in time and
+ * shows the month and day in the top corner.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mekaeel
+ * @version November 29th
  */
 public class Date extends Actor
 {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Icon
-comment0.text=\r\n\ Effect\ Class\r\n\ \r\n\ @Natalie\ Huang,\ Liyu\ Xiao,Wendy\ Luo\r\n\ @November\ 28\r\n
+comment0.text=\r\n\ Effect\ Class\r\n\ \r\n\ @Natalie\ Huang,\ Liyu\ Xiao,\ Wendy\ Luo\r\n\ @November\ 28\r\n
 comment1.params=x
 comment1.target=Icon(java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ the\ Icon\ Class\r\n\ <p>\ Includes\ looping\ through\ the\ photos\ and\ scaling\ each\ one\ to\ make\ sure\ they\ fit\ \r\n\ well\ on\ the\ screen\r\n

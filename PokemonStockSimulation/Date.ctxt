@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Date
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Date\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ class\ that\ keeps\ track\ of\ the\ date\ at\ the\ current\ point\ in\ time\ and\r\n\ shows\ the\ month\ and\ day\ in\ the\ top\ corner.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 29th\r\n
 comment1.params=worldSpeed
 comment1.target=Date(int)
 comment2.params=

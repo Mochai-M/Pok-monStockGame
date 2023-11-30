@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Portfolio
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Portfolio\ here.\r\n\ \r\n\ @author\ Mekaeel\ Malik\r\n\ @version\ November\ 27th\r\n
+comment0.text=\r\n\ Displays\ the\ current\ value\ of\ the\ stock\ entered\ into\ the\ parameters.\r\n\ \r\n\ @\ Companies\ c\:\ the\ company\ that\ will\ have\ their\ stock\ price\ displayed\r\n\ @\ boolean\ centerOnLeft\:\ differentiator\ to\ decide\ which\ side\ of\ the\ screen\ the\ price\ should\ be\ centered\ on\r\n\ \r\n\ @author\ Mekaeel\ Malik\r\n\ @version\ November\ 27th\r\n
 comment1.params=c\ centerOnLeft
 comment1.target=Portfolio(Companies,\ boolean)
 comment2.params=

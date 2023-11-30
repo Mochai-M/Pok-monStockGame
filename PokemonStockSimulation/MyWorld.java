@@ -67,7 +67,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
+        setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class);
         
         this.effectSpawnRate = effectSpawnRate;
                 
@@ -125,9 +125,7 @@ public class MyWorld extends World
         
         setBackground("BackgroundwRope.png");
         
-        Tugrope tugrope = new Tugrope();
-        
-        tugrope.setCompanies(company1,company2);
+        Tugrope tugrope = new Tugrope(company1,company2);
         
         addObject(tugrope, 800, 700);
     }

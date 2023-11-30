@@ -1,7 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Portfolio here.
+ * Displays the current value of the stock entered into the parameters.
+ * 
+ * @ Companies c: the company that will have their stock price displayed
+ * @ boolean centerOnLeft: differentiator to decide which side of the screen the price should be centered on
  * 
  * @author Mekaeel Malik
  * @version November 27th

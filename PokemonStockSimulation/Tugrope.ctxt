@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Tugrope
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Tugrope\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Tugrope()
+comment0.text=\r\n\ Displays\ the\ difference\ between\ the\ two\ stocks\ through\ a\ game\ of\ tug\ of\ war.\r\n\ \r\n\ @\ Companies\ uno\:\ Company\ of\ the\ pokemon\ on\ the\ left\r\n\ @\ Companies\ dos\:\ Company\ of\ the\ pokemon\ on\ the\ right\r\n\ \r\n\ @author\ Mekaeel\ \r\n\ @version\ November\ 29th\r\n
+comment1.params=uno\ dos
+comment1.target=Tugrope(Companies,\ Companies)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Tugrope\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
@@ -10,6 +10,4 @@ comment3.params=
 comment3.target=void\ moveTheKnot()
 comment4.params=
 comment4.target=int\ moveToPoint()
-comment5.params=uno\ dos
-comment5.target=void\ setCompanies(Companies,\ Companies)
-numComments=6
+numComments=5

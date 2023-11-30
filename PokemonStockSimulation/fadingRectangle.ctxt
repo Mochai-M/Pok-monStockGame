@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FadingRectangle
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ fadingRectangle\ here.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 29th\r\n
+comment0.text=\r\n\ Display\ function\ that\ slowly\ fades\ to\ black\ before\ showing\ who\ the\ \r\n\ final\ winner\ of\ the\ stock\ simulation\ was.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 29th\r\n
 comment1.params=x\ y\ winner
 comment1.target=FadingRectangle(int,\ int,\ java.lang.String)
 comment2.params=
