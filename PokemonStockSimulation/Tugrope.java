@@ -24,7 +24,7 @@ public class Tugrope extends Actor
         company2 = dos;
         
         // Set the image of the tug of war rope
-        rope = new GreenfootImage("Tugknot.png");
+        rope = new GreenfootImage("Tugknot1.png");
         
         // Set the image for the Tugrope actor
         setImage(rope);

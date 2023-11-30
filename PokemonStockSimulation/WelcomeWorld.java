@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WelcomeWorld extends World
 {
-    private SuperDisplayLabel label;
     Button next = new Button("Next!");
     private GreenfootImage image;
     private int storyFrame = 0; 
@@ -21,9 +20,9 @@ public class WelcomeWorld extends World
     private int stockChangeValue = 40;
     private int worldSpeed = 10;
     
-    private Button changeEffect = new Button("Effect Spawn Rate",280);
-    private Button changeVariance = new Button("Stock Variance Value",320);
-    private Button changeSpeed = new Button("World Speed Rate",280);
+    private Button changeEffect = new Button("Effect Spawn Rate",300);
+    private Button changeVariance = new Button("Stock Variance Value",340);
+    private Button changeSpeed = new Button("World Speed Rate",300);
     
     /**
      * Constructor for objects of class WelcomeWorld.

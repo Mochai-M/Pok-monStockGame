@@ -19,7 +19,7 @@ public class BottomSelectionButton extends Actor
         image.setColor(Color.BLACK);
         image.fill();
         image.setColor (Color.WHITE);
-        image.setFont(new Font("Times New Roman", true, false, 30));
+        image.setFont(new Font("Arial", true, false, 30));
         image.drawString(text, 20, 35);
         setImage(image);
     }

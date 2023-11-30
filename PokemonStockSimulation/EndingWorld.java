@@ -12,6 +12,8 @@ public class EndingWorld extends World
     private GreenfootImage background;
     private GreenfootImage start;
     
+    private FadingRectangle endScreen;
+    
     /**
      * Constructor for objects of class EndingWorld.
      * 
@@ -21,12 +23,13 @@ public class EndingWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1);
         
-        setPaintOrder(SuperDisplayLabel.class, FadingRectangle.class);
+        setPaintOrder(FadingRectangle.class);
         
         this.background = background;
         setBackground(background);
         
-        addObject(new FadingRectangle(1600,800, winner.getPlayer()),800,400);
+        endScreen = new FadingRectangle(1600,800, winner.getPlayer());
+        addObject(endScreen,800,400);
     }
     
     public EndingWorld(GreenfootImage background)
@@ -34,11 +37,11 @@ public class EndingWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1);
         
-        setPaintOrder(SuperDisplayLabel.class, FadingRectangle.class);
+        setPaintOrder(FadingRectangle.class);
         
         this.background = background;
         setBackground(background);
         
         addObject(new FadingRectangle(1600,800, "TIE"),800,400);
     }
-    }
+}

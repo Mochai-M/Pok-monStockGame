@@ -18,6 +18,12 @@ public class FadingRectangle extends Actor
     // Variable to store the winner'simage
     private GreenfootImage winnerImage;
     
+    // Variable for winner sound
+    private GreenfootSound winSound = new GreenfootSound("winSound.mp3");
+    
+    // Variable to make sure the sound only plays once
+    private boolean played = false;
+    
     /**
      * Constructor to initialize the fading rectangle with a given size and the winner of the simulation
      * 
@@ -26,6 +32,7 @@ public class FadingRectangle extends Actor
      * @String winner: the winner of the simulation in terms of string value
      */ 
     public FadingRectangle(int x, int y, String winner) {
+        winSound.setVolume(20);
         
         // Set the winner's image based on the provided winner parameter
         if (winner.equals("TIE")) {
@@ -68,10 +75,18 @@ public class FadingRectangle extends Actor
         else if (image.getTransparency() > 251) {
             image.setTransparency(255);
             image.drawImage(winnerImage, 0, 0);
+            playSound();
         } 
         // Increment the clock if fading is still in progress
         else {
             clock++;
+        }
+    }
+    
+    public void playSound() {
+        if(played == false) {
+            winSound.play();
+            played = true;
         }
     }
 }

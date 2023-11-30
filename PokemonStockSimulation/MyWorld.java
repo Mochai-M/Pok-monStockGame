@@ -22,6 +22,8 @@ import java.util.ArrayList;
  * <p> Green Stock Header Credits (Edited): https://www.vecteezy.com/vector-art/626625-green-leaf-logo-vector
  * <p> Pink Stock Header Credits (Edited): Blackpink (Logo), Roblox (Logo)
  * <p> Pokemon Coin Icon: http://www.reddit.com/r/pokemon/comments/2tup93/how_do_you_pronounce_the_pokemon_currency_symbol/
+ * <p> Red flag: http://clipart-library.com/clipart/BTaAkr4Gc.htm
+ * <p> Tugknot + rope (edited): https://www.rawpixel.com/image/406489/free-illustration-psd-rope-nautical-chain
  * 
  * <p> Credits for Sound </p>
  * 
@@ -29,7 +31,7 @@ import java.util.ArrayList;
  * <p> Water Effect Sound Credits link: https://mixkit.co/free-sound-effects/fire/ </p>
  * <p> Green Effect Sound Credits link: https://mixkit.co/free-sound-effects/wind/ </p>
  * <p> Pink Effect Sound Credits link: https://pixabay.com/sound-effects/search/fairy/ </p>
- * 
+ * <p> Pokemon win sound effect: https://www.myinstants.com/en/instant/pokemon-level-up-sound-44389/
  * 
  * 
  * 
@@ -37,7 +39,7 @@ import java.util.ArrayList;
  * 
  * <p> KNOWN BUGS </p>
  * <p> If ran at a high speeds, the effects will slow down the simulation and will lag the simulation </p>
- * 
+ * <p> Sound card error causing the fire sound effect to not play, should be resolved on a different computer
  * 
  * @author Mekaeel Malik, Natalie Huang, Liyu Xiao
  * @version November 29th
@@ -61,7 +63,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
-        setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class);
+        setPaintOrder(Weather.class, Portfolio.class, Date.class, Icon.class, Companies.class);
         
         //sets the values at the side 
         
@@ -115,11 +117,11 @@ public class MyWorld extends World
         
         tickDown = 0;
         
-        setBackground("BackgroundwRope.png");
+        setBackground("background.png");
         
         Tugrope tugrope = new Tugrope(company1,company2);
         
-        addObject(tugrope, 800, 700);
+        addObject(tugrope, 800, 705);
     }
         
        
@@ -154,7 +156,10 @@ public class MyWorld extends World
         
         //spawns random weather effects 
         tickDown++;
-        if(Greenfoot.getRandomNumber(effectSpawnRate-tickDown) == 0){
+        if(effectSpawnRate <= tickDown) {
+            tickDown = 0;
+        }
+        if(Greenfoot.getRandomNumber(effectSpawnRate - tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
             if(weatherType == 0){
                 addObject(new BlueEffect(), 600, 300);

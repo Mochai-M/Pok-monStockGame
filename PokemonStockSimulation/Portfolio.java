@@ -27,7 +27,7 @@ public class Portfolio extends Actor
         
         // Initialize the displayValue image
         displayValue = new GreenfootImage(400, 50);
-        displayValue.setFont(new Font("Times New Roman", false, false, 30));
+        displayValue.setFont(new Font("Arial", true, false, 30));
     }
     
     /**

@@ -36,7 +36,7 @@ public class Date extends Actor
         date.setColor(Color.BLACK);
         date.fill();
         date.setColor(Color.WHITE);
-        date.setFont(new Font("Times New Roman", true, false, 30));
+        date.setFont(new Font("Arial", true, false, 30));
         
         // Determine the suffix for the day (e.g., 1st, 2nd, 3rd, 4th)
         if (day == 1 || day == 21 || day == 31) {
@@ -88,7 +88,6 @@ public class Date extends Actor
         date.setColor(Color.BLACK);
         date.fill();
         date.setColor(Color.WHITE);
-        date.setFont(new Font("Times New Roman", true, false, 30));
         date.drawString(months[month] + ", " + day + ending, 10, 35);
         
         // Set the updated image
