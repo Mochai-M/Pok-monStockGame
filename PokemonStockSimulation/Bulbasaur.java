@@ -21,23 +21,14 @@ public class Bulbasaur extends Icon
      */
     public void act()
     {
-        /**
-         * setImage("Bulbasaur2.png");
-        GreenfootImage bulbasaurImage;
-        int stockPrice = GreenCompany.getCurrentValue();
-        if(stockPrice > 75){
-            bulbasaurImage = new GreenfootImage("Bulbasaur0.png"); //happy bulbasaur
-            setImage(bulbasaurImage);
-        }else if (stockPrice < 30){
-            bulbasaurImage = new GreenfootImage("Bulbasaur1.png"); //pissed off/angry 
-            setImage(bulbasaurImage);
-        }else if (stockPrice < 50){
-            bulbasaurImage = new GreenfootImage("Bulbasaur3.png"); //sad 
-            setImage(bulbasaurImage);
-        }else {
-            bulbasaurImage = new GreenfootImage("Bulbasaur4.png"); //normal bulbasaur
-            setImage(bulbasaurImage);
-        }
-         */
+        super.act("Plant");
+    }
+    
+    public String getCompany(){
+        return "Plant";
+    }
+    
+    public String getPlayer() {
+        return "Bulbasaur";
     }
 }

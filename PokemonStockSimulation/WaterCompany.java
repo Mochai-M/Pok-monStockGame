@@ -11,18 +11,20 @@ public class WaterCompany extends Companies
 {
     protected static int currentValue = 50;
     protected static int newValue;
-    protected static int previousValue = 100;
-    protected int iteration;
+    protected static int previousValue = 200;
+    protected static boolean modified;
     
+    protected int iteration;
     protected greenfoot.Color color;
     
     public WaterCompany(int v) {
         super();
         iteration = 0;
+        modified = false;
         
         currentValue = v;
-        
-        color = Color.BLUE;
+
+        color = new Color(55,123,191);;
     }
     
     /**
@@ -59,6 +61,20 @@ public class WaterCompany extends Companies
     /**
      * Getter method for iteration
      */
+    public boolean wasModified() {
+        return modified;
+    }
+    
+    /**
+     * Setter method for iteration
+     */
+    public void resetModified() {
+        modified = false;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
     public greenfoot.Color getColor() {
         return color;
     }
@@ -78,13 +94,6 @@ public class WaterCompany extends Companies
     }
     
     /**
-     * Setter method for previousValue
-     */
-    public void updatePreviousValue(int x) {
-        previousValue = x;
-    }
-    
-    /**
      * Setter method for currentValue
      */
     public void setNewValue(int x) {
@@ -95,6 +104,7 @@ public class WaterCompany extends Companies
         } else {
             newValue = x;
         }
+        modified = true;
     }
     
     public String toString(){

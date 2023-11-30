@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Companies here.
+ * Super class for each company that holds the functions used by all companies
+ * and properly abstracts and statics certain variables for efficient code.
  * 
  * @author Mekaeel
  * @version November 14th, 2023
@@ -10,61 +11,46 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Companies extends Actor
 {   
     protected int spawnPoint = 1775;
-    protected int clock;
+    protected static int clock = 0;
     protected static int lineWidth = 156;
-    protected boolean modified = false;
     
-    public static GreenfootImage points = new GreenfootImage(lineWidth,550);
-    public GreenfootImage finishedPoints;
+    protected static int varianceRate;
+    
+    protected static Icon[] players;
+    
+    protected static GreenfootImage points = new GreenfootImage(lineWidth,550);
+    protected GreenfootImage finishedPoints;
 
     
     public Companies() {
-        clock = 0;
     }
     
     public void act() {
-        clock++;
         
-        if(clock >= 50) {
-            nextPoint();
-            clock = 0;
+        if(clock == 48 && getIteration() == 0) {
+            nextPoint();            
         }
     }
     
-    public void nextPoint() {        
-        if(getIteration() == 0 || getClass() != FireCompany.class) {         
-            if(modified == false) {
-                //Determines whether to randomly increase of randomly decrease the stock price
-                int changeType = Greenfoot.getRandomNumber(2); 
-                //increase the stock price
-                if(changeType == 0){
-                   setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(30)); 
-                }
-                //decrease the stock price
-                else{
-                    setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(30));
-                }
+    public void nextPoint() {  
+        if(wasModified() == false) {
+            //Determines whether to randomly increase of randomly decrease the stock price
+            int changeType = Greenfoot.getRandomNumber(2); 
+            //increase the stock price
+            if(changeType == 0){
+               setNewValue(getCurrentValue()-Greenfoot.getRandomNumber(varianceRate)); 
             }
-            
-            newPoint(0,getCurrentValue(),101,getNewValue());
-            
-            updateCurrentValue(getNewValue());
-            
-            if(getClass() == FireCompany.class) {
-                finishedPoints = new GreenfootImage(getImage());
-                
-                points = new GreenfootImage(lineWidth,550);
-                
-                setImage(finishedPoints);
+            //decrease the stock price
+            else{
+                setNewValue(getCurrentValue()+Greenfoot.getRandomNumber(varianceRate));
             }
-            
-            if(getClass() == FireCompany.class) {
-                ((MyWorld)getWorld()).addObject(new FireCompany(),spawnPoint,275);
-            }
-            
-            modified = false;
         }
-        incrementIteration();
+        
+        newPoint(0,getCurrentValue(),101,getNewValue());
+        
+        updateCurrentValue(getNewValue());
+        
+        resetModified();
     }
       
     public abstract void updateCurrentValue(int x);
@@ -75,6 +61,10 @@ public abstract class Companies extends Actor
     
     public abstract void setNewValue(int x);
     
+    public abstract boolean wasModified();
+    
+    public abstract void resetModified();
+    
     public abstract int getIteration();
     
     public abstract greenfoot.Color getColor();
@@ -82,6 +72,22 @@ public abstract class Companies extends Actor
     public abstract void incrementIteration();
     
     public void newPoint(int x1, int y1, int x2, int y2) {
+        if(players[0].getCompany() == toString() || players[1].getCompany() == toString()) {
+            points.setColor(Color.BLACK);
+            
+            points.drawLine(x1 + 3,y1,x2 + 3,y2);
+            points.drawLine(x1 - 3,y1,x2 - 3,y2);
+            
+            points.drawLine(x1,y1 + 3,x2,y2 + 3);
+            points.drawLine(x1,y1 - 3,x2,y2 - 3);
+            
+            points.drawLine(x1 + 4,y1,x2 + 4,y2);
+            points.drawLine(x1 - 4,y1,x2 - 4,y2);
+            
+            points.drawLine(x1,y1 + 4,x2,y2 + 4);
+            points.drawLine(x1,y1 - 4,x2,y2 - 4);
+        }
+        
         points.setColor(getColor());
         
         points.drawLine(x1,y1,x2,y2);
@@ -100,12 +106,10 @@ public abstract class Companies extends Actor
     }
     
     public void increaseValue(int x) {
-        modified = true;
         setNewValue(getNewValue() - x);
     }
     
     public void decreaseValue(int x){
-        modified = true;
         setNewValue(getNewValue() + x);
     }
     
@@ -114,5 +118,9 @@ public abstract class Companies extends Actor
     }
     
     public abstract String toString();
+    
+    public void setVarianceRate(int x) {
+        varianceRate = x;
+    }
 
 }

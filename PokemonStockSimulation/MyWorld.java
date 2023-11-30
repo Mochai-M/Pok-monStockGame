@@ -1,7 +1,39 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
- * Write a description of class MyWorld here.
+ *  
+ * <p> Pokemon Stock Simulation watch as two pokemon battle it out through the stock market!  </p>
+ * 
+ * 
+ * <p> Key Features: Weather effects (increase decrease the stock prices), Portfolios (shows how well the pokemon's company is doing),
+ * Icons (show the emotions each pokemon has depending on the price of their stocks), Stock indicators (show whether stock is rising or 
+ * dropping for the given company), Stock Graphs (How the stocks are shown to go up and down on the screen) </p>
+ * 
+ * 
+ * <p> Credits for Images </p>
+ * 
+ * <p> Fire Effect Image Credits link : https://martincrownover.com/gamemaker-examples-tutorials/particles-fire/ </p>
+ * <p> Water Effect Image Credits link: https://forums.synfig.org/t/still-not-sorted-out-falling-rain/1927 </p>
+ * <p> Green Effect Image Credits link: https://tenor.com/view/leaves-gif-16219912 </p> 
+ * <p> Pink Effect Image Credits link: https://www.pinterest.ca/pin/329114685245117235/ </p>
+ * 
+ * <
+ * 
+ * <p> Credits for Sound </p>
+ * 
+ * <p> Fire Effect Sound Credits link: https://mixkit.co/free-sound-effects/rain/ </p>
+ * <p> Water Effect Sound Credits link: https://mixkit.co/free-sound-effects/fire/ </p>
+ * <p> Green Effect Sound Credits link: https://mixkit.co/free-sound-effects/wind/ </p>
+ * <p> Pink Effect Sound Credits link: https://pixabay.com/sound-effects/search/fairy/ </p>
+ * 
+ * 
+ * 
+ * 
+ * 
+ * <p> KNOWN BUGS </p>
+ * <p> If ran at a high speeds, the effects will slow down the simulation and will lag the simulation </p>
+ * 
  * 
  * @author Mekaeel Malik, Natalie Huang, Liyu Xiao
  * @version 1.0
@@ -19,19 +51,26 @@ public class MyWorld extends World
     //GreenfootImage icon1 = new GreenfootImage();
     
     private Icon player1, player2;
+    
+    private Companies company1, company2;
+    
+    private int tickDown;
+    
+    private int effectSpawnRate;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
+    public MyWorld(int effectSpawnRate, int stockVarianceRate, int worldSpeed)
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1600, 800, 1, false);
         
         setPaintOrder(Portfolio.class, Date.class, Icon.class, Companies.class, LineGraph.class);
         
-        addObject(new LineGraph(),800,400);
-        
+        this.effectSpawnRate = effectSpawnRate;
+                
         Companies blueCompany = new WaterCompany(100);
         addObject(blueCompany, 151,25);
         
@@ -47,38 +86,75 @@ public class MyWorld extends World
         Companies redCompany = new FireCompany();
         addObject(redCompany, 1775,275);
         
+        redCompany.players = WelcomeWorld.getPlayers();
+        redCompany.setVarianceRate(stockVarianceRate);
+        
         //sets the values at the side 
         
         Icon[] temp = WelcomeWorld.getPlayers();
         player1 = temp[0];
         player2 = temp[1];
-        addObject(player1, 125, 700);
-        addObject(player2, 1600-125, 700);
+        
+        addObject(player1, 200, 700);
+        addObject(player2, 1600-200, 700);
 
         // Date Object
-        addObject(new Date(), 1375, 25);
+        addObject(new Date(worldSpeed), 1375, 25);
         
-        // Portfolio value display
-        /*
-        if(c == "Water") {
-            company = (Companies)getWorld().getObjects(WaterCompany.class).get(0);
-        } else if(c == "Fire") {
-            company = (Companies)getWorld().getObjects(FireCompany.class).get(0);
-        } else if(c == "Plant") {
-            company = (Companies)getWorld().getObjects(GreenCompany.class).get(0);
-        } else if(c == "Pink") {
-            company = (Companies)getWorld().getObjects(PinkCompany.class).get(0);
+        
+        //Black Friday Object
+        addObject(new BlackFriday(),600,600);
+      
+        if(player1.getCompany() == "Water") {
+            addObject(new Portfolio(blueCompany, true), 200, 575);
+            company1 = blueCompany;
+        } else if(player1.getCompany() == "Fire") {
+            addObject(new Portfolio(redCompany, true), 200, 575);
+            company1 = redCompany;
         }
-        */
-       
-        addObject(new Portfolio(getObjects(FireCompany.class).get(0)), 125, 575);
-        addObject(new Portfolio(getObjects(PinkCompany.class).get(0)), 1600-125, 575);
+        
+        if(player2.getCompany() == "Plant") {
+            addObject(new Portfolio(greenCompany, false), 1600-200, 575);
+            company2 = greenCompany;        
+        } else if(player2.getCompany() == "Pink") {
+            addObject(new Portfolio(pinkCompany, false), 1600-200, 575);
+            company2 = pinkCompany;  
+        }
+        
+        tickDown = 0;
+        
+        setBackground("BackgroundwRope.png");
+        
+        Tugrope tugrope = new Tugrope();
+        
+        tugrope.setCompanies(company1,company2);
+        
+        addObject(tugrope, 800, 700);
     }
-    int tickDown = 0;
+        
+       
+    
     
     public void act() {
         if(getObjects(Weather.class).size() == 0) {
             addWeather();
+        }
+        
+        
+        if(getObjects(Date.class).get(0).endSimulation()) {
+            GreenfootImage finalBackground = getBackground();
+            
+            for(Actor a : getObjects(Actor.class)) {
+                finalBackground.drawImage(a.getImage(),a.getX()-(a.getImage().getWidth()/2),a.getY()-(a.getImage().getHeight()/2));
+                removeObject(a);
+            }
+            if(company1.getValue() > company2.getValue()) {
+                Greenfoot.setWorld(new EndingWorld(finalBackground, player1));
+            } else if(company2.getValue() > company1.getValue()) {
+               Greenfoot.setWorld(new EndingWorld(finalBackground, player2));
+            } else {
+                Greenfoot.setWorld(new EndingWorld(finalBackground));
+            }           
         }
     }
     
@@ -86,30 +162,23 @@ public class MyWorld extends World
         
         //spawns random weather effects 
         tickDown++;
-        if(Greenfoot.getRandomNumber(1000-tickDown) == 0){
+        if(Greenfoot.getRandomNumber(effectSpawnRate-tickDown) == 0){
             int weatherType = Greenfoot.getRandomNumber(4); 
             if(weatherType == 0){
-                addObject(new BlueEffect(), 0, 300);
-                addObject(new BlueEffect(), 900, 300);
-                addObject(new BlueEffect(), 1500, 300);
+                addObject(new BlueEffect(), 600, 300);
                 
                 tickDown = 0;
             }
             else if(weatherType == 1){
-                addObject(new GreenEffect(), 0, 300);
-                addObject(new GreenEffect(), 900, 300);
-                addObject(new GreenEffect(), 1500, 300);
+                addObject(new GreenEffect(), 600, 300);
                 tickDown = 0;
             }
             else if(weatherType == 2){
-                addObject(new RedEffect(), 0, 300);
-                addObject(new RedEffect(), 900, 300);
-                addObject(new RedEffect(), 1500, 300);
+                addObject(new RedEffect(), 600, 300);
                 tickDown = 0;
             }
             else{
-                addObject(new PinkEffect(), 0, 300);
-                addObject(new PinkEffect(), 900, 300);
+                addObject(new PinkEffect(), 600, 300);
                 addObject(new PinkEffect(), 1500, 300);
                 tickDown = 0;
             }

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Effects for the pink stock
  * 
- * @Liyu
- * @Nov 24 2023
+ * @Liyu Xiao
+ * @Nov 28 2023
  * 
  * 
  * image credits: https://www.pinterest.ca/pin/329114685245117235/
@@ -26,6 +26,8 @@ public class PinkEffect extends Weather
         pinkSound.setVolume(20);
     }
     
+    
+    //Inherits the act method from weather class
     public void act()
     {
         super.act("Pink", "Water");

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The effect for the Green stock
  * 
- * @Liyu
- * @Nov 11 2023
+ * @Liyu Xiao
+ * @Nov 28 2023
  * 
  * image link: https://tenor.com/view/leaves-gif-16219912
  * 
@@ -21,6 +21,8 @@ public class GreenEffect extends Weather
         
     }
     
+    
+    //Inherits the act method from weather class
     public void act()
     {
         super.act("Plant", "Water");

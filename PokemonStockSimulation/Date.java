@@ -12,13 +12,33 @@ public class Date extends Actor
     private int month,day = 1;
     private int clock;
     private String ending;
+    private int worldSpeed;
     
     private String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private int[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
     
-    public void Date() {
+    public Date(int worldSpeed) {
         month = 0;
         day = 1;
+        
+        this.worldSpeed = worldSpeed;
+        
+        date.setColor(Color.BLACK);
+        date.fill();
+        date.setColor(Color.WHITE);
+        date.setFont(new Font("Times New Roman", true, false, 30));
+        
+        if(day == 1 || day == 21 || day == 31) {
+            ending = "st";
+        } else if (day == 2 || day == 22) {
+            ending = "nd";
+        } else if (day == 3 || day == 23) {
+            ending = "rd";
+        } else {
+            ending = "th";
+        }
+        
+        date.drawString(months[month] + ", " + day + ending, 10, 35);
         
         setImage(date);
     }
@@ -29,7 +49,7 @@ public class Date extends Actor
      */
     public void act()
     {
-        if(clock > 20 && endSimulation()) {
+        if(clock > worldSpeed && endSimulation() == false) {
             updateDate();
             clock = 0;
         }
@@ -50,7 +70,7 @@ public class Date extends Actor
         date.setColor(Color.BLACK);
         date.fill();
         date.setColor(Color.WHITE);
-        date.setFont(new Font("Roman",false,false,30));
+        date.setFont(new Font("Times New Roman", true, false, 30));
         date.drawString(months[month] + ", " + day + ending, 10, 35);
         
         setImage(date);
@@ -68,10 +88,14 @@ public class Date extends Actor
             date.setColor(Color.BLACK);
             date.fill();
             date.setColor(Color.WHITE);
-            date.setFont(new Font("TimesNewRoman",false,false,30));
+            date.setFont(new Font("Times New Roman",false,false,30));
             date.drawString("FINISHED", 10, 35);
-            return false;
+            return true;
         }
-        return true;
+        return false;
+    }
+    
+    public String getDate() {
+        return month + Integer.toString(day);
     }
 }

@@ -21,23 +21,15 @@ public class Squirtle extends Icon
      */
     public void act()
     {
-        /**
-         * setImage("Squirtle2.png");
-        GreenfootImage squirtleImage;
-        int stockPrice = WaterCompany.getCurrentValue();
-        if(stockPrice > 75){
-            squirtleImage = new GreenfootImage("Squirtle0.png"); //happy squirtle
-            setImage(squirtleImage);
-        }else if (stockPrice < 30){
-            squirtleImage = new GreenfootImage("Squirtle1.png"); //pissed off/angry 
-            setImage(squirtleImage);
-        }else if (stockPrice < 50){
-            squirtleImage = new GreenfootImage("Squirtle3.png"); //sad 
-            setImage(squirtleImage);
-        }else {
-            squirtleImage = new GreenfootImage("Squirtle2.png"); //normal squirtle
-            setImage(squirtleImage);
-        }
-         */
+        super.act("Water");
+    }
+    
+    
+    public String getCompany(){
+        return "Water";
+    }
+    
+    public String getPlayer() {
+        return "Squirtle";
     }
 }

@@ -17,6 +17,14 @@ public class WelcomeWorld extends World
     
     private static Icon player1, player2;
     
+    private int effectSpawnRate = 1000;
+    private int stockChangeValue = 40;
+    private int worldSpeed = 10;
+    
+    private Button changeEffect = new Button("Effect Spawn Rate",280);
+    private Button changeVariance = new Button("Stock Variance Value",320);
+    private Button changeSpeed = new Button("World Speed Rate",280);
+    
     /**
      * Constructor for objects of class WelcomeWorld.
      * <p> Constructor adds the Super Display Label as well as the button for clicking next
@@ -25,7 +33,6 @@ public class WelcomeWorld extends World
     public WelcomeWorld()
     {    
         super(1600, 800, 1, false);
-        label = new SuperDisplayLabel();
         addObject(next, 1360, 710); 
         player1 = null;
         player2 = null;
@@ -35,21 +42,28 @@ public class WelcomeWorld extends World
      * Stores players in an array
      */
     public static Icon[] getPlayers(){
-        player1 = new Charmander();
-        player2= new Ditto();
         return new Icon[]{player1, player2};
     }
-    
     /**
      * Act method:
      * <p>Repeats the actions of updating labels and frames.
      */
     public void act(){
         frames();
-        if(Greenfoot.mouseClicked(next)){
-            addObject(label, 800, 50);
-            label.update("WELCOME PLAYER!");
+        if(storyFrame < 4 && Greenfoot.mouseClicked(next)){
             storyFrame++;
+        } else if(storyFrame == 4 && player1 != null && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+        } else if(storyFrame == 5 && player2 != null && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+            
+            removeObject(selectTop);
+            removeObject(selectBottom);
+        } else if(storyFrame >= 6 && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+            removeObject(changeEffect);
+            removeObject(changeVariance);
+            removeObject(changeSpeed);
         }
     }
     
@@ -59,36 +73,31 @@ public class WelcomeWorld extends World
      */
     public void frames(){
         if (storyFrame == 1){
-            label.update("There are some Pokemon who have decided to take up some businesses classes. Now, they think they know everything about stocks!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 2){
-            label.update("They've decided to battle each other to find out which team knows their stocks the best");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 3){
-            label.update("Will your team be able to defeat the other pair?");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
         }else if(storyFrame == 4){ //player 1 selection
-            label.update("Choose your Pokemon Player 1!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(selectTop, 1152, 145); // ttop button selection
-            addObject(selectBottom, 1152, 550); //bottom button selection
+            addObject(selectTop, 352, 498); // left button selection
+            addObject(selectBottom, 1271, 498); //right button selection
             
             if(Greenfoot.mouseClicked(selectTop)){
-                player1 = new Charmander();
+                player1 = new Squirtle();
                 // chosen charmander
                 // add the background of charmander into the world
             } else if(Greenfoot.mouseClicked(selectBottom)){
-                player1 = new Squirtle();
+                player1 = new Charmander();
                 // chosen squirtle
                 // add the background of squirtle into the world
             }
             //if selectTop is chosen, then that pokemon will appear in the world
             //if selectBottom is chosen, same thing happens 
         }else if(storyFrame == 5){ //player 2 selection
-            label.update("Choose your Pokemon Player 2!");
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(selectTop, 1152, 145); // top button selection
-            addObject(selectBottom, 1152, 550); //bottom button selection
+            addObject(selectTop, 280, 498); // left button selection
+            addObject(selectBottom, 1214, 498); //right button selection
             
             if(Greenfoot.mouseClicked(selectTop)){
                 player2 = new Ditto();
@@ -100,10 +109,22 @@ public class WelcomeWorld extends World
                 // add the background of bulbasaur into the world
             }
             // after, the game will spawn and start
-        }
-        
-        else if (storyFrame == 6){
-            Greenfoot.setWorld(new MyWorld());
+        } else if(storyFrame == 6) {            
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            
+            addObject(changeEffect,400,400);
+            addObject(changeVariance,800,400);
+            addObject(changeSpeed,1200,400);
+            
+            if(Greenfoot.mouseClicked(changeEffect)){
+                effectSpawnRate = Integer.parseInt(Greenfoot.ask("Input new effect spawn rate. (Current one is " + effectSpawnRate + ")"));
+            } else if(Greenfoot.mouseClicked(changeVariance)){
+                stockChangeValue = Integer.parseInt(Greenfoot.ask("Input new stock variance value. (Current one is " + stockChangeValue + ")"));
+            } else if(Greenfoot.mouseClicked(changeSpeed)){
+                worldSpeed = Integer.parseInt(Greenfoot.ask("Input new world speed. (Current one is " + worldSpeed + ")"));
+            }
+        } else if (storyFrame == 7){
+            Greenfoot.setWorld(new MyWorld(stockChangeValue,stockChangeValue,worldSpeed));
         }
     }
 }

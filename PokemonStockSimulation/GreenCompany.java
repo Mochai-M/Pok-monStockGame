@@ -12,16 +12,19 @@ public class GreenCompany extends Companies
     protected static int currentValue = 50;
     protected static int newValue;
     protected static int previousValue = 200;
+    protected static boolean modified;
+    
     protected int iteration;
     protected greenfoot.Color color;
     
     public GreenCompany(int v) {
         super();
         iteration = 0;
+        modified = false;
         
         currentValue = v;
 
-        color = Color.GREEN;
+        color = new Color(110,194,68);
     }
     
     /**
@@ -58,6 +61,20 @@ public class GreenCompany extends Companies
     /**
      * Getter method for iteration
      */
+    public boolean wasModified() {
+        return modified;
+    }
+    
+    /**
+     * Setter method for iteration
+     */
+    public void resetModified() {
+        modified = false;
+    }
+    
+    /**
+     * Getter method for iteration
+     */
     public greenfoot.Color getColor() {
         return color;
     }
@@ -87,6 +104,7 @@ public class GreenCompany extends Companies
         } else {
             newValue = x;
         }
+        modified = true;
     }
     
     public String toString(){

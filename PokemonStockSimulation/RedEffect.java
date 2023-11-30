@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The effect for the Red stock
  * 
- * @Liyu 
- * @Nov 24 2023
+ * @Liyu Xiao
+ * @Nov 28 2023
  * 
  * 
  * sound Effects credits link: https://mixkit.co/free-sound-effects/fire/
@@ -13,16 +13,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RedEffect extends Weather
 {
     //initialize, the fire sound
-    GreenfootSound fireSound;
+    GreenfootSound fireSound = new GreenfootSound("fire.wav");
     
     
     public RedEffect(){
         //sets the size and length for the effect
-        super(250,160, "FireEffect.gif");
-        //fireSound = new GreenfootSound("fire.wav");
-        //fireSound.setVolume(10);
+        super(450,200, "FireEffect.gif");
+        
+        //fireSound.setVolume(20);
     }
     
+    
+    //Inherits the act method from weather class
     public void act()
     {
         super.act("Fire", "Plant");

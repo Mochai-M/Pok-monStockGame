@@ -9,17 +9,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Portfolio extends Actor
 {
     protected Companies company; 
-    protected int value;
     
     private GreenfootImage displayValue;
     
-    public Portfolio(Companies c) {
+    private boolean centerOnLeft;
+    
+    public Portfolio(Companies c, boolean centerOnLeft) {
         company = c;
         
+        this.centerOnLeft = centerOnLeft;
         
-        displayValue = new GreenfootImage(250,50);
         
-        displayValue.setFont(new Font("Roman",false,false,30));
+        displayValue = new GreenfootImage(400,50);
+        
+        displayValue.setFont(new Font("Times New Roman",false,false,30));
     }
     /**
      * Act - do whatever the Portfolio wants to do. This method is called whenever
@@ -31,10 +34,16 @@ public class Portfolio extends Actor
     }
     
     public void updateValue() {
+        
         displayValue.setColor(Color.BLACK);
         displayValue.fill();
         displayValue.setColor(Color.WHITE);
-        displayValue.drawString("₱ " + Float.toString(company.getValue()) + " ("+company+")", 10, 35);
+        
+        if(centerOnLeft) {
+            displayValue.drawString("("+company+") "+Float.toString(company.getValue()) + " ₱ ", 200, 35);
+        } else {
+            displayValue.drawString("₱ " + Float.toString(company.getValue()) + " ("+company+")", 10, 35);
+        }
         
         setImage(displayValue);
     }
