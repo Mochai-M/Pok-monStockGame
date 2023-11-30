@@ -17,8 +17,11 @@ import java.util.ArrayList;
  * <p> Water Effect Image Credits link: https://forums.synfig.org/t/still-not-sorted-out-falling-rain/1927 </p>
  * <p> Green Effect Image Credits link: https://tenor.com/view/leaves-gif-16219912 </p> 
  * <p> Pink Effect Image Credits link: https://tenor.com/view/hearts-pink-hearts-going-up-gif-17654443 </p>
- * 
- * <
+ * <p> Fire Stock Header Credits (Edited): https://www.logolynx.com/topic/fire
+ * <p> Water Stock Header Credits: BWT company (Logo)
+ * <p> Green Stock Header Credits (Edited): https://www.vecteezy.com/vector-art/626625-green-leaf-logo-vector
+ * <p> Pink Stock Header Credits (Edited): Blackpink (Logo), Roblox (Logo)
+ * <p> Pokemon Coin Icon: http://www.reddit.com/r/pokemon/comments/2tup93/how_do_you_pronounce_the_pokemon_currency_symbol/
  * 
  * <p> Credits for Sound </p>
  * 
@@ -37,7 +40,7 @@ import java.util.ArrayList;
  * 
  * 
  * @author Mekaeel Malik, Natalie Huang, Liyu Xiao
- * @version 1.0
+ * @version November 29th
  */
 public class MyWorld extends World
 {    

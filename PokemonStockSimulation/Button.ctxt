@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\r\n\ Button\ Class\r\n\ \r\n\ @Natalie\r\n\ @November\ 21\r\n
+comment0.text=\r\n\ Button\ Class\r\n\ \r\n\ @Natalie,\ Mekaeel\r\n\ @November\ 21\r\n
 comment1.params=text
 comment1.target=Button(java.lang.String)
 comment1.text=\r\n\ Constructor\ Class\r\n\ <p>\ Presents\ what\ the\ button\ will\ look\ like\ on\ the\ screen\r\n
 comment2.params=text\ size
 comment2.target=Button(java.lang.String,\ int)
+comment2.text=\r\n\ Slightly\ more\ modular\ constructor\ used\ in\ the\ settings\ screen\r\n
 comment3.params=
 comment3.target=void\ act()
 comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Button\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

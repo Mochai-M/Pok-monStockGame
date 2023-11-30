@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Button Class
  * 
- * @Natalie
+ * @Natalie, Mekaeel
  * @November 21
  */
 public class Button extends Actor
@@ -24,6 +24,9 @@ public class Button extends Actor
         setImage(image);
     }
     
+    /**
+     * Slightly more modular constructor used in the settings screen
+     */
     public Button (String text, int size){
         image = new GreenfootImage (size, 54);
         image.setColor(Color.BLACK);

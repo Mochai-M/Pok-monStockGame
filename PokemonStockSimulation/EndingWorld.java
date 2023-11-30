@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class EndingWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mekaeel
+ * @version November 29th
  */
 public class EndingWorld extends World
 {
