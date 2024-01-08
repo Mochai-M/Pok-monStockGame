@@ -23,7 +23,7 @@ public class BlackFriday extends Actor
      */
     
     public BlackFriday(){
-        stockMarketSound.setVolume(20);
+        stockMarketSound.setVolume(50);
         getImage().scale(1,1);
     }
     

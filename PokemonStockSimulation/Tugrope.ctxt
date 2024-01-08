@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Tugrope
-comment0.text=\r\n\ Displays\ the\ difference\ between\ the\ two\ stocks\ through\ a\ game\ of\ tug\ of\ war.\r\n\ \r\n\ @author\ Mekaeel\ \r\n\ @version\ November\ 29th\r\n
+comment0.text=\n\ Displays\ the\ difference\ between\ the\ two\ stocks\ through\ a\ game\ of\ tug\ of\ war.\n\ \n\ @author\ Mekaeel\ \n\ @version\ November\ 29th\n
 comment1.params=uno\ dos
 comment1.target=Tugrope(Companies,\ Companies)
-comment1.text=\ \r\n\ Constructor\ to\ initialize\ Tugrope\ with\ two\ Companies\ objects\r\n\ @param\ Companies\ uno\ -\ Company\ of\ the\ pokemon\ on\ the\ left\r\n\ @param\ Companies\ dos\ -\ Company\ of\ the\ pokemon\ on\ the\ right\r\n
+comment1.text=\ \n\ Constructor\ to\ initialize\ Tugrope\ with\ two\ Companies\ objects\n\ @param\ Companies\ uno\ -\ Company\ of\ the\ pokemon\ on\ the\ left\n\ @param\ Companies\ dos\ -\ Company\ of\ the\ pokemon\ on\ the\ right\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Tugrope\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Tugrope\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ moveTheKnot()
-comment3.text=\ \r\n\ Method\ to\ move\ the\ tug\ of\ war\ knot\ based\ on\ the\ difference\ in\ stock\ values\ \r\n
+comment3.text=\ \n\ Method\ to\ move\ the\ tug\ of\ war\ knot\ based\ on\ the\ difference\ in\ stock\ values\ \n
 comment4.params=
 comment4.target=int\ moveToPoint()
-comment4.text=\r\n\ Method\ to\ calculate\ the\ x-coordinate\ where\ the\ tug\ of\ war\ knot\ should\ move\ \r\n
+comment4.text=\n\ Method\ to\ calculate\ the\ x-coordinate\ where\ the\ tug\ of\ war\ knot\ should\ move\ \n
 numComments=5

@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Portfolio
-comment0.text=\r\n\ Displays\ the\ current\ value\ of\ the\ stock\ entered\ into\ the\ parameters.\r\n\ \r\n\ @\ Companies\ c\:\ the\ company\ that\ will\ have\ their\ stock\ price\ displayed\r\n\ @\ boolean\ centerOnLeft\:\ differentiator\ to\ decide\ which\ side\ of\ the\ screen\ the\ price\ should\ be\ centered\ on\r\n\ \r\n\ @author\ Mekaeel\ Malik\r\n\ @version\ November\ 27th\r\n
+comment0.text=\n\ Displays\ the\ current\ value\ of\ the\ stock\ entered\ into\ the\ parameters.\n\ \n\ @\ Companies\ c\:\ the\ company\ that\ will\ have\ their\ stock\ price\ displayed\n\ @\ boolean\ centerOnLeft\:\ differentiator\ to\ decide\ which\ side\ of\ the\ screen\ the\ price\ should\ be\ centered\ on\n\ \n\ @author\ Mekaeel\ Malik\n\ @version\ November\ 27th\n
 comment1.params=c\ centerOnLeft
 comment1.target=Portfolio(Companies,\ boolean)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Portfolio\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Portfolio\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ updateValue()
-comment3.text=\r\n\ Method\ to\ update\ the\ displayed\ stock\ value\r\n
+comment3.text=\n\ Method\ to\ update\ the\ displayed\ stock\ value\n
 numComments=4

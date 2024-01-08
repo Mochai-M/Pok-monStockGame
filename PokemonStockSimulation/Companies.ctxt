@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Companies
-comment0.text=\r\n\ Super\ class\ for\ each\ company\ that\ holds\ the\ functions\ used\ by\ all\ companies\r\n\ and\ properly\ abstracts\ and\ statics\ certain\ variables\ for\ efficient\ code.\r\n\ \r\n\ @author\ Mekaeel\r\n\ @version\ November\ 29th,\ 2023\r\n
+comment0.text=\n\ Super\ class\ for\ each\ company\ that\ holds\ the\ functions\ used\ by\ all\ companies\n\ and\ properly\ abstracts\ and\ statics\ certain\ variables\ for\ efficient\ code.\n\ \n\ @author\ Mekaeel\n\ @version\ November\ 29th,\ 2023\n
 comment1.params=
 comment1.target=Companies()
 comment10.params=
@@ -23,10 +23,10 @@ comment18.params=x
 comment18.target=void\ setVarianceRate(int)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ FireCompany\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ FireCompany\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ nextPoint()
-comment3.text=\r\n\ Method\ to\ generate\ the\ next\ point\ in\ the\ stock\ price\ graph\r\n
+comment3.text=\n\ Method\ to\ generate\ the\ next\ point\ in\ the\ stock\ price\ graph\n
 comment4.params=x
 comment4.target=void\ updateCurrentValue(int)
 comment5.params=
